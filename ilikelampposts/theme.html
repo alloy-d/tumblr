@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="{Favicon}" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
-    <meta name="color:Body background" content="#262329" />
+    <meta name="color:Body background" content="#232929" />
     <style type="text/css">
       body {
         background-color: {color:Body background};
@@ -33,39 +33,33 @@
       div#header h1 a:link, div#header h1 a:visited {
         background-color: #ffffff;
         border: none;
-        color: {color:Body background}:
+        color: {color:Body background};
       }
 
       div#content {
+        display: table;
         line-height: 1.5em;
         margin-left: 200px;
         width: 70ex;
       }
       div#content div.post {
+        display: table-row;
         margin-bottom: 150px;
         margin-left: 100px;
       }
 
-      div.meta {
-        background-color: #ffffff;
-        border: 1px solid #000000;
-        color: {color:Body background};
-        font-weight: bold;
-        padding: 0;
-      }
-      div.meta a:link, div.meta a:visited {
-        background-color: #ffffff;
-        color: {color:Body background};
-        padding: 0;
-      }
-      div.meta a.permalink:link, div.meta a.permalink:visited {
+      a.permalink:link, a.permalink:visited {
         border-right: 3px solid #000000;
         border-bottom: none;
-        display: block;
+        display: table-cell;
         text-align: center;
         width: 40px;
       }
-      div.meta span.date {
+      span.date {
+        background-color: #ffffff;
+        color: {color:Body background};
+        display: table-cell;
+        font-weight: bold;
         text-transform: uppercase;
       }
 
@@ -104,16 +98,14 @@
 
         {block:Text}
           <div class="post text">
-            <div class="meta">
-              <a class="permalink" href="{Permalink}">&#8734</a>
+            <a class="permalink" href="{Permalink}">&#8734</a>
+            <span class="date">
               {block:NewDayDate}
-                <span class="date">
-                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                    {DayOfMonthWithZero} {ShortMonth}
-                  </a>
-                </span>
+                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                  {DayOfMonthWithZero} {ShortMonth}
+                </a>
               {/block:NewDayDate}
-            </div>
+            </span>
             {block:Title}
               <h2 class="post_title">{Title}</h2>
             {/block:Title}
@@ -126,16 +118,14 @@
 
         {block:Photo}
           <div class="post photo">
-            <div class="meta">
-              <a class="permalink" href="{Permalink}">&#8734</a>
+            <a class="permalink" href="{Permalink}">&#8734</a>
+            <span class="date">
               {block:NewDayDate}
-                <span class="date">
-                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                    {DayOfMonthWithZero} {ShortMonth}
-                  </a>
-                </span>
+                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                  {DayOfMonthWithZero} {ShortMonth}
+                </a>
               {/block:NewDayDate}
-            </div>
+            </span>
             <img src="{PhotoURL-400}" alt="{PhotoAlt}" />
 
             {block:Caption}
@@ -146,16 +136,14 @@
 
         {block:Quote}
           <div class="post quote">
-            <div class="meta">
-              <a class="permalink" href="{Permalink}">&#8734</a>
+            <a class="permalink" href="{Permalink}">&#8734</a>
+            <span class="date">
               {block:NewDayDate}
-                <span class="date">
-                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                    {DayOfMonthWithZero} {ShortMonth}
-                  </a>
-                </span>
+                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                  {DayOfMonthWithZero} {ShortMonth}
+                </a>
               {/block:NewDayDate}
-            </div>
+            </span>
             <blockquote class="{Length}">
               {Quote}
             </blockquote>
@@ -168,16 +156,14 @@
 
         {block:Link}
           <div class="post link">
-            <div class="meta">
-              <a class="permalink" href="{Permalink}">&#8734</a>
+            <a class="permalink" href="{Permalink}">&#8734</a>
+            <span class="date">
               {block:NewDayDate}
-                <span class="date">
-                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                    {DayOfMonthWithZero} {ShortMonth}
-                  </a>
-                </span>
+                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                  {DayOfMonthWithZero} {ShortMonth}
+                </a>
               {/block:NewDayDate}
-            </div>
+            </span>
             <h2 class="post_title"><a href="{URL}" {Target}>{Name}</a></h2>
 
             {block:Description}
@@ -188,16 +174,14 @@
 
         {block:Chat}
           <div class="post chat">
-            <div class="meta">
-              <a class="permalink" href="{Permalink}">&#8734</a>
+            <a class="permalink" href="{Permalink}">&#8734</a>
+            <span class="date">
               {block:NewDayDate}
-                <span class="date">
-                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                    {DayOfMonthWithZero} {ShortMonth}
-                  </a>
-                </span>
+                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                  {DayOfMonthWithZero} {ShortMonth}
+                </a>
               {/block:NewDayDate}
-            </div>
+            </span>
             {block:Title}
               <h2 class="post_title">{Title}</h2>
             {/block:Title}
@@ -216,16 +200,14 @@
 
         {block:Audio}
           <div class="post audio">
-            <div class="meta">
-              <a class="permalink" href="{Permalink}">&#8734</a>
+            <a class="permalink" href="{Permalink}">&#8734</a>
+            <span class="date">
               {block:NewDayDate}
-                <span class="date">
-                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                    {DayOfMonthWithZero} {ShortMonth}
-                  </a>
-                </span>
+                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                  {DayOfMonthWithZero} {ShortMonth}
+                </a>
               {/block:NewDayDate}
-            </div>
+            </span>
             {AudioPlayer}
             {block:Caption}
               <div class="caption">{Caption}</div>
@@ -235,16 +217,14 @@
 
         {block:Video}
           <div class="post video">
-            <div class="meta">
-              <a class="permalink" href="{Permalink}">&#8734</a>
+            <a class="permalink" href="{Permalink}">&#8734</a>
+            <span class="date">
               {block:NewDayDate}
-                <span class="date">
-                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                    {DayOfMonthWithZero} {ShortMonth}
-                  </a>
-                </span>
+                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                  {DayOfMonthWithZero} {ShortMonth}
+                </a>
               {/block:NewDayDate}
-            </div>
+            </span>
             {Video-400}
             {block:Caption}
               <div class="caption">{Caption}</div>
