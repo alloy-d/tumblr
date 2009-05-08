@@ -134,6 +134,8 @@
       a:link:hover, a:visited:hover {
         background-color: {color:Medium};
       }
+
+      {CustomCSS}
     </style>
 	</head>
 	<body>
@@ -151,7 +153,7 @@
     <div id="content">
       {block:Posts}
         <div class="post">
-          <a name="{PostID}" class="permalink" href="{Permalink}">&#8734</a>
+          <a name="{PostID}" class="permalink" href="{Permalink}">&#8734;</a>
           <span class="date">
             {block:NewDayDate}
               <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
@@ -242,14 +244,33 @@
             {Video-400}
             {block:Caption}
               <div class="caption">{Caption}</div>
-            {/block:Caption]
+            {/block:Caption}
           </div><!-- post_content video -->
         </div><!-- post -->
         {/block:Video}
-
-
       {/block:Posts}
     </div><!-- content -->
+    <div id="pagination">
+      {block:Pagination}
+        <p>You can look at
+        {block:NextPage}
+          <a href="{NextPage}">older things</a>
+          {block:PreviousPage} or {/block:PreviousPage}
+        {/block:NextPage}
+        {block:PreviousPage}
+          <a href="{PreviousPage}">newer things</a>
+        {/block:PreviousPage}
+        .</p>
+      {/block:Pagination}
 
+      {block:DayPagination}
+        {block:PreviousDayPage}
+          <a href="{PreviousDayPage}">Previous day</a>
+        {/block:PreviousDayPage}
+        {block:NextDayPage}
+          <a href="{NextDayPage}">Next day</a>
+        {/block}
+      {/block:DayPagination}
+    </div><!-- pagination -->
 	</body>
 </html>
