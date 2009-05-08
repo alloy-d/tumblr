@@ -23,8 +23,8 @@ If you'd like to see it in action, you can check out [a sample tumblelog
 using it](http://hashtheme.tumblr.com/).
 
 
-I like lamp posts.
-------------------
+I like lampposts.
+-----------------
 
 A work in progress. It is currently incomplete and ugly. If you'd really
 like to see what it looks like so far, [you
