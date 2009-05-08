@@ -6,10 +6,13 @@
     <link rel="shortcut icon" href="{Favicon}" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
-    <meta name="color:Body background" content="#232929" />
+    <meta name="color:Dark" content="#212426" />
+    <meta name="color:Medium" content="#6A747D" />
+    <meta name="color:Light" content="#DFE6EC" />
+
     <style type="text/css">
       body {
-        background-color: {color:Body background};
+        background-color: {color:Dark};
         color: #ffffff;
         font-family: sans-serif;
         margin: 0;
@@ -18,7 +21,8 @@
 
       div#header {
         background-color: #ffffff;
-        color: {color:Body background};
+        height: 120px;
+        color: {color:Dark};
       }
       div#header h1 {
         font-family: "Georgia", "Palatino", serif;
@@ -29,11 +33,12 @@
         padding-top: 10px;
         padding-bottom: 10px;
         text-transform: uppercase;
+        vertical-align: center;
       }
       div#header h1 a:link, div#header h1 a:visited {
         background-color: #ffffff;
         border: none;
-        color: {color:Body background};
+        color: {color:Dark};
       }
 
       div#content {
@@ -54,23 +59,31 @@
         vertical-align: top;
         width: 40px;
       }
+      a.permalink:link:hover, a.permalink:visited:hover {
+        background-color: #000000;
+        border-right: 3px solid {color:Light};
+      }
+
       span.date {
         background-color: transparent;
         display: table-cell;
         font-weight: bold;
+        padding-top: 13px;
         text-transform: uppercase;
+        vertical-align: top;
         width: 200px;
       }
       span.date a:link, span.date a:visited {
-        background-color: #ffffff;
+        background-color: {color:Light};
         border: 3px solid #000000;
         border-left: none;
-        color: {color:Body background};
-        padding: 5px;
+        color: {color:Dark};
+        padding: 5px 10px;
         vertical-align: top;
       }
 
       div.post_content {
+        padding-top: 10px;
         padding-bottom: 150px;
         width: 70ex;
       }
@@ -78,10 +91,11 @@
       h2.post_title {
         font-family: "Palatino", serif;
         font-size: 20pt;
+        margin-top: 0;
       }
 
       div.post img {
-        background-color: #444444;
+        background-color: {color:Medium};
         display: block;
         padding: 8px;
       }
@@ -92,7 +106,7 @@
         text-decoration: none;
       }
       a:link:hover, a:visited:hover {
-        background-color: #444444;
+        background-color: {color:Medium};
       }
     </style>
 	</head>
