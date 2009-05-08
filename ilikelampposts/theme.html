@@ -19,16 +19,23 @@
         padding: 0;
       }
 
+      div#header {
+        margin-top: 60px;
+      }
       div#header h1 {
         background-color: #ffffff;
+        background-image: url('http://static.tumblr.com/stpp4vf/ZeIkjbi3x/lamp-mid.png');
+        background-position: 55px;
+        background-repeat: no-repeat;
         color: {color:Dark};
         font-family: "Georgia", "Palatino", serif;
         font-size: 90px;
         font-weight: 100;
-        height: 120px;
+        height: 100px;
+        margin-top: 0;
         margin-bottom: 0; 
         padding-right: 50px;
-        padding-top: 10px;
+        padding-top: 7px;
         padding-bottom: 10px;
         text-align: right;
         text-transform: uppercase;
@@ -42,16 +49,25 @@
       p#blog_description {
         border-left: 46px solid #000000;
         color: {color:Medium};
-        font-family: "Palatino", sans-serif;
+        font-family: "Palatino", serif;
         font-size: 30px;
         font-style: italic;
         margin: 0;
+        margin-top: -30px;
         margin-left: 100px;
         padding-right: 50px;
+        padding-bottom: 300px;
         text-align: right;
+      }
+      div#header img.lamp_part {
+        display: block;
+        margin: 0;
+        margin-left: 55px;
+        padding: 0;
       }
 
       div#content {
+        border: none;
         display: table;
         line-height: 1.5em;
         margin-left: 100px;
@@ -122,7 +138,11 @@
 	</head>
 	<body>
     <div id="header">
+      <img class="lamp_part"
+          src="http://static.tumblr.com/stpp4vf/Eq5kjbi0x/lamp-top.png" />
       <h1 id="blog_title"><a href="/">{Title}</a></h1>
+      <img class="lamp_part"
+          src="http://static.tumblr.com/stpp4vf/cMHkjbi4e/lamp-bottom.png" />
       {block:Description}
         <p id="blog_description">{Description}</p>
       {/block:Description}
@@ -130,10 +150,8 @@
 
     <div id="content">
       {block:Posts}
-        <a name="{PostID}" />
-
         <div class="post">
-          <a class="permalink" href="{Permalink}">&#8734</a>
+          <a name="{PostID}" class="permalink" href="{Permalink}">&#8734</a>
           <span class="date">
             {block:NewDayDate}
               <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
