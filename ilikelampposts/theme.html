@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+
+    <meta name="color:Body background" content="#262329" />
+    <style type="text/css">
+      body {
+        background-color: {color:Body background};
+        color: #ffffff;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      div#header {
+        background-color: #ffffff;
+        color: {color:Body background};
+        margin-bottom: 200px;
+      }
+      div#header h1 {
+        font-family: "Georgia", "Palatino", serif;
+        font-size: 48pt;
+        font-weight: 100;
+        margin-left: 200px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      div#content {
+        line-height: 1.5em;
+        margin-left: 200px;
+        width: 70ex;
+      }
+      div#content div.post {
+        margin-bottom: 150px;
+        margin-left: 100px;
+      }
+
+      p.meta {
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        color: {color:Body background};
+        font-weight: bold;
+        padding: 0;
+      }
+      p.meta a:link, p.meta a:visited {
+        background-color: #ffffff;
+        color: {color:Body background};
+        padding: 0;
+      }
+      a.permalink:link, a.permalink:visited {
+        border-right: 3px solid #000000;
+        border-bottom: none;
+        color: red;
+        text-align: center;
+        width: 30px;
+      }
+      span.date {
+        text-transform: uppercase;
+      }
+
+      h2.post_title {
+        font-family: "Palatino", serif;
+        font-size: 20pt;
+      }
+
+      div.post img {
+        background-color: #444444;
+        display: block;
+        padding: 8px;
+      }
+
+      a:link, a:visited {
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      a:link:hover, a:visited:hover {
+        background-color: #444444;
+      }
+    </style>
+	</head>
+	<body>
+    <div id="header">
+      <h1 id="blog_title">{Title}</h1>
+      {block:Description}
+        <p id="blog_description">{Description}</p>
+      {/block:Description}
+    </div><!-- header -->
+
+    <div id="content">
+      {block:Posts}
+        <a name="{PostID}" />
+
+        {block:Text}
+          <div class="post text">
+            <p class="meta">
+              <a class="permalink" href="{Permalink}">&#8734</a>
+              {block:NewDayDate}
+                <span class="date">
+                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                    {DayOfMonthWithZero} {ShortMonth}
+                  </a>
+                </span>
+              {/block:NewDayDate}
+            </p>
+            {block:Title}
+              <h2 class="post_title">{Title}</h2>
+            {/block:Title}
+
+            <div class="post_content">
+              {Body}
+            </div><!-- post_content -->
+          </div><!-- post text -->
+        {/block:Text}
+
+        {block:Photo}
+          <div class="post photo">
+            <p class="meta">
+              {block:NewDayDate}
+                <span class="date">
+                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                    {DayOfMonthWithZero} {ShortMonth}
+                  </a>
+                </span>
+              {/block:NewDayDate}
+            </p>
+            <img src="{PhotoURL-400}" alt="{PhotoAlt}" />
+
+            {block:Caption}
+              <div class="caption">{Caption}</div>
+            {/block:Caption}
+          </div><!-- post photo -->
+        {/block:Photo}
+
+        {block:Quote}
+          <div class="post quote">
+            <p class="meta">
+              <a class="permalink" href="{Permalink}">&#8734</a>
+              {block:NewDayDate}
+                <span class="date">
+                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                    {DayOfMonthWithZero} {ShortMonth}
+                  </a>
+                </span>
+              {/block:NewDayDate}
+            </p>
+            <blockquote class="{Length}">
+              {Quote}
+            </blockquote>
+
+            {block:Source}
+              <div class="source">{Source}</div>
+            {/block:Source}
+          </div><!-- post quote -->
+        {/block:Quote}
+
+        {block:Link}
+          <div class="post link">
+            <p class="meta">
+              <a class="permalink" href="{Permalink}">&#8734</a>
+              {block:NewDayDate}
+                <span class="date">
+                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                    {DayOfMonthWithZero} {ShortMonth}
+                  </a>
+                </span>
+              {/block:NewDayDate}
+            </p>
+            <h2 class="post_title"><a href="{URL}" {Target}>{Name}</a></h2>
+
+            {block:Description}
+              <div class="description">{Description}</div>
+            {/block:Description}
+          </div><!-- post link -->
+        {/block:Link}
+
+        {block:Chat}
+          <div class="post chat">
+            <p class="meta">
+              <a class="permalink" href="{Permalink}">&#8734</a>
+              {block:NewDayDate}
+                <span class="date">
+                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                    {DayOfMonthWithZero} {ShortMonth}
+                  </a>
+                </span>
+              {/block:NewDayDate}
+            </p>
+            {block:Title}
+              <h2 class="post_title">{Title}</h2>
+            {/block:Title}
+
+            {block:Lines}
+              <p class="chat_line chat_line_{Alt}">
+                {block:Label}
+                  <span class="label">{Label}</span>
+                {/block:Label}
+                <span class="speaker uid{UserNumber}">{Name}</span>
+                <span class="text">{Line}</span>
+              </p>
+            {/block:Lines}
+          </div><!-- post chat -->
+        {/block:Chat}
+
+        {block:Audio}
+          <div class="post audio">
+            <p class="meta">
+              <a class="permalink" href="{Permalink}">&#8734</a>
+              {block:NewDayDate}
+                <span class="date">
+                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                    {DayOfMonthWithZero} {ShortMonth}
+                  </a>
+                </span>
+              {/block:NewDayDate}
+            </p>
+            {AudioPlayer}
+            {block:Caption}
+              <div class="caption">{Caption}</div>
+            {/block:Caption}
+          </div><!-- post audio -->
+        {/block:Audio}
+
+        {block:Video}
+          <div class="post video">
+            <p class="meta">
+              <a class="permalink" href="{Permalink}">&#8734</a>
+              {block:NewDayDate}
+                <span class="date">
+                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                    {DayOfMonthWithZero} {ShortMonth}
+                  </a>
+                </span>
+              {/block:NewDayDate}
+            </p>
+            {Video-400}
+            {block:Caption}
+              <div class="caption">{Caption}</div>
+            {/block:Caption]
+          </div><!-- post video -->
+        {/block:Video}
+
+      {/block:Posts}
+    </div><!-- content -->
+
+	</body>
+</html>
