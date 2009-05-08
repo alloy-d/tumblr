@@ -19,12 +19,12 @@
       div#header {
         background-color: #ffffff;
         color: {color:Body background};
-        margin-bottom: 200px;
       }
       div#header h1 {
         font-family: "Georgia", "Palatino", serif;
         font-size: 48pt;
         font-weight: 100;
+        margin-bottom: 0; 
         margin-left: 200px;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -39,28 +39,40 @@
       div#content {
         display: table;
         line-height: 1.5em;
-        margin-left: 200px;
-        width: 70ex;
+        margin-left: 100px;
       }
       div#content div.post {
         display: table-row;
-        margin-bottom: 150px;
-        margin-left: 100px;
       }
 
       a.permalink:link, a.permalink:visited {
-        border-right: 3px solid #000000;
-        border-bottom: none;
+        background-color: #000000;
+        border: 3px solid #000000;
         display: table-cell;
+        padding-top: 10px;
         text-align: center;
+        vertical-align: top;
         width: 40px;
       }
       span.date {
-        background-color: #ffffff;
-        color: {color:Body background};
+        background-color: transparent;
         display: table-cell;
         font-weight: bold;
         text-transform: uppercase;
+        width: 200px;
+      }
+      span.date a:link, span.date a:visited {
+        background-color: #ffffff;
+        border: 3px solid #000000;
+        border-left: none;
+        color: {color:Body background};
+        padding: 5px;
+        vertical-align: top;
+      }
+
+      div.post_content {
+        padding-bottom: 150px;
+        width: 70ex;
       }
 
       h2.post_title {
@@ -96,54 +108,42 @@
       {block:Posts}
         <a name="{PostID}" />
 
+        <div class="post">
+          <a class="permalink" href="{Permalink}">&#8734</a>
+          <span class="date">
+            {block:NewDayDate}
+              <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                {DayOfMonthWithZero} {ShortMonth}
+              </a>
+            {/block:NewDayDate}
+          </span>
+
         {block:Text}
-          <div class="post text">
-            <a class="permalink" href="{Permalink}">&#8734</a>
-            <span class="date">
-              {block:NewDayDate}
-                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                  {DayOfMonthWithZero} {ShortMonth}
-                </a>
-              {/block:NewDayDate}
-            </span>
+          <div class="post_content text">
             {block:Title}
               <h2 class="post_title">{Title}</h2>
             {/block:Title}
 
-            <div class="post_content">
+            <div class="post_body">
               {Body}
-            </div><!-- post_content -->
-          </div><!-- post text -->
+            </div><!-- post_body -->
+          </div><!-- post_content -->
+        </div><!-- post -->
         {/block:Text}
 
         {block:Photo}
-          <div class="post photo">
-            <a class="permalink" href="{Permalink}">&#8734</a>
-            <span class="date">
-              {block:NewDayDate}
-                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                  {DayOfMonthWithZero} {ShortMonth}
-                </a>
-              {/block:NewDayDate}
-            </span>
+          <div class="post_content photo">
             <img src="{PhotoURL-400}" alt="{PhotoAlt}" />
 
             {block:Caption}
               <div class="caption">{Caption}</div>
             {/block:Caption}
-          </div><!-- post photo -->
+          </div><!-- post_content photo -->
+        </div><!-- post -->
         {/block:Photo}
 
         {block:Quote}
-          <div class="post quote">
-            <a class="permalink" href="{Permalink}">&#8734</a>
-            <span class="date">
-              {block:NewDayDate}
-                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                  {DayOfMonthWithZero} {ShortMonth}
-                </a>
-              {/block:NewDayDate}
-            </span>
+          <div class="post_content quote">
             <blockquote class="{Length}">
               {Quote}
             </blockquote>
@@ -151,37 +151,23 @@
             {block:Source}
               <div class="source">{Source}</div>
             {/block:Source}
-          </div><!-- post quote -->
+          </div><!-- post_content quote -->
+        </div><!-- post -->
         {/block:Quote}
 
         {block:Link}
-          <div class="post link">
-            <a class="permalink" href="{Permalink}">&#8734</a>
-            <span class="date">
-              {block:NewDayDate}
-                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                  {DayOfMonthWithZero} {ShortMonth}
-                </a>
-              {/block:NewDayDate}
-            </span>
+          <div class="post_content link">
             <h2 class="post_title"><a href="{URL}" {Target}>{Name}</a></h2>
 
             {block:Description}
               <div class="description">{Description}</div>
             {/block:Description}
-          </div><!-- post link -->
+          </div><!-- post_content link -->
+        </div><!-- post -->
         {/block:Link}
 
         {block:Chat}
-          <div class="post chat">
-            <a class="permalink" href="{Permalink}">&#8734</a>
-            <span class="date">
-              {block:NewDayDate}
-                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                  {DayOfMonthWithZero} {ShortMonth}
-                </a>
-              {/block:NewDayDate}
-            </span>
+          <div class="post_content chat">
             {block:Title}
               <h2 class="post_title">{Title}</h2>
             {/block:Title}
@@ -195,42 +181,30 @@
                 <span class="text">{Line}</span>
               </p>
             {/block:Lines}
-          </div><!-- post chat -->
+          </div><!-- post_content chat -->
+        </div><!-- post -->
         {/block:Chat}
 
         {block:Audio}
-          <div class="post audio">
-            <a class="permalink" href="{Permalink}">&#8734</a>
-            <span class="date">
-              {block:NewDayDate}
-                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                  {DayOfMonthWithZero} {ShortMonth}
-                </a>
-              {/block:NewDayDate}
-            </span>
+          <div class="post_content audio">
             {AudioPlayer}
             {block:Caption}
               <div class="caption">{Caption}</div>
             {/block:Caption}
-          </div><!-- post audio -->
+          </div><!-- post_content audio -->
+        </div><!-- post -->
         {/block:Audio}
 
         {block:Video}
-          <div class="post video">
-            <a class="permalink" href="{Permalink}">&#8734</a>
-            <span class="date">
-              {block:NewDayDate}
-                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                  {DayOfMonthWithZero} {ShortMonth}
-                </a>
-              {/block:NewDayDate}
-            </span>
+          <div class="post_content video">
             {Video-400}
             {block:Caption}
               <div class="caption">{Caption}</div>
             {/block:Caption]
-          </div><!-- post video -->
+          </div><!-- post_content video -->
+        </div><!-- post -->
         {/block:Video}
+
 
       {/block:Posts}
     </div><!-- content -->
