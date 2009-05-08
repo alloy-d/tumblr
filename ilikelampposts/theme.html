@@ -30,6 +30,11 @@
         padding-bottom: 10px;
         text-transform: uppercase;
       }
+      div#header h1 a:link, div#header h1 a:visited {
+        background-color: #ffffff;
+        border: none;
+        color: {color:Body background}:
+      }
 
       div#content {
         line-height: 1.5em;
@@ -41,26 +46,26 @@
         margin-left: 100px;
       }
 
-      p.meta {
+      div.meta {
         background-color: #ffffff;
         border: 1px solid #000000;
         color: {color:Body background};
         font-weight: bold;
         padding: 0;
       }
-      p.meta a:link, p.meta a:visited {
+      div.meta a:link, div.meta a:visited {
         background-color: #ffffff;
         color: {color:Body background};
         padding: 0;
       }
-      a.permalink:link, a.permalink:visited {
+      div.meta a.permalink:link, div.meta a.permalink:visited {
         border-right: 3px solid #000000;
         border-bottom: none;
-        color: red;
+        display: block;
         text-align: center;
-        width: 30px;
+        width: 40px;
       }
-      span.date {
+      div.meta span.date {
         text-transform: uppercase;
       }
 
@@ -87,7 +92,7 @@
 	</head>
 	<body>
     <div id="header">
-      <h1 id="blog_title">{Title}</h1>
+      <h1 id="blog_title"><a href="/">{Title}</a></h1>
       {block:Description}
         <p id="blog_description">{Description}</p>
       {/block:Description}
@@ -99,7 +104,7 @@
 
         {block:Text}
           <div class="post text">
-            <p class="meta">
+            <div class="meta">
               <a class="permalink" href="{Permalink}">&#8734</a>
               {block:NewDayDate}
                 <span class="date">
@@ -108,7 +113,7 @@
                   </a>
                 </span>
               {/block:NewDayDate}
-            </p>
+            </div>
             {block:Title}
               <h2 class="post_title">{Title}</h2>
             {/block:Title}
@@ -121,7 +126,7 @@
 
         {block:Photo}
           <div class="post photo">
-            <p class="meta">
+            <div class="meta">
               <a class="permalink" href="{Permalink}">&#8734</a>
               {block:NewDayDate}
                 <span class="date">
@@ -130,7 +135,7 @@
                   </a>
                 </span>
               {/block:NewDayDate}
-            </p>
+            </div>
             <img src="{PhotoURL-400}" alt="{PhotoAlt}" />
 
             {block:Caption}
@@ -141,7 +146,7 @@
 
         {block:Quote}
           <div class="post quote">
-            <p class="meta">
+            <div class="meta">
               <a class="permalink" href="{Permalink}">&#8734</a>
               {block:NewDayDate}
                 <span class="date">
@@ -150,7 +155,7 @@
                   </a>
                 </span>
               {/block:NewDayDate}
-            </p>
+            </div>
             <blockquote class="{Length}">
               {Quote}
             </blockquote>
@@ -163,7 +168,7 @@
 
         {block:Link}
           <div class="post link">
-            <p class="meta">
+            <div class="meta">
               <a class="permalink" href="{Permalink}">&#8734</a>
               {block:NewDayDate}
                 <span class="date">
@@ -172,7 +177,7 @@
                   </a>
                 </span>
               {/block:NewDayDate}
-            </p>
+            </div>
             <h2 class="post_title"><a href="{URL}" {Target}>{Name}</a></h2>
 
             {block:Description}
@@ -183,7 +188,7 @@
 
         {block:Chat}
           <div class="post chat">
-            <p class="meta">
+            <div class="meta">
               <a class="permalink" href="{Permalink}">&#8734</a>
               {block:NewDayDate}
                 <span class="date">
@@ -192,7 +197,7 @@
                   </a>
                 </span>
               {/block:NewDayDate}
-            </p>
+            </div>
             {block:Title}
               <h2 class="post_title">{Title}</h2>
             {/block:Title}
@@ -211,7 +216,7 @@
 
         {block:Audio}
           <div class="post audio">
-            <p class="meta">
+            <div class="meta">
               <a class="permalink" href="{Permalink}">&#8734</a>
               {block:NewDayDate}
                 <span class="date">
@@ -220,7 +225,7 @@
                   </a>
                 </span>
               {/block:NewDayDate}
-            </p>
+            </div>
             {AudioPlayer}
             {block:Caption}
               <div class="caption">{Caption}</div>
@@ -230,7 +235,7 @@
 
         {block:Video}
           <div class="post video">
-            <p class="meta">
+            <div class="meta">
               <a class="permalink" href="{Permalink}">&#8734</a>
               {block:NewDayDate}
                 <span class="date">
@@ -239,7 +244,7 @@
                   </a>
                 </span>
               {/block:NewDayDate}
-            </p>
+            </div>
             {Video-400}
             {block:Caption}
               <div class="caption">{Caption}</div>
