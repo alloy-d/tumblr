@@ -5,7 +5,7 @@ This is a repository of the themes I've created for
 [Tumblr](http://tumblr.com)-powered blogs.
 
 You can find my tumblelog, which is quite probably using one of these
-themes, [here](http://calcandcoffee.tumblr.com).
+themes, [here](http://lloyda2.tumblr.com).
 
 
 
