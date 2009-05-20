@@ -6,125 +6,141 @@
     <link rel="shortcut icon" href="{Favicon}" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
-    <meta name="color:Text" content="#212426" />
+    <meta name="color:Text" content="#303030" />
     <meta name="color:Light" content="#F0F0F0" />
     <meta name="color:Lighter" content="#FFFFFF" />
 
     <style type="text/css">
       body {
-        background-color: {color:Lighter};
-        color: #ffffff;
-        font-family: sans-serif;
-        margin: 0;
-        padding: 0;
+          background-color: {color:Lighter};
+          color: {color:Text};
+          font-family: "Verdana", "Gill Sans", sans-serif;
+          margin: 0;
+          padding: 0;
       }
 
       div#header {
-        margin-top: 60px;
+          margin-top: 60px;
+          margin-bottom: 160px;
       }
       div#header h1 {
-        background-color: {color:Light};
-        background-position: 55px;
-        background-repeat: no-repeat;
-        color: {color:Text};
-        font-family: "Georgia", "Palatino", serif;
-        font-size: 90px;
-        font-weight: 100;
-        height: 100px;
-        margin-top: 0;
-        margin-bottom: 0; 
-        padding-right: 50px;
-        padding-top: 7px;
-        padding-bottom: 10px;
-        text-align: right;
-        text-transform: uppercase;
-        vertical-align: middle;
+          background-color: {color:Light};
+          color: {color:Text};
+          font-family: "Palatino", serif;
+          font-size: 90px;
+          font-weight: 100;
+          margin-top: 0;
+          margin-bottom: 0; 
+          text-align: center;
+          text-transform: uppercase;
       }
       div#header h1 a:link, div#header h1 a:visited {
-        background-color: transparent;
-        border: none;
-        color: inherit;
+          background-color: transparent;
+          border: none;
+          color: inherit;
       }
       p#blog_description {
-        color: {color:Text};
-        font-family: "Palatino", serif;
-        font-size: 30px;
-        font-style: italic;
-        margin: 0;
-        margin-top: -30px;
-        margin-left: 100px;
-        padding-right: 50px;
-        padding-bottom: 300px;
-        text-align: right;
+          color: {color:Text};
+          font-family: "Palatino", serif;
+          font-size: 28px;
+          font-style: italic;
+          margin: 0;
+          margin-top: -4px;
+          text-align: center;
       }
 
       div#content {
-        border: none;
-        display: table;
-        line-height: 1.5em;
-        margin: auto;
+          border: none;
+          line-height: 1.5em;
+          margin: auto;
+          text-align: justify;
+          width: 600px;
       }
       div#content div.post {
-        display: table-row;
+          margin-bottom: 120px;
       }
 
       a.permalink:link, a.permalink:visited {
-        background-color: #000000;
-        border: 3px solid #000000;
-        display: table-cell;
-        padding-top: 10px;
-        text-align: center;
-        vertical-align: top;
-        width: 40px;
+          border: none;
+          text-align: center;
       }
       a.permalink:link:hover, a.permalink:visited:hover {
-        background-color: #000000;
-        border-right: 3px solid {color:Light};
       }
 
       span.date {
-        background-color: transparent;
-        display: table-cell;
-        font-weight: bold;
-        padding-top: 13px;
-        text-transform: uppercase;
-        vertical-align: top;
-        width: 200px;
+          background-color: transparent;
+          font-family: "Palatino", sans-serif;
+          font-size: 80%;
+          font-style: italic;
+          text-align: center;
       }
       span.date a:link, span.date a:visited {
-        background-color: {color:Light};
-        border: 3px solid #000000;
-        border-left: none;
-        color: {color:Text};
-        padding: 5px 10px;
-        vertical-align: top;
+          border: none;
       }
 
       div.post_content {
-        padding-top: 10px;
-        padding-bottom: 150px;
-        width: 70ex;
       }
 
       h2.post_title {
-        font-family: "Palatino", serif;
-        font-size: 20pt;
-        margin-top: 0;
+          font-family: "Palatino", serif;
+          font-size: 20pt;
+          line-height: 1em;
+          margin-top: 0;
+          text-align: left;
       }
 
       div.post img {
-        background-color: {color:Light};
-        display: block;
-        padding: 8px;
+          background-color: {color:Light};
+          clear: both;
+          display: block;
+          margin: auto;
+          padding: 8px;
+      }
+
+      div.post div.caption {
+          margin-top: 1.5em;
+      }
+
+      div.chat p {
+          margin: 0;
+      }
+      div.chat span.label {
+          font-weight: bold;
+      }
+      div.chat {
+          margin-bottom: 16px;
       }
 
       a:link, a:visited {
-        border-bottom: 1px solid {color:Text};
-        color: {color:Text};
-        text-decoration: none;
+          border-bottom: 1px solid {color:Text};
+          color: {color:Text};
+          text-decoration: none;
       }
       a:link:hover, a:visited:hover {
-        background-color: {color:Light};
+          background-color: {color:Light};
+      }
+
+      p {
+          margin: 16px 0;
+      }
+
+      blockquote {
+          border-left: 3px solid {color:Light};
+          margin-left: 8px;
+          padding-left: 6px;
+      }
+
+      code, pre {
+          font-family: "Andale Mono", "Monaco", monospace;
+      }
+
+      div#pagination {
+          text-align: center;
+      }
+      div#pagination a:link, div#pagination a:visited {
+          border-bottom: none;
+          font-family: "Palatino", sans-serif;
+          font-style: italic;
       }
 
       {CustomCSS}
@@ -141,14 +157,7 @@
     <div id="content">
       {block:Posts}
         <div class="post">
-          <a name="{PostID}" class="permalink" href="{Permalink}">&#8734;</a>
-          <span class="date">
-            {block:NewDayDate}
-              <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                {DayOfMonthWithZero} {ShortMonth}
-              </a>
-            {/block:NewDayDate}
-          </span>
+            <a name="{PostID}"></a>
 
         {block:Text}
           <div class="post_content text">
@@ -157,7 +166,9 @@
             {/block:Title}
 
             <div class="post_body">
+                <p>
               {Body}
+                </p>
             </div><!-- post_body -->
           </div><!-- post_content -->
         {/block:Text}
@@ -167,7 +178,7 @@
             <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
 
             {block:Caption}
-              <div class="caption">{Caption}</div>
+              <p class="caption">{Caption}</p>
             {/block:Caption}
           </div><!-- post_content photo -->
         {/block:Photo}
@@ -179,7 +190,7 @@
             </blockquote>
 
             {block:Source}
-              <div class="source">{Source}</div>
+              <p class="source">{Source}</p>
             {/block:Source}
           </div><!-- post_content quote -->
         {/block:Quote}
@@ -189,7 +200,7 @@
             <h2 class="post_title"><a href="{URL}" {Target}>{Name}</a></h2>
 
             {block:Description}
-              <div class="description">{Description}</div>
+              <p class="description">{Description}</p>
             {/block:Description}
           </div><!-- post_content link -->
         {/block:Link}
@@ -205,7 +216,6 @@
                 {block:Label}
                   <span class="label">{Label}</span>
                 {/block:Label}
-                <span class="speaker uid{UserNumber}">{Name}</span>
                 <span class="text">{Line}</span>
               </p>
             {/block:Lines}
@@ -230,30 +240,50 @@
           </div><!-- post_content video -->
         {/block:Video}
 
+          <span class="date">
+              <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                  {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a>,
+              <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm} ET (&#8734;)</a>
+          </span>
         </div><!-- post -->
       {/block:Posts}
     </div><!-- content -->
     <div id="pagination">
       {block:Pagination}
-        <p>You can look at
-        {block:NextPage}
-          <a href="{NextPage}">older things</a>
-          {block:PreviousPage} or {/block:PreviousPage}
-        {/block:NextPage}
         {block:PreviousPage}
-          <a href="{PreviousPage}">newer things</a>
+          <a href="{PreviousPage}">&laquo; newer</a>
+          {block:NextPage}
+          |
+          {/block:NextPage}
         {/block:PreviousPage}
-        .</p>
+        {block:NextPage}
+          <a href="{NextPage}">older &raquo;</a>
+        {/block:NextPage}
       {/block:Pagination}
 
       {block:DayPagination}
         {block:PreviousDayPage}
-          <a href="{PreviousDayPage}">Previous day</a>
+          <a href="{PreviousDayPage}">&laquo; yesterday</a>
+          {block:NextDayPage}
+          |
+          {/block:NextDayPage}
         {/block:PreviousDayPage}
         {block:NextDayPage}
-          <a href="{NextDayPage}">Next day</a>
+          <a href="{NextDayPage}">tomorrow &raquo;</a>
         {/block:NextDayPage}
       {/block:DayPagination}
+
+      {block:PermalinkPagination}
+        {block:PreviousPost}
+            <a href="{PreviousPost}">&laquo; previous</a>
+            {block:NextPost}
+            |
+            {/block:NextPost}
+        {/block:PreviousPost}
+        {block:NextPost}
+            <a href="{NextPost}">next &raquo;</a>
+        {/block:NextPost}
+      {/block:PermalinkPagination}
     </div><!-- pagination -->
 	</body>
 </html>
