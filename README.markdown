@@ -26,7 +26,13 @@ using it](http://hashtheme.tumblr.com/).
 I like lampposts.
 -----------------
 
-A work in progress. It is currently incomplete and ugly. If you'd really
-like to see what it looks like so far, [you
-can](http://ilikelampposts.tumblr.com), but you've been warned.
+A work in progress. It is currently mostly complete, but it is obviously
+not polished in several places. If you'd like to see what it looks like so
+far, [you can](http://ilikelampposts.tumblr.com/).
 
+
+Light City
+----------
+
+A light theme designed to be elegant and minimal. I've created [a sample
+tumblelog that uses it](http://lightcitytheme.tumblr.com/).
