@@ -6,13 +6,13 @@
     <link rel="shortcut icon" href="{Favicon}" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
-    <meta name="color:Dark" content="#212426" />
-    <meta name="color:Medium" content="#6A747D" />
-    <meta name="color:Light" content="#DFE6EC" />
+    <meta name="color:Text" content="#212426" />
+    <meta name="color:Light" content="#F0F0F0" />
+    <meta name="color:Lighter" content="#FFFFFF" />
 
     <style type="text/css">
       body {
-        background-color: {color:Dark};
+        background-color: {color:Lighter};
         color: #ffffff;
         font-family: sans-serif;
         margin: 0;
@@ -23,11 +23,10 @@
         margin-top: 60px;
       }
       div#header h1 {
-        background-color: #ffffff;
-        background-image: url('http://static.tumblr.com/stpp4vf/ZeIkjbi3x/lamp-mid.png');
+        background-color: {color:Light};
         background-position: 55px;
         background-repeat: no-repeat;
-        color: {color:Dark};
+        color: {color:Text};
         font-family: "Georgia", "Palatino", serif;
         font-size: 90px;
         font-weight: 100;
@@ -42,13 +41,12 @@
         vertical-align: middle;
       }
       div#header h1 a:link, div#header h1 a:visited {
-        background-color: #ffffff;
+        background-color: transparent;
         border: none;
-        color: {color:Dark};
+        color: inherit;
       }
       p#blog_description {
-        border-left: 46px solid #000000;
-        color: {color:Medium};
+        color: {color:Text};
         font-family: "Palatino", serif;
         font-size: 30px;
         font-style: italic;
@@ -59,18 +57,12 @@
         padding-bottom: 300px;
         text-align: right;
       }
-      div#header img.lamp_part {
-        display: block;
-        margin: 0;
-        margin-left: 55px;
-        padding: 0;
-      }
 
       div#content {
         border: none;
         display: table;
         line-height: 1.5em;
-        margin-left: 100px;
+        margin: auto;
       }
       div#content div.post {
         display: table-row;
@@ -103,7 +95,7 @@
         background-color: {color:Light};
         border: 3px solid #000000;
         border-left: none;
-        color: {color:Dark};
+        color: {color:Text};
         padding: 5px 10px;
         vertical-align: top;
       }
@@ -121,18 +113,18 @@
       }
 
       div.post img {
-        background-color: {color:Medium};
+        background-color: {color:Light};
         display: block;
         padding: 8px;
       }
 
       a:link, a:visited {
-        border-bottom: 1px solid #ffffff;
-        color: #ffffff;
+        border-bottom: 1px solid {color:Text};
+        color: {color:Text};
         text-decoration: none;
       }
       a:link:hover, a:visited:hover {
-        background-color: {color:Medium};
+        background-color: {color:Light};
       }
 
       {CustomCSS}
@@ -140,11 +132,7 @@
 	</head>
 	<body>
     <div id="header">
-      <img class="lamp_part"
-          src="http://static.tumblr.com/stpp4vf/Eq5kjbi0x/lamp-top.png" />
       <h1 id="blog_title"><a href="/">{Title}</a></h1>
-      <img class="lamp_part"
-          src="http://static.tumblr.com/stpp4vf/cMHkjbi4e/lamp-bottom.png" />
       {block:Description}
         <p id="blog_description">{Description}</p>
       {/block:Description}
