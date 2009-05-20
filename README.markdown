@@ -30,9 +30,14 @@ A work in progress. It is currently mostly complete, but it is obviously
 not polished in several places. If you'd like to see what it looks like so
 far, [you can](http://ilikelampposts.tumblr.com/).
 
+(I refer to this theme as 'illp' in my commit messages.)
+
 
 Light City
 ----------
 
 A light theme designed to be elegant and minimal. I've created [a sample
 tumblelog that uses it](http://lightcitytheme.tumblr.com/).
+
+(I refer to this theme as 'lc' in my commit messages, and it started out as
+'wc'.)
