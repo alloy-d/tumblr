@@ -72,12 +72,11 @@
       a.permalink:link:hover, a.permalink:visited:hover {
       }
 
-      span.date {
+      span.date, span.hat_tip {
           background-color: transparent;
           font-family: "Palatino", sans-serif;
           font-size: 80%;
           font-style: italic;
-          text-align: center;
       }
       span.date a:link, span.date a:visited {
           border: none;
@@ -254,6 +253,13 @@
           </div><!-- post_content video -->
         {/block:Video}
 
+	{block:RebloggedFrom}
+	  <span class="hat_tip">
+	      Found via
+	      <a href="{ReblogParentURL}">{ReblogParentName}</a>
+	      on
+	  </span>
+	{/block:RebloggedFrom}
           <span class="date">
               <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
                   {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a>,
