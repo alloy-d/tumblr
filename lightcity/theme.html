@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="{Favicon}" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
+    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
     <meta name="color:Text" content="#303030" />
     <meta name="color:Standout" content="#F0F0F0" />
     <meta name="color:Background" content="#FFFFFF" />
@@ -188,7 +189,7 @@
 
         {block:Photo}
           <div class="post_content photo">
-            <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
 
             {block:Caption}
               <p class="caption">{Caption}</p>
