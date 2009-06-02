@@ -73,13 +73,13 @@
       a.permalink:link:hover, a.permalink:visited:hover {
       }
 
-      span.date, span.hat_tip {
+      span.date, span.hat_tip, span.high_res_link {
           background-color: transparent;
           font-family: "Palatino", "Georgia", serif;
           font-size: 80%;
           font-style: italic;
       }
-      span.date a:link, span.date a:visited {
+      span.date a:link, span.date a:visited, span.hat_tip a:link, span.hat_tip a:visited, span.high_res_link a:link, span.high_res_link a:visited {
           border: none;
       }
 
@@ -100,6 +100,9 @@
           display: block;
           margin: auto;
           padding: 8px;
+      }
+      div.post a:link img, div.post a:visited img {
+          border: none;
       }
 
       div.post div.caption {
@@ -257,15 +260,22 @@
           {block:RebloggedFrom}
             <span class="hat_tip">
               Found via
-              <a href="{ReblogParentURL}">{ReblogParentName}</a>
-              on
+              <a href="{ReblogParentURL}">{ReblogParentName}</a>.
             </span>
           {/block:RebloggedFrom}
           <span class="date">
+            Posted
             <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a>,
-            <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm} (&#8734;)</a>
+                {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a>, at
+            <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm} (&#8734;)</a>.
           </span>
+          {block:Photo}
+            {block:HighRes}
+              <span class="high_res_link">
+                <a href="{PhotoURL-HighRes}">Available in higher resolution.</a>
+              </span>
+            {/block:HighRes}
+          {/block:Photo}
         </div><!-- post -->
       {/block:Posts}
     </div><!-- content -->
