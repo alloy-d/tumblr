@@ -173,98 +173,98 @@
         <div class="post">
             <a name="{PostID}"></a>
 
-        {block:Text}
-          <div class="post_content text">
-            {block:Title}
-              <h2 class="post_title">{Title}</h2>
-            {/block:Title}
+          {block:Text}
+            <div class="post_content text">
+              {block:Title}
+                <h2 class="post_title">{Title}</h2>
+              {/block:Title}
 
-            <div class="post_body">
+              <div class="post_body">
                 <p>
-              {Body}
+                  {Body}
                 </p>
-            </div><!-- post_body -->
-          </div><!-- post_content -->
-        {/block:Text}
+              </div><!-- post_body -->
+            </div><!-- post_content -->
+          {/block:Text}
 
-        {block:Photo}
-          <div class="post_content photo">
-            {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+          {block:Photo}
+            <div class="post_content photo">
+              {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
 
-            {block:Caption}
-              <p class="caption">{Caption}</p>
-            {/block:Caption}
-          </div><!-- post_content photo -->
-        {/block:Photo}
+              {block:Caption}
+                <p class="caption">{Caption}</p>
+              {/block:Caption}
+            </div><!-- post_content photo -->
+          {/block:Photo}
 
-        {block:Quote}
-          <div class="post_content quote">
-            <blockquote class="{Length}">
-              {Quote}
-            </blockquote>
+          {block:Quote}
+            <div class="post_content quote">
+              <blockquote class="{Length}">
+                {Quote}
+              </blockquote>
 
-            {block:Source}
-              <p class="source">{Source}</p>
-            {/block:Source}
-          </div><!-- post_content quote -->
-        {/block:Quote}
+              {block:Source}
+                <p class="source">{Source}</p>
+              {/block:Source}
+            </div><!-- post_content quote -->
+          {/block:Quote}
 
-        {block:Link}
-          <div class="post_content link">
-            <h2 class="post_title"><a href="{URL}" {Target}>{Name}</a></h2>
+          {block:Link}
+            <div class="post_content link">
+              <h2 class="post_title"><a href="{URL}" {Target}>{Name}</a></h2>
 
-            {block:Description}
-              <p class="description">{Description}</p>
-            {/block:Description}
-          </div><!-- post_content link -->
-        {/block:Link}
+              {block:Description}
+                <p class="description">{Description}</p>
+              {/block:Description}
+            </div><!-- post_content link -->
+          {/block:Link}
 
-        {block:Chat}
-          <div class="post_content chat">
-            {block:Title}
-              <h2 class="post_title">{Title}</h2>
-            {/block:Title}
+          {block:Chat}
+            <div class="post_content chat">
+              {block:Title}
+                <h2 class="post_title">{Title}</h2>
+              {/block:Title}
 
-            {block:Lines}
-              <p class="chat_line chat_line_{Alt}">
-                {block:Label}
-                  <span class="label">{Label}</span>
-                {/block:Label}
-                <span class="text">{Line}</span>
-              </p>
-            {/block:Lines}
-          </div><!-- post_content chat -->
-        {/block:Chat}
+              {block:Lines}
+                <p class="chat_line chat_line_{Alt}">
+                  {block:Label}
+                    <span class="label">{Label}</span>
+                  {/block:Label}
+                  <span class="text">{Line}</span>
+                </p>
+              {/block:Lines}
+            </div><!-- post_content chat -->
+          {/block:Chat}
 
-        {block:Audio}
-          <div class="post_content audio">
-            {AudioPlayer}
-            {block:Caption}
-              <div class="caption">{Caption}</div>
-            {/block:Caption}
-          </div><!-- post_content audio -->
-        {/block:Audio}
+          {block:Audio}
+            <div class="post_content audio">
+              {AudioPlayer}
+              {block:Caption}
+                <div class="caption">{Caption}</div>
+              {/block:Caption}
+            </div><!-- post_content audio -->
+          {/block:Audio}
 
-        {block:Video}
-          <div class="post_content video">
-            {Video-400}
-            {block:Caption}
-              <div class="caption">{Caption}</div>
-            {/block:Caption}
-          </div><!-- post_content video -->
-        {/block:Video}
+          {block:Video}
+            <div class="post_content video">
+              {Video-400}
+              {block:Caption}
+                <div class="caption">{Caption}</div>
+              {/block:Caption}
+            </div><!-- post_content video -->
+          {/block:Video}
 
-	{block:RebloggedFrom}
-	  <span class="hat_tip">
-	      Found via
-	      <a href="{ReblogParentURL}">{ReblogParentName}</a>
-	      on
-	  </span>
-	{/block:RebloggedFrom}
+          {block:RebloggedFrom}
+            <span class="hat_tip">
+              Found via
+              <a href="{ReblogParentURL}">{ReblogParentName}</a>
+              on
+            </span>
+          {/block:RebloggedFrom}
           <span class="date">
-              <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                  {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a>,
-              <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm} (&#8734;)</a>
+            <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a>,
+            <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm} (&#8734;)</a>
           </span>
         </div><!-- post -->
       {/block:Posts}
@@ -296,19 +296,19 @@
 
       {block:PermalinkPagination}
         {block:PreviousPost}
-            <a href="{PreviousPost}">&laquo; previous</a>
-            {block:NextPost}
-            |
-            {/block:NextPost}
+          <a href="{PreviousPost}">&laquo; previous</a>
+          {block:NextPost}
+          |
+          {/block:NextPost}
         {/block:PreviousPost}
         {block:NextPost}
-            <a href="{NextPost}">next &raquo;</a>
+          <a href="{NextPost}">next &raquo;</a>
         {/block:NextPost}
       {/block:PermalinkPagination}
     </div><!-- pagination -->
     <div id="attribution">
-        <p>Powered by <a href="http://tumblr.com/">Tumblr</a>;<br />
-        themed by <a href="http://lloyda2.tumblr.com/">Adam Lloyd</a>.</p>
+      <p>Powered by <a href="http://tumblr.com/">Tumblr</a>;<br />
+      themed by <a href="http://lloyda2.tumblr.com/">Adam Lloyd</a>.</p>
     </div><!-- attribution -->
 	</body>
 </html>
