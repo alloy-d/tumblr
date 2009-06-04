@@ -122,6 +122,14 @@
           margin-bottom: 16px;
       }
 
+      /* I made the audio player centered by default;
+       * comment or delete this next definition to left-align it. */
+      div.audio div.audio_container {
+          clear: both;
+          margin: auto;
+          text-align: center;
+      }
+
       div.video div.video_container {
           clear: both;
           margin: auto;
@@ -251,7 +259,7 @@
 
           {block:Audio}
             <div class="post_content audio">
-              {AudioPlayerGrey}
+              <div class="audio_container">{AudioPlayerGrey}</div>
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
