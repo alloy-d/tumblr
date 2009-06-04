@@ -123,6 +123,12 @@
           margin-bottom: 16px;
       }
 
+      div.video div.video_container {
+          clear: both;
+          margin: auto;
+          text-align: center;
+      }
+
       a:link, a:visited {
           border-bottom: 1px solid {color:Text};
           color: {color:Text};
@@ -255,7 +261,7 @@
 
           {block:Video}
             <div class="post_content video">
-              {Video-500}
+              <div class="video_container">{Video-500}</div>
               {block:Caption}
                 <div class="caption">{Caption}</div>
               {/block:Caption}
