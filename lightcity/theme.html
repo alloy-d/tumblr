@@ -45,13 +45,19 @@
           border: none;
           color: inherit;
       }
-      p#blog_description {
+      div#blog_description {
           color: {color:Text};
           font-family: "Palatino", "Georgia", serif;
           font-size: 28px;
           font-style: italic;
           margin: 0;
           text-align: center;
+      }
+      div#blog_description p {
+          display: inline;
+      }
+      div#blog_description br {
+          display: none;
       }
 
       div#content {
@@ -185,7 +191,7 @@
     <div id="header">
       <h1 id="blog_title"><a href="/">{Title}</a></h1>
       {block:Description}
-        <p id="blog_description">{Description}</p>
+        <div id="blog_description"><p>{Description}</p></div>
       {/block:Description}
     </div><!-- header -->
 
