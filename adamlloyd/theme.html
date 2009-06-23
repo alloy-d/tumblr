@@ -48,6 +48,7 @@ code, pre {
     font-family: "Courier New", "Courier", "Andale Mono", monospace;
 }
 h2, p.prominent {
+    color: {color:Accent};
     font-family: "Palatino", serif;
     font-size: 20pt;
     font-weight: normal;
@@ -60,14 +61,8 @@ p {
 .prominent {
     margin: 2em 0;
 }
-.accent1, .green {
+.accent {
     color: {color:Accent};
-}
-.accent2, .blue {
-    color: {color:Second accent};
-}
-.accent3, .red {
-    color: {color:Third accent};
 }
 
 /* Header styles */
@@ -84,10 +79,15 @@ div#header em {
     color: {color:Accent};
     font-style: normal;
 }
+div#header a:link, div#header a:visited {
+    color: {color:Accent};
+}
 div#header div#description p {
     font-size: 20pt;
     margin: 0;
 }
+
+/* Main content styles */
 div#content {
     line-height: 1.5em;
     text-align: left;
@@ -183,6 +183,9 @@ div#search input#query {
 div#links {
     font-size: 16pt;
 }
+div#links a:link, div#links a:visited {
+    color: {color:Accent};
+}
 div#links ul {
     display: inline;
     list-style-type: none;
@@ -199,6 +202,11 @@ div#links ul li:first-child:before {
 }
 div#links ul:after {
     content: '.';
+}
+
+/* Footer styles */
+p#footer a:link, p#footer a:visited {
+    color: {color:Accent};
 }
 
 /* "Fancy" stuff */
@@ -218,7 +226,7 @@ div#links ul:after {
     padding: 16px 0;
 }
 .post_info .symbol {
-    color: {color:Second accent};
+    color: {color:Link text};
     text-transform: uppercase;
 }
 
@@ -357,7 +365,7 @@ div#links ul:after {
       {/block:Posts}
       {block:SearchPage}
         {block:NoSearchResults}
-          <p class="prominent">Sorry; I haven't mentioned <span class="green">{SearchQuery}</span>.</p>
+          <p class="prominent">Sorry; I haven't mentioned <span class="accent">{SearchQuery}</span>.</p>
         {/block:NoSearchResults}
       {/block:SearchPage}
     </div><!-- content -->
@@ -408,7 +416,7 @@ div#links ul:after {
       Also try my
       <ul><li><a href="http://github.com/lloyda2">code</a></li><li><a href="http://delicious.com/adam.lloyd">bookmarks</a></li><li><a href="http://identi.ca/lloyda2">updates</a></li><li><a href="mailto:lloyda2@rpi.edu">inbox</a></li></ul>
     </div><!-- links -->
-    <p>All content copyright &copy; {CopyrightYears} <a xmlns:cc="http://creativecommons.org/ns#" href="mailto:lloyda2@rpi.edu" property="cc:attributionName" rel="cc:attributionURL">Adam Lloyd</a>.<br />
+    <p id="footer">All content copyright &copy; {CopyrightYears} <a xmlns:cc="http://creativecommons.org/ns#" href="mailto:lloyda2@rpi.edu" property="cc:attributionName" rel="cc:attributionURL">Adam Lloyd</a>.<br />
     Text and photos are available under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-Share Alike 3.0 License</a>.<br />
     Code is available under the <a rel="license" href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a> unless otherwise noted.</p>
   </body>
