@@ -12,8 +12,8 @@ themes, [here](http://lloyda2.tumblr.com).
 The themes
 ==========
 
-Hash
-----
+[Hash](hash/theme.html)
+-----------------------
 
 My first Tumblr theme. It was created from scratch with the intent of being
 both simple and attractive. You may think it fits both criteria nicely, or
@@ -23,8 +23,8 @@ If you'd like to see it in action, you can check out [a sample tumblelog
 using it](http://hashtheme.tumblr.com/).
 
 
-I like lampposts.
------------------
+[I like lampposts.](ilikelampposts/theme.html)
+----------------------------------------------
 
 A work in progress. It is currently mostly complete, but it is obviously
 not polished in several places. If you'd like to see what it looks like so
@@ -33,8 +33,8 @@ far, [you can](http://ilikelampposts.tumblr.com/).
 (I refer to this theme as 'illp' in my commit messages.)
 
 
-Light City
-----------
+[Light City](lightcity/theme.html)
+----------------------------------
 
 A light theme designed to be elegant and minimal. I've created [a sample
 tumblelog that uses it](http://lightcitytheme.tumblr.com/).
@@ -46,13 +46,14 @@ tumblelog that uses it](http://lightcitytheme.tumblr.com/).
 Other
 -----
 
-You can find a theme I made for personal use in the `adamlloyd`
-directory. As of the last edit of this README, it is in use on [my
-main tumblelog](lloyda2.tumblr.com).
+You can find a theme I made for personal use in the
+[adamlloyd](adamlloyd) directory. As of the last edit of this README,
+it is in use on [my main tumblelog](http://lloyda2.tumblr.com).
 
-The file `base.html` contains, more or less, the HTML that is used by
-each of my themes since "I like lampposts". More up-to-date copies can
-probably be extracted from either my personal theme or Light City.
+The file [base.html](base.html) contains, more or less, the HTML that
+is used by each of my themes since "I like lampposts". More up-to-date
+copies can probably be extracted from either my personal theme or
+Light City.
 
 
 
@@ -62,4 +63,4 @@ License
 All of the code for my themes is available under the terms of the
 Artistic License 2.0. It can be found
 [here](http://www.perlfoundation.org/artistic_license_2_0) or
-reproduced in the `LICENSE` file in this repository.
+reproduced in the [LICENSE](LICENSE) file in this repository.
