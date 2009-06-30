@@ -48,7 +48,8 @@ Other
 
 You can find a theme I made for personal use in the
 [adamlloyd](master/adamlloyd) directory. As of the last edit of this README,
-it is in use on [my main tumblelog](http://lloyda2.tumblr.com).
+it is in use on [my main tumblelog](http://lloyda2.tumblr.com). (This
+is referred to as 'al' in my commit messages.)
 
 The file [base.html](master/base.html) contains, more or less, the HTML that
 is used by each of my themes since "I like lampposts". More up-to-date
