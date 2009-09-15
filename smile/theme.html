@@ -11,7 +11,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>Adam Lloyd{block:PostTitle} - "{PostTitle}"{/block:PostTitle}</title>
+    <title>{Title}{block:PostTitle} - "{PostTitle}"{/block:PostTitle}</title>
     <link rel="shortcut icon" href="{Favicon}" />
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
@@ -241,12 +241,12 @@ p#footer a:link, p#footer a:visited {
   </head>
   <body>
     <div id="header">
-      <h1>Hi. <em>I'm Adam Lloyd.</em></h1>
+      <h1><a href="/">(^_^)</a></h1>
       <div id="description">
-        <p>I am a computer scientist in training.</p>
-        <p><a href="/">This</a> is a notebook of sorts.
+        <p>{Description}</p>
+        <p>
           {block:SearchPage}
-            <a href="/search/{URLSafeSearchQuery}">These</a> are your search results.
+          <a href="/search/{URLSafeSearchQuery}">Here</a>'s what I've got for you.
           {/block:SearchPage}
         </p>
       </div>
