@@ -260,9 +260,6 @@
         padding: 2px 4px;
         margin: -2px -4px;
       }
-      div#footer p {
-        margin: 0;
-      }
 
       /* "Fancy" stuff */
       .collapsible .text {
@@ -295,13 +292,14 @@
     </style>
   </head>
   <body>
-    <div id="header">
-      <h1><a href="/">{Title}</a></h1>
-      <div id="description">
-        <p>{Description}</p>
-      </div>
-    </div><!-- header -->
     <div id="everything">
+      <div id="header">
+        <h1><a href="/">(^_^)</a></h1>
+        <div id="description">
+          <p>{Description}</p>
+        </div>
+      </div><!-- header -->
+
       <div id="content">
         {block:SearchPage}
           <p class="prominent"><a href="/search/{URLSafeSearchQuery}">Here</a>'s what I've got for you:</p>
@@ -466,19 +464,30 @@
       <div id="static">
         <div id="links">
           <ul>
-            <li><a href="/archive">archive</a></li>
-            <li><a href="{RSS}">rss</a></li>
+            <li><a href="mailto:lloyda2@rpi.edu">inbox</a></li>
+            <li><a href="http://delicious.com/adam.lloyd">bookmarks</a></li>
+            <li><a href="http://lloyda2.github.com/portfolio/">portfolio</a></li>
+            <li><a href="http://identi.ca/lloyda2">updates</a></li>
+            <li><a href="http://github.com/lloyda2">code</a></li>
           </ul>
         </div><!-- links -->
         <div id="search">
           <form action="/search" method="get">
-            <input type="text" size="7" name="q" value="search" id="query" onfocus="this.value='';" onblur="if (this.value=='') this.value='search';" /><input type="submit" value="&raquo;" style="display: none;" />
+            <input type="text" size="7" name="q" value="ricerca" id="query" onfocus="this.value='';" onblur="if (this.value=='') this.value='ricerca';" /><input type="submit" value="&raquo;" style="display: none;" />
           </form>
         </div><!-- search -->
         <div id="footer">
-          <p>Theme by <a href="http://lloyda2.tumblr.com/">Adam Lloyd</a></p>
-          <p>Powered by <a href="http://tumblr.com/">Tumblr</a></p>
-        </div>
+          <div class="collapsible">
+            <span class="symbol">&copy;</span><span class="text_only">: </span>
+            <div class="text">Copyright {CopyrightYears} <a xmlns:cc="http://creativecommons.org/ns#" href="mailto:lloyda2@rpi.edu" property="cc:attributionName" rel="cc:attributionURL">Adam Lloyd</a>.</div>
+          </div> / <div class="collapsible">
+            <span class="symbol">CC-BY-SA</span><span class="text_only">: </span>
+            <div class="text"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-Share Alike 3.0 License</a> for text and photos.</div>
+          </div> / <div class="collapsible">
+            <span class="symbol">GPL</span><span class="text_only">: </span>
+            <div class="text"><a rel="license" href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a> for code.</div>
+          </div>
+        </div><!-- footer -->
       </div><!-- static -->
     </div><!-- everything -->
   </body>
