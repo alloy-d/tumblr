@@ -260,6 +260,9 @@
         padding: 2px 4px;
         margin: -2px -4px;
       }
+      div#footer p {
+        margin: 0;
+      }
 
       /* "Fancy" stuff */
       .collapsible .text {
@@ -292,14 +295,13 @@
     </style>
   </head>
   <body>
+    <div id="header">
+      <h1><a href="/">(^_^)</a></h1>
+      <div id="description">
+        <p>{Description}</p>
+      </div>
+    </div><!-- header -->
     <div id="everything">
-      <div id="header">
-        <h1><a href="/">(^_^)</a></h1>
-        <div id="description">
-          <p>{Description}</p>
-        </div>
-      </div><!-- header -->
-
       <div id="content">
         {block:SearchPage}
           <p class="prominent"><a href="/search/{URLSafeSearchQuery}">Here</a>'s what I've got for you:</p>
