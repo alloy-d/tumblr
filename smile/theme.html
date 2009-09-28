@@ -295,15 +295,14 @@
         <h1><a href="/">(^_^)</a></h1>
         <div id="description">
           <p>{Description}</p>
-          <p>
-            {block:SearchPage}
-            <a href="/search/{URLSafeSearchQuery}">Here</a>'s what I've got for you.
-            {/block:SearchPage}
-          </p>
         </div>
       </div><!-- header -->
 
       <div id="content">
+        {block:SearchPage}
+          <p class="prominent"><a href="/search/{URLSafeSearchQuery}">Here</a>'s what I've got for you.</p>
+        {/block:SearchPage}
+
         {block:Posts}
           <div class="post">
               <a name="{PostID}"></a>
