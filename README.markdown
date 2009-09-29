@@ -43,6 +43,16 @@ tumblelog that uses it](http://lightcitytheme.tumblr.com/).
 'wc'.)
 
 
+[Smile!](tip/smile/theme.html)
+------------------------------
+
+A cheerful and minimalistic theme.  It uses Tumblr's new theming features
+to be very customizable (and largely internationalizable).  You can see it
+in action [here](http://smiletheme.tumblr.com/).
+
+(This is, not surprisingly, referred to as 'smile' in my commit messages.)
+
+
 Other
 -----
 
