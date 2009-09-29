@@ -14,17 +14,37 @@
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
     {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+    <!-- Custom color definitions -->
     <meta name="color:Background" content="#fafafc" />
     <meta name="color:Text" content="#303038" />
     <meta name="color:Stand out" content="#000000" />
     <meta name="color:Blend in" content="#e2e2e6" />
     <meta name="color:Link text" content="#185878" />
 
+    <!-- Custom font definitions -->
+    <meta name="font:Body" content='"Gill Sans"'/>
+    <meta name="font:Header fallback" content='"Gill Sans"'/>
+    <meta name="font:Monospace fallback" content='"Consolas"'/>
+
+    <!-- Custom boolean definitions -->
+    <meta name="if:Show description" content="1"/>
+    <meta name="if:Show contact link" content="0"/>
+    <meta name="if:Use smile instead of title" content="0"/>
+    <meta name="if:Wink on smile mouseover" content="0"/>
+
+    <!-- Custom text definitions -->
+    <meta name="text:Contact email address" content=""/>
+    <meta name="text:Contact link text" content=""/>
+    <meta name="text:Archive link text" content=""/>
+    <meta name="text:RSS link text" content=""/>
+    <meta name="text:Search box default text" content=""/>
+
     <style type="text/css">
       body {
         background-color: {color:Background};
         color: {color:Text};
-        font-family: "Gill Sans", "Helvetica", sans-serif;
+        font-family: {font:Body}, "Gill Sans", "Helvetica", sans-serif;
         font-size: 10pt;
         padding: 40px;
         padding-right: 0;
@@ -47,18 +67,18 @@
         padding-left: 1ex;
       }
       code, pre {
-        font-family: "Inconsolata", "Courier New", "Courier", "Andale Mono", monospace;
+        font-family: "Inconsolata", {font:Monospace fallback}, "Courier New", "Courier", "Andale Mono", monospace;
       }
       h2 {
         color: {color:Stand out};
-        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
         font-size: 24pt;
         font-weight: normal;
         line-height: 1.1em;
       }
       p.prominent {
         color: {color:Stand out};
-        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
         font-size: 16pt;
         font-style: italic;
         font-weight: normal;
@@ -90,7 +110,7 @@
         margin-left: 220px;
       }
       div#header h1 {
-        font-family: "Inconsolata", "Courier New", "Courier", "Andale Mono", monospace;
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
         font-size: 40pt;
         font-weight: 100;
         margin: 0;
@@ -104,7 +124,7 @@
       }
       div#header div#description p {
         color: {color:Stand out};
-        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
         font-size: 16pt;
         margin: 0;
       }
@@ -180,7 +200,7 @@
 
       /* Pagination styles */
       div#pagination {
-        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
         margin-bottom: 40px;
       }
 
@@ -207,7 +227,7 @@
         border: none;
         color: {color:Text};
         display: inline;
-        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
         font-size: 16pt;
         margin: 0;
         padding: 0;
@@ -222,7 +242,7 @@
 
       /* Link list and footer styles */
       div#links {
-        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
         font-size: 16pt;
       }
       div#links a:link, div#links a:visited {
@@ -248,7 +268,7 @@
       }
 
       div#footer {
-        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
         font-size: 8pt;
         text-align: right;
       }
@@ -273,7 +293,7 @@
       }
 
       .post_info {
-        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
         font-size: 8pt;
         margin-top: -16px;
         padding: 16px 0;
@@ -293,10 +313,25 @@
   </head>
   <body>
     <div id="header">
-      <h1><a href="/">{Title}</a></h1>
+      {block:IfNotUseSmileInsteadOfTitle}
+        <h1><a href="/">{Title}</a></h1>
+      {/block:IfNotUseSmileInsteadOfTitle}
+      {block:IfUseSmileInsteadOfTitle}
+        {block:IfWinkOnSmileMouseover}
+          <h1><a href="/"
+              onmouseover="this.innerHTML='(~_^)';"
+              onmouseout="this.innerHTML='(^_^)';">(^_^)</a>
+          </h1>
+        {/block:IfWinkOnSmileMouseover}
+        {block:IfNotWinkOnSmileMouseover}
+          <h1><a href="/">(^_^)</a></h1>
+        {/block:IfNotWinkOnSmileMouseover}
+      {/block:IfUseSmileInsteadOfTitle}
+      {block:IfShowDescription}
       <div id="description">
         <p>{Description}</p>
       </div>
+      {/block:IfShowDescription}
     </div><!-- header -->
     <div id="everything">
       <div id="content">
@@ -463,13 +498,24 @@
       <div id="static">
         <div id="links">
           <ul>
-            <li><a href="/archive">archive</a></li>
-            <li><a href="{RSS}">rss</a></li>
+            {block:IfShowContactLink}
+            {block:IfContactEmailAddress}
+              <li><a href="mailto:{text:Contact email address}">{block:IfContactLinkText}{text:Contact link text}{/block:IfContactLinkText}{block:IfNotContactLinkText}contact{/block:IfNotContactLinkText}</a></li>
+            {/block:IfContactEmailAddress}
+            {/block:IfShowContactLink}
+            <li><a
+              href="/archive">{block:IfArchiveLinkText}{text:Archive link text}{/block:IfArchiveLinkText}{block:IfNotArchiveLinkText}archive{/block:IfNotArchiveLinkText}</a></li>
+            <li><a href="{RSS}">{block:IfRSSLinkText}{text:RSS link text}{/block:IfRSSLinkText}{block:IfNotRSSLinkText}rss{/block:IfNotRSSLinkText}</a></li>
           </ul>
         </div><!-- links -->
         <div id="search">
           <form action="/search" method="get">
+            {block:IfSearchBoxDefaultText}
+            <input type="text" size="7" name="q" value="{text:Search box default text}" id="query" onfocus="this.value='';" onblur="if (this.value=='') this.value='{text:Search box default text}';" /><input type="submit" value="&raquo;" style="display: none;" />
+            {/block:IfSearchBoxDefaultText}
+            {block:IfNotSearchBoxDefaultText}
             <input type="text" size="7" name="q" value="search" id="query" onfocus="this.value='';" onblur="if (this.value=='') this.value='search';" /><input type="submit" value="&raquo;" style="display: none;" />
+            {/block:IfNotSearchBoxDefaultText}
           </form>
         </div><!-- search -->
         <div id="footer">
