@@ -12,7 +12,7 @@ themes, [here](http://lloyda2.tumblr.com).
 The themes
 ==========
 
-[Hash](master/hash/theme.html)
+[Hash](tip/hash/theme.html)
 ------------------------------
 
 My first Tumblr theme. It was created from scratch with the intent of being
@@ -23,7 +23,7 @@ If you'd like to see it in action, you can check out [a sample tumblelog
 using it](http://hashtheme.tumblr.com/).
 
 
-[I like lampposts.](master/ilikelampposts/theme.html)
+[I like lampposts.](tip/ilikelampposts/theme.html)
 -----------------------------------------------------
 
 A work in progress. It is currently mostly complete, but it is obviously
@@ -33,7 +33,7 @@ far, [you can](http://ilikelampposts.tumblr.com/).
 (I refer to this theme as 'illp' in my commit messages.)
 
 
-[Light City](master/lightcity/theme.html)
+[Light City](tip/lightcity/theme.html)
 -----------------------------------------
 
 A light theme designed to be elegant and minimal. I've created [a sample
@@ -51,7 +51,7 @@ You can find a theme I made for personal use in the
 it is in use on [my main tumblelog](http://lloyda2.tumblr.com). (This
 is referred to as 'al' in my commit messages.)
 
-The file [base.html](master/base.html) contains, more or less, the HTML that
+The file [base.html](tip/base.html) contains, more or less, the HTML that
 is used by each of my themes since "I like lampposts". More up-to-date
 copies can probably be extracted from either my personal theme or
 Light City.
@@ -64,4 +64,4 @@ License
 All of the code for my themes is available under the terms of the
 Artistic License 2.0. It can be found
 [here](http://www.perlfoundation.org/artistic_license_2_0) or
-reproduced in the [LICENSE](master/LICENSE) file in this repository.
+reproduced in the [LICENSE](tip/LICENSE) file in this repository.
