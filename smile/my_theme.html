@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- 
+     Theme copyright 2009 Adam Lloyd.
+     Licensed under the Artistic License 2.0:
+       <http://www.perlfoundation.org/artistic_license_2_0>
+  -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>{Title}{block:PostTitle} - "{PostTitle}"{/block:PostTitle}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+
+    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+    <!-- Custom color definitions -->
+    <meta name="color:Background" content="#fafafc" />
+    <meta name="color:Text" content="#303038" />
+    <meta name="color:Stand out" content="#000000" />
+    <meta name="color:Blend in" content="#e2e2e6" />
+    <meta name="color:Link text" content="#185878" />
+
+    <!-- Custom font definitions -->
+    <meta name="font:Body" content='"Gill Sans"'/>
+    <meta name="font:Header fallback" content='"Gill Sans"'/>
+    <meta name="font:Monospace fallback" content='"Consolas"'/>
+
+    <!-- Custom boolean definitions -->
+    <meta name="if:Show description" content="1"/>
+    <meta name="if:Show contact link" content="0"/>
+    <meta name="if:Left always goes back in time" content="0"/>
+    <meta name="if:Use smile instead of title" content="0"/>
+    <meta name="if:Wink on smile mouseover" content="0"/>
+
+    <!-- Custom text definitions -->
+    <meta name="text:Contact email address" content=""/>
+    <meta name="text:Contact link text" content=""/>
+    <meta name="text:Archive link text" content=""/>
+    <meta name="text:RSS link text" content=""/>
+    <meta name="text:Search box default text" content=""/>
+
+    <style type="text/css">
+      body {
+        background-color: {color:Background};
+        color: {color:Text};
+        font-family: {font:Body}, "Gill Sans", "Helvetica", sans-serif;
+        font-size: 10pt;
+        padding: 40px;
+        padding-right: 0;
+        padding-bottom: 0;
+      }
+
+      /* Basic styles */
+      a:link, a:visited {
+        color: {color:Link text};
+        text-decoration: none;
+      }
+      a:link:hover, a:visited:hover {
+        text-decoration: underline;
+      }
+      blockquote {
+        border-left: 1px solid {color:Blend in};
+        font-size: 100%;
+        margin: 1.5em 0 1.5em 1ex;
+        padding-right: 1.5ex;
+        padding-left: 1ex;
+      }
+      code, pre {
+        font-family: "Inconsolata", {font:Monospace fallback}, "Courier New", "Courier", "Andale Mono", monospace;
+      }
+      h2 {
+        color: {color:Stand out};
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-size: 24pt;
+        font-weight: normal;
+        line-height: 1.1em;
+      }
+      p.prominent {
+        color: {color:Stand out};
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-size: 16pt;
+        font-style: italic;
+        font-weight: normal;
+        margin-top: 0;
+      }
+
+      p {
+        margin: 1em 0;
+      }
+
+      .prominent {
+        margin: 2em 0;
+      }
+      .accent {
+        color: {color:Stand out};
+      }
+
+
+      /* Styles for the giant everything wrapper */
+      div#everything {
+        width: 820px;
+      }
+
+
+      /* Header styles */
+      div#header {
+        clear: both;
+        margin-bottom: 60px;
+        margin-left: 220px;
+      }
+      div#header h1 {
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-size: 40pt;
+        font-weight: 100;
+        margin: 0;
+      }
+      div#header em {
+        color: {color:Stand out};
+        font-style: normal;
+      }
+      div#header a:link, div#header a:visited {
+        color: {color:Stand out};
+      }
+      div#header div#description p {
+        color: {color:Stand out};
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-size: 16pt;
+        margin: 0;
+      }
+
+      /* Main content styles */
+      div#content {
+        float: right;
+        line-height: 1.5em;
+        text-align: left;
+        width: 600px;
+      }
+
+      /* General post styles */
+      div.post {
+        margin-top: 5em;
+        margin-bottom: 0;
+      }
+      div.post:first-child {
+        margin-top: 0;
+      }
+      div.post h2 {
+        margin-top: 0;
+      }
+
+      /* Photo post styles */
+      div.post .photo a:link img, div.post .photo a:visited img {
+        border: none;
+      }
+
+      /* Quote post styles */
+      div.post .quote blockquote {
+        border: none;
+        color: {color:Stand out};
+        font-style: italic;
+        margin: 0 0 10pt 0;
+        padding: 0;
+      }
+      div.post .quote blockquote.short {
+        font-size: 18pt;
+        line-height: 1.1em;
+      }
+      div.post .quote blockquote.medium {
+        font-size: 14pt;
+        line-height: 1.25em;
+      }
+      div.post .quote blockquote.long {
+        font-size: 12pt;
+      }
+      div.post .quote .source p:first-child {
+        margin-right: 4ex;
+        text-align: right;
+      }
+      div.post .quote .source p:first-child:before {
+        content: "\2014";
+      }
+
+      /* Link post styles */
+      div.post .link h2 a:after {
+        content: " \2192";
+      }
+
+      /* Chat post styles */
+      div.post .chat p.chat_line {
+        margin: 0;
+      }
+      div.post .chat span.label {
+        color: {color:Stand out};
+        font-weight: bold;
+      }
+      div.post .chat {
+        margin-bottom: 1em;
+      }
+
+      /* Pagination styles */
+      div#pagination {
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        margin-bottom: 40px;
+      }
+
+
+      /* Styles for the bottom corner stuff. */
+      div#static {
+        border-right: 2px solid {color:Blend in};
+        float: left;
+        padding-right: 20px;
+        width: 180px;
+      }
+
+      /* Search styles */
+      div#search {
+        margin: 0.8em 0;
+        text-align: right;
+      }
+      div#search form {
+        display: inline;
+        font-size: 16pt;
+      }
+      div#search input {
+        background-color: {color:Background};
+        border: none;
+        color: {color:Text};
+        display: inline;
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-size: 16pt;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+      }
+      div#search input:hover, div#search input:focus {
+        color: {color:Stand out};
+      }
+      div#search input#query {
+        border-bottom: 1px solid {color:Blend in};
+      }
+
+      /* Link list and footer styles */
+      div#links {
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-size: 16pt;
+      }
+      div#links a:link, div#links a:visited {
+        color: {color:Text};
+      }
+      div#links a:link:hover, div#links a:visited:hover {
+        color: {color:Stand out};
+        text-decoration: none;
+      }
+      div#links ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+      }
+      div#links ul li {
+      }
+      div#links ul li:before {
+      }
+      div#links ul li:first-child:before {
+      }
+      div#links ul:after {
+      }
+
+      div#footer {
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-size: 8pt;
+        text-align: right;
+      }
+      div#footer div.collapsible {
+        display: inline;
+        padding: 2px 4px;
+        margin: -2px -4px;
+      }
+      div#footer p {
+        margin: 0;
+      }
+
+      /* "Fancy" stuff */
+      .collapsible .text {
+        display: none;
+      }
+      .collapsible:hover .text {
+        display: inline;
+      }
+      .collapsible:hover .symbol {
+        display: none;
+      }
+
+      .post_info {
+        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-size: 8pt;
+        margin-top: -16px;
+        padding: 16px 0;
+      }
+      .post_info .symbol {
+        color: {color:Blend in};
+        text-transform: uppercase;
+      }
+
+      .text_only {
+        display: none;
+      }
+    
+/* User-specific styles */
+{CustomCSS}
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      {block:IfNotUseSmileInsteadOfTitle}
+        <h1><a href="/">{Title}</a></h1>
+      {/block:IfNotUseSmileInsteadOfTitle}
+      {block:IfUseSmileInsteadOfTitle}
+        {block:IfWinkOnSmileMouseover}
+          <h1><a href="/"
+              onmouseover="this.innerHTML='(~_^)';"
+              onmouseout="this.innerHTML='(^_^)';">(^_^)</a>
+          </h1>
+        {/block:IfWinkOnSmileMouseover}
+        {block:IfNotWinkOnSmileMouseover}
+          <h1><a href="/">(^_^)</a></h1>
+        {/block:IfNotWinkOnSmileMouseover}
+      {/block:IfUseSmileInsteadOfTitle}
+      {block:IfShowDescription}
+      <div id="description">
+        <p>{Description}</p>
+      </div>
+      {/block:IfShowDescription}
+    </div><!-- header -->
+    <div id="everything">
+      <div id="content">
+        {block:SearchPage}
+          <p class="prominent"><a href="/search/{URLSafeSearchQuery}">Here</a>'s what I've got for you:</p>
+        {/block:SearchPage}
+
+        <div id="posts">
+          {block:Posts}
+            <div class="post">
+                <a name="{PostID}"></a>
+
+              {block:Text}
+                <div class="post_content text">
+                  {block:Title}
+                    <h2 class="post_title">{Title}</h2>
+                  {/block:Title}
+
+                  <div class="post_body">
+                    <p>
+                      {Body}
+                    </p>
+                  </div><!-- post_body -->
+                </div><!-- post_content -->
+              {/block:Text}
+
+              {block:Photo}
+                <div class="post_content photo">
+                  {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+
+                  {block:Caption}
+                    <div class="caption"><p>{Caption}</p></div>
+                  {/block:Caption}
+                </div><!-- post_content photo -->
+              {/block:Photo}
+
+              {block:Quote}
+                <div class="post_content quote">
+                  <blockquote class="{Length}">
+                    {Quote}
+                  </blockquote>
+
+                  {block:Source}
+                    <div class="source"><p>{Source}</p></div>
+                  {/block:Source}
+                </div><!-- post_content quote -->
+              {/block:Quote}
+
+              {block:Link}
+                <div class="post_content link">
+                  <h2 class="post_title"><a href="{URL}" {Target}>{Name}</a></h2>
+
+                  {block:Description}
+                    <p class="description">{Description}</p>
+                  {/block:Description}
+                </div><!-- post_content link -->
+              {/block:Link}
+
+              {block:Chat}
+                <div class="post_content chat">
+                  {block:Title}
+                    <h2 class="post_title">{Title}</h2>
+                  {/block:Title}
+
+                  {block:Lines}
+                    <p class="chat_line chat_line_{Alt}">
+                      {block:Label}
+                        <span class="label user_{UserNumber}">{Label}</span>
+                      {/block:Label}
+                      <span class="text">{Line}</span>
+                    </p>
+                  {/block:Lines}
+                </div><!-- post_content chat -->
+              {/block:Chat}
+
+              {block:Audio}
+                <div class="post_content audio">
+                  <div class="audio_container">{AudioPlayerBlack}</div>
+                  {block:Caption}
+                    <div class="caption">{Caption}</div>
+                  {/block:Caption}
+                </div><!-- post_content audio -->
+              {/block:Audio}
+
+              {block:Video}
+                <div class="post_content video">
+                  <div class="video_container">{Video-500}</div>
+                  {block:Caption}
+                    <div class="caption">{Caption}</div>
+                  {/block:Caption}
+                </div><!-- post_content video -->
+              {/block:Video}
+
+              <div class="post_info collapsible">
+                <span class="symbol">Meta</span><span class="text_only">-post information follows:</span>
+                <div class="text">
+                  {block:Reblog}
+                    <span class="hat_tip">
+                      Found via
+                      <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                    </span>
+                  {/block:Reblog}
+                  {block:NotReblog}
+                    Posted
+                  {/block:NotReblog}
+                  on <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">{DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a> at
+                  <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm}</a>.
+                  {block:Photo}
+                    {block:HighRes}
+                      <span class="high_res_link">
+                        <a href="{PhotoURL-HighRes}">Available in higher resolution.</a>
+                      </span>
+                    {/block:HighRes}
+                  {/block:Photo}
+                </div><!-- text -->
+              </div><!-- post_info -->
+            </div><!-- post -->
+            <hr class="text_only" />
+          {/block:Posts}
+        </div><!-- posts -->
+        {block:SearchPage}
+          {block:NoSearchResults}
+            <p class="prominent">Nothing! I haven't mentioned <span class="accent">{SearchQuery}</span>.</p>
+          {/block:NoSearchResults}
+        {/block:SearchPage}
+        <div id="pagination">
+          {block:Pagination}
+            {block:IfNotLeftAlwaysGoesBackInTime}
+              {block:PreviousPage}
+                <a href="{PreviousPage}">&laquo; newer</a>
+                {block:NextPage}
+                |
+                {/block:NextPage}
+              {/block:PreviousPage}
+              {block:NextPage}
+                <a href="{NextPage}">older &raquo;</a>
+              {/block:NextPage}
+            {/block:IfNotLeftAlwaysGoesBackInTime}
+            {block:IfLeftAlwaysGoesBackInTime}
+              {block:NextPage}
+                <a href="{NextPage}">&laquo; older</a>
+                {block:PreviousPage}
+                |
+                {/block:PreviousPage}
+              {/block:NextPage}
+              {block:PreviousPage}
+                <a href="{PreviousPage}">newer &raquo;</a>
+              {/block:PreviousPage}
+            {/block:IfLeftAlwaysGoesBackInTime}
+          {/block:Pagination}
+
+          {block:DayPagination}
+            {block:PreviousDayPage}
+              <a href="{PreviousDayPage}">&laquo; yesterday</a>
+              {block:NextDayPage}
+              |
+              {/block:NextDayPage}
+            {/block:PreviousDayPage}
+            {block:NextDayPage}
+              <a href="{NextDayPage}">tomorrow &raquo;</a>
+            {/block:NextDayPage}
+          {/block:DayPagination}
+
+          {block:PermalinkPagination}
+            {block:PreviousPost}
+              <a href="{PreviousPost}">&laquo; previous</a>
+              {block:NextPost}
+              |
+              {/block:NextPost}
+            {/block:PreviousPost}
+            {block:NextPost}
+              <a href="{NextPost}">next &raquo;</a>
+            {/block:NextPost}
+          {/block:PermalinkPagination}
+        </div><!-- pagination -->
+      </div><!-- content -->
+      <div id="static">
+        <div id="links">
+          <ul>
+            {block:IfShowContactLink}
+            {block:IfContactEmailAddress}
+              <li><a href="mailto:{text:Contact email address}">{block:IfContactLinkText}{text:Contact link text}{/block:IfContactLinkText}{block:IfNotContactLinkText}contact{/block:IfNotContactLinkText}</a></li>
+            {/block:IfContactEmailAddress}
+            {/block:IfShowContactLink}
+            <li><a href="http://delicious.com/adam.lloyd/">bookmarks</a></li>
+            <li><a href="http://lloyda2.github.com/portfolio/">portfolio</a></li>
+            <li><a href="http://identi.ca/lloyda2/">updates</a></li>
+            <li><a href="http://bitbucket.org/lloyda2/">code</a></li>
+          </ul>
+        </div><!-- links -->
+        <div id="search">
+          <form action="/search" method="get">
+            {block:IfSearchBoxDefaultText}
+            <input type="text" size="7" name="q" value="{text:Search box default text}" id="query" onfocus="this.value='';" onblur="if (this.value=='') this.value='{text:Search box default text}';" /><input type="submit" value="&raquo;" style="display: none;" />
+            {/block:IfSearchBoxDefaultText}
+            {block:IfNotSearchBoxDefaultText}
+            <input type="text" size="7" name="q" value="search" id="query" onfocus="this.value='';" onblur="if (this.value=='') this.value='search';" /><input type="submit" value="&raquo;" style="display: none;" />
+            {/block:IfNotSearchBoxDefaultText}
+          </form>
+        </div><!-- search -->
+        <div id="footer">
+          <p>Powered by <a href="http://tumblr.com/">Tumblr</a></p>
+          <div class="collapsible">
+            <span class="symbol">&copy;</span><span class="text_only">: </span>
+            <div class="text">Copyright {CopyrightYears} <a xmlns:cc="http://creativecommons.org/ns#" href="mailto:lloyda2@rpi.edu" property="cc:attributionName" rel="cc:attributionURL">Adam Lloyd</a>.</div>
+          </div> / <div class="collapsible">
+            <span class="symbol">CC-BY-SA</span><span class="text_only">: </span>
+            <div class="text"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-Share Alike 3.0 License</a> for text and photos.</div>
+          </div> / <div class="collapsible">
+            <span class="symbol">GPL</span><span class="text_only">: </span>
+            <div class="text"><a rel="license" href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a> for code.</div>
+          </div>
+        </div><!-- footer -->
+      </div><!-- static -->
+    </div><!-- everything -->
+  </body>
+</html>
