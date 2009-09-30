@@ -30,6 +30,7 @@
     <!-- Custom boolean definitions -->
     <meta name="if:Show description" content="1"/>
     <meta name="if:Show contact link" content="0"/>
+    <meta name="if:Left always goes back in time" content="0"/>
     <meta name="if:Use smile instead of title" content="0"/>
     <meta name="if:Wink on smile mouseover" content="0"/>
 
@@ -459,15 +460,28 @@
         {/block:SearchPage}
         <div id="pagination">
           {block:Pagination}
-            {block:PreviousPage}
-              <a href="{PreviousPage}">&laquo; newer</a>
+            {block:IfNotLeftAlwaysGoesBackInTime}
+              {block:PreviousPage}
+                <a href="{PreviousPage}">&laquo; newer</a>
+                {block:NextPage}
+                |
+                {/block:NextPage}
+              {/block:PreviousPage}
               {block:NextPage}
-              |
+                <a href="{NextPage}">older &raquo;</a>
               {/block:NextPage}
-            {/block:PreviousPage}
-            {block:NextPage}
-              <a href="{NextPage}">older &raquo;</a>
-            {/block:NextPage}
+            {/block:IfNotLeftAlwaysGoesBackInTime}
+            {block:IfLeftAlwaysGoesBackInTime}
+              {block:NextPage}
+                <a href="{NextPage}">&laquo; older</a>
+                {block:PreviousPage}
+                |
+                {/block:PreviousPage}
+              {/block:NextPage}
+              {block:PreviousPage}
+                <a href="{PreviousPage}">newer &raquo;</a>
+              {/block:PreviousPage}
+            {/block:IfLeftAlwaysGoesBackInTime}
           {/block:Pagination}
 
           {block:DayPagination}
