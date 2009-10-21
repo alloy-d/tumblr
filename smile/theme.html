@@ -29,7 +29,6 @@
 
     <!-- Custom boolean definitions -->
     <meta name="if:Show description" content="1"/>
-    <meta name="if:Show contact link" content="0"/>
     <meta name="if:Left always goes back in time" content="0"/>
     <meta name="if:Use smile instead of title" content="0"/>
     <meta name="if:Add separators between posts" content="0"/>
@@ -40,6 +39,7 @@
     <meta name="text:Archive link text" content=""/>
     <meta name="text:RSS link text" content=""/>
     <meta name="text:Search box default text" content=""/>
+    <meta name="text:Post info cover text" content=""/>
 
     <!-- Custom image definitions -->
     <meta name="image:Header" content=""/>
@@ -457,7 +457,12 @@
               {/block:Video}
 
               <div class="post_info collapsible">
-                <span class="symbol">Meta</span><span class="text_only">-post information follows:</span>
+                {block:IfPostInfoCoverText}
+                  <span class="symbol">{text:Post info cover text}</span><span class="text_only"> - </span>
+                {/block:IfPostInfoCoverText}
+                {block:IfNotPostInfoCoverText}
+                  <span class="symbol">Meta</span><span class="text_only">-post information follows:</span>
+                {/block:IfNotPostInfoCoverText}
                 <div class="text">
                   {block:Reblog}
                     <span class="hat_tip">
@@ -546,11 +551,9 @@
             <!-- Example:
             <li><a href="http://somesite.com/some/path/">some text</a></li>
             -->
-            {block:IfShowContactLink}
             {block:IfContactEmailAddress}
               <li><a href="mailto:{text:Contact email address}">{block:IfContactLinkText}{text:Contact link text}{/block:IfContactLinkText}{block:IfNotContactLinkText}contact{/block:IfNotContactLinkText}</a></li>
             {/block:IfContactEmailAddress}
-            {/block:IfShowContactLink}
             <li><a
               href="/archive">{block:IfArchiveLinkText}{text:Archive link text}{/block:IfArchiveLinkText}{block:IfNotArchiveLinkText}archive{/block:IfNotArchiveLinkText}</a></li>
             <li><a href="{RSS}">{block:IfRSSLinkText}{text:RSS link text}{/block:IfRSSLinkText}{block:IfNotRSSLinkText}rss{/block:IfNotRSSLinkText}</a></li>
