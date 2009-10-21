@@ -521,6 +521,10 @@
       <div id="static">
         <div id="links">
           <ul>
+            <!-- ADD LINKS HERE -->
+            <!-- Example:
+            <li><a href="http://somesite.com/some/path/">some text</a></li>
+            -->
             {block:IfShowContactLink}
             {block:IfContactEmailAddress}
               <li><a href="mailto:{text:Contact email address}">{block:IfContactLinkText}{text:Contact link text}{/block:IfContactLinkText}{block:IfNotContactLinkText}contact{/block:IfNotContactLinkText}</a></li>
