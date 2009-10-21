@@ -41,6 +41,10 @@
     <meta name="text:RSS link text" content=""/>
     <meta name="text:Search box default text" content=""/>
 
+    <!-- Custom image definitions -->
+    <meta name="image:Header" content=""/>
+
+
     <style type="text/css">
       body {
         background-color: {color:Background};
@@ -128,6 +132,9 @@
         font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
         font-size: 160%;
         margin: 0;
+      }
+      div#header a img {
+        border: none;
       }
 
       /* Main content styles */
@@ -335,15 +342,22 @@
   </head>
   <body>
     <div id="header">
-      {block:IfNotUseSmileInsteadOfTitle}
-        <h1><a href="/">{Title}</a></h1>
-      {/block:IfNotUseSmileInsteadOfTitle}
-      {block:IfUseSmileInsteadOfTitle}
-        <h1><a href="/"
-            onmouseover="this.innerHTML='(~_^)';"
-            onmouseout="this.innerHTML='(^_^)';">(^_^)</a>
-        </h1>
-      {/block:IfUseSmileInsteadOfTitle}
+      {block:IfNotHeaderImage}
+        {block:IfNotUseSmileInsteadOfTitle}
+          <h1><a href="/">{Title}</a></h1>
+        {/block:IfNotUseSmileInsteadOfTitle}
+        {block:IfUseSmileInsteadOfTitle}
+          <h1><a href="/"
+              onmouseover="this.innerHTML='(~_^)';"
+              onmouseout="this.innerHTML='(^_^)';">(^_^)</a>
+          </h1>
+        {/block:IfUseSmileInsteadOfTitle}
+      {/block:IfNotHeaderImage}
+      {block:IfHeaderImage}
+        <a href="/">
+          <img src="{image:Header}">
+        </a>
+      {/block:IfHeaderImage}
       {block:IfShowDescription}
       <div id="description">
         <p>{Description}</p>
