@@ -32,6 +32,7 @@
     <meta name="if:Show contact link" content="0"/>
     <meta name="if:Left always goes back in time" content="0"/>
     <meta name="if:Use smile instead of title" content="0"/>
+    <meta name="if:Add separators between posts" content="0"/>
 
     <!-- Custom text definitions -->
     <meta name="text:Contact email address" content=""/>
@@ -151,6 +152,17 @@
       div.post img {
         max-width: 100%;
       }
+
+      {block:IfAddSeparatorsBetweenPosts}
+      div.post {
+        border-bottom: 1px solid {color:Blend in};
+        margin-top: 7em;
+      }
+      .post_info {
+        margin-top: 1em;
+        margin-bottom: -16px;
+      }
+      {/block:IfAddSeparatorsBetweenPosts}
 
       /* Photo post styles */
       div.post .photo a:link img, div.post .photo a:visited img {
