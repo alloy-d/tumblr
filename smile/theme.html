@@ -322,6 +322,14 @@
         display: none;
       }
     
+      {block:IfUseSmileInsteadOfTitle}
+      div#header h1 {
+        font-family: "Inconsolata", {font:Monospace fallback}, "Courier New", "Courier", "Andale Mono", monospace;
+      }
+      div#header h1 a:link:hover, div#header h1 a:visited:hover {
+        text-decoration: none;
+      }
+      {/block:IfUseSmileInsteadOfTitle}
 /* User-specific styles */
 {CustomCSS}
     </style>
