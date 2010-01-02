@@ -19,6 +19,10 @@
     <meta name="color:Comment foreground" content="#b22222" />
     <meta name="color:Link background" content="#b4eeb4" />
     <meta name="color:Code background" content="#fff8dc" />
+
+    <!-- booleans -->
+    <meta name="if:Show date for permalink" content="0" />
+    
     <style type="text/css">
       /* body */
 body {
@@ -295,7 +299,20 @@ p#attribution {
         {/block:Audio}
 
 
-        <p class="permalink"><a href="{Permalink}">permalink</a></p>
+        <p class="permalink">
+          {block:IfNotShowDateForPermalink}
+            <a href="{Permalink}">permalink</a>
+          {/block:IfNotShowDateForPermalink}
+          {block:IfShowDateForPermalink}
+            {block:Reblog}
+              Reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+            {/block:Reblog}
+            {block:NotReblog}
+              Posted
+            {/block:NotReblog}
+            on <a href="{Permalink}">{DayOfMonthWithZero} {Month} {Year}</a>.
+          {/block:IfShowDateForPermalink}
+        </p>
       </li>
       {/block:Posts}
     </ol>
