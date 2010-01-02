@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
     Hash, a Tumblr theme.
     Author: Adam Lloyd
@@ -8,126 +8,126 @@
 
     Licensed under the Artistic License 2.0
     http://www.perlfoundation.org/artistic_license_2_0
- -->
+-->
 <html>
-    <head>
-      <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
-        <link rel="shortcut icon" href="{Favicon}" />
-        <link rel="alternate" type="application/rss+xml" href="{RSS}" />
-        
-        <!-- default colors -->
-        <meta name="color:Comment foreground" content="#b22222" />
-        <meta name="color:Link background" content="#b4eeb4" />
-        <meta name="color:Code background" content="#fff8dc" />
-        <style type="text/css">
-/* body */
+  <head>
+    <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    
+    <!-- default colors -->
+    <meta name="color:Comment foreground" content="#b22222" />
+    <meta name="color:Link background" content="#b4eeb4" />
+    <meta name="color:Code background" content="#fff8dc" />
+    <style type="text/css">
+      /* body */
 body {
-  background-color: white;
-  color: black;
-  font-family: sans-serif;
-  font-size: 10pt;
-  margin-left: 3em;
+    background-color: white;
+    color: black;
+    font-family: sans-serif;
+    font-size: 10pt;
+    margin-left: 3em;
 }
 
 
 /* links */
 a:link, a:visited {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
 }
 
 a:link:hover, a:visited:hover {
-  background-color: {color:Link background};
+    background-color: {color:Link background};
 }
 
 a:link img, a:visited img {
-  border: none;
+    border: none;
 }
 
 p.permalink:before {
-  content: "# ";
+    content: "# ";
 }
 p.permalink {
-  color: {color:Comment foreground};
-  font-family: "Monaco", "Andale Mono", monospace;
-  font-size: 8pt;
-  margin-top: 1em;
+    color: {color:Comment foreground};
+    font-family: "Monaco", "Andale Mono", monospace;
+    font-size: 8pt;
+    margin-top: 1em;
 }
 p.permalink a:link, p.permalink a:visited {
-  color: {color:Comment foreground};
-  text-decoration: none;
+    color: {color:Comment foreground};
+    text-decoration: none;
 }
 
 
 /* other elements */
 blockquote {
-  font-style: italic;
-  margin-left: 0;
-  padding-left: 0;
+    font-style: italic;
+    margin-left: 0;
+    padding-left: 0;
 }
 blockquote em {
-  font-style: normal;
+    font-style: normal;
 }
 blockquote blockquote {
-  margin-left: 2em;
+    margin-left: 2em;
 }
 
 code, pre {
-  background-color: {color:Code background};
+    background-color: {color:Code background};
 }
 
 
 /* blog title */
 h1 {
-  font-family: "Monaco", "Andale Mono", monospace;
-  font-size: 24pt;
-  margin-bottom: -10px;
-  padding-bottom: 0;
+    font-family: "Monaco", "Andale Mono", monospace;
+    font-size: 24pt;
+    margin-bottom: -10px;
+    padding-bottom: 0;
 }
 h1 a:link, h1 a:visited {
-  color: black;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 div#header {
-  margin-bottom: 3em;
+    margin-bottom: 3em;
 }
 
 
 /* blog description (best if short) */
 p#description:before {
-  content: '# ';
+    content: '# ';
 }
 p#description {
-  color: {color:Comment foreground};
-  font-family: "Monaco", "Andale Mono", monospace;
+    color: {color:Comment foreground};
+    font-family: "Monaco", "Andale Mono", monospace;
 }
 
 
 /* post list */
 ol#posts {
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: 0;
-  width: 48em;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    width: 48em;
 }
 
 
 /* all posts */
 li.post {
-  line-height: 1.3em;
-  padding-top: 2em;
-  padding-bottom: 3em;
+    line-height: 1.3em;
+    padding-top: 2em;
+    padding-bottom: 3em;
 }
 li.post h3:before {
-  content: "# ";
+    content: "# ";
 }
 li.post h3, li.post h3 a {
-  color: {color:Comment foreground};
-  font-family: "Monaco", "Andale Mono", monospace;
-  font-size: 12pt;
-  font-weight: normal;
-  margin-top: 0;
-  text-decoration: none;
+    color: {color:Comment foreground};
+    font-family: "Monaco", "Andale Mono", monospace;
+    font-size: 12pt;
+    font-weight: normal;
+    margin-top: 0;
+    text-decoration: none;
 }
 
 
@@ -140,9 +140,9 @@ li.text {
 li.photo {
 }
 li.photo img {
-  background-color: white;
-  border: 1px solid black;
-  padding: 1px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 1px;
 }
 
 
@@ -150,10 +150,10 @@ li.photo img {
 li.quote {
 }
 li.quote div.source:before {
-  content: 'source: ';
+    content: 'source: ';
 }
 li.quote div.source {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 
 
@@ -161,10 +161,10 @@ li.quote div.source {
 li.link {
 }
 li.link a.link:before {
-  content: "link: ";
+    content: "link: ";
 }
 li.link a.link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 
@@ -172,18 +172,18 @@ li.link a.link {
 li.chat {
 }
 li.chat ul {
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: 0;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
 }
 li.chat ul li:first {
-  margin-top: 0;
+    margin-top: 0;
 }
 li.chat ul li {
-  margin-top: 0.5em;
+    margin-top: 0.5em;
 }
 li.chat .label {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 
@@ -196,139 +196,139 @@ li.video {
 p#footer {
 }
 p#attribution {
-  font-size: 8pt;
+    font-size: 8pt;
 }
 
 {CustomCSS}
-        </style>
-    </head>
-    <body>
-        <div id="header">
-        <h1><a href="/">{Title}</a></h1>
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1><a href="/">{Title}</a></h1>
+
+      {block:Description}
+      <p id="description">{Description}</p>
+      {/block:Description}
+    </div>
+
+    <ol id="posts">
+      {block:Posts}
+      {block:Text}
+      <li class="post text">
+        {block:Title}
+        <h3><a href="{Permalink}">{Title}</a></h3>
+        {/block:Title}
+
+        {Body}
+        <p class="permalink"><a href="{Permalink}">permalink</a></p>
+      </li>
+      {/block:Text}
+
+      {block:Photo}
+      <li class="post photo">
+        {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+
+        {block:Caption}
+        <div class="caption">{Caption}</div>
+        {/block:Caption}
+        <p class="permalink"><a href="{Permalink}">permalink</a></p>
+      </li>
+      {/block:Photo}
+
+      {block:Quote}
+      <li class="post quote">
+        <blockquote>{Quote}</blockquote>
+
+        {block:Source}
+        <div class="source">{Source}</div>
+        {/block:Source}
+        <p class="permalink"><a href="{Permalink}">permalink</a></p>
+      </li>
+      {/block:Quote}
+
+      {block:Link}
+      <li class="post link">
+        <h3><a href="{URL}" class="link" {Target}>{Name}</a></h3>
 
         {block:Description}
-            <p id="description">{Description}</p>
+        <div class="description">{Description}</div>
         {/block:Description}
-        </div>
+        <p class="permalink"><a href="{Permalink}">permalink</a></p>
+      </li>
+      {/block:Link}
 
-        <ol id="posts">
-            {block:Posts}
-                {block:Text}
-                    <li class="post text">
-                        {block:Title}
-                            <h3><a href="{Permalink}">{Title}</a></h3>
-                        {/block:Title}
+      {block:Chat}
+      <li class="post chat">
+        {block:Title}
+        <h3><a href="{Permalink}">{Title}</a></h3>
+        {/block:Title}
 
-                        {Body}
-                        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-                    </li>
-                {/block:Text}
+        <ul class="chat">
+          {block:Lines}
+          <li class="{Alt} user_{UserNumber}">
+            {block:Label}
+            <span class="label">{Label}</span>
+            {/block:Label}
 
-                {block:Photo}
-                    <li class="post photo">
-                        {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+            {Line}
+          </li>
+          {/block:Lines}
+        </ul>
+        <p class="permalink"><a href="{Permalink}">permalink</a></p>
+      </li>
+      {/block:Chat}
 
-                        {block:Caption}
-                            <div class="caption">{Caption}</div>
-                        {/block:Caption}
-                        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-                    </li>
-                {/block:Photo}
+      {block:Video}
+      <li class="post video">
+        {Video-400}
 
-                {block:Quote}
-                    <li class="post quote">
-                        <blockquote>{Quote}</blockquote>
+        {block:Caption}
+        <div class="caption">{Caption}</div>
+        {/block:Caption}
+        <p class="permalink"><a href="{Permalink}">permalink</a></p>
+      </li>
+      {/block:Video}
 
-                        {block:Source}
-                            <div class="source">{Source}</div>
-                        {/block:Source}
-                        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-                    </li>
-                {/block:Quote}
+      {block:Audio}
+      <li class="post caption">
+        {AudioPlayerWhite}
 
-                {block:Link}
-                    <li class="post link">
-                        <h3><a href="{URL}" class="link" {Target}>{Name}</a></h3>
+        {block:Caption}
+        <div class="caption">{Caption}</div>
+        {/block:Caption}
+        <p class="permalink"><a href="{Permalink}">permalink</a></p>
+      </li>
+      {/block:Audio}
+      {/block:Posts}
+    </ol>
 
-                        {block:Description}
-                            <div class="description">{Description}</div>
-                        {/block:Description}
-                        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-                    </li>
-                {/block:Link}
+    <p id="footer">
+      {block:Pagination}
+      {block:PreviousPage}
+      <a href="{PreviousPage}">&lt;- Previous</a>
+      {/block:PreviousPage}
 
-                {block:Chat}
-                    <li class="post chat">
-                        {block:Title}
-                            <h3><a href="{Permalink}">{Title}</a></h3>
-                        {/block:Title}
+      <a href="/archive">Archive</a>
 
-                        <ul class="chat">
-                            {block:Lines}
-                                <li class="{Alt} user_{UserNumber}">
-                                    {block:Label}
-                                        <span class="label">{Label}</span>
-                                    {/block:Label}
+      {block:NextPage}
+      <a href="{NextPage}">Next -&gt;</a>
+      {/block:NextPage}
+      {/block:Pagination}
 
-                                    {Line}
-                                </li>
-                            {/block:Lines}
-                        </ul>
-                        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-                    </li>
-                {/block:Chat}
+      {block:PermalinkPagination}
+      {block:PreviousPost}
+      <a href="{PreviousPost}">&lt;- Previous</a>
+      {/block:PreviousPost}
 
-                {block:Video}
-                    <li class="post video">
-                        {Video-400}
+      <a href="/archive">Archive</a>
 
-                        {block:Caption}
-                            <div class="caption">{Caption}</div>
-                        {/block:Caption}
-                        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-                    </li>
-                {/block:Video}
-
-                {block:Audio}
-                    <li class="post caption">
-                        {AudioPlayerWhite}
-
-                        {block:Caption}
-                            <div class="caption">{Caption}</div>
-                        {/block:Caption}
-                        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-                    </li>
-                {/block:Audio}
-            {/block:Posts}
-        </ol>
-
-        <p id="footer">
-          {block:Pagination}
-            {block:PreviousPage}
-                <a href="{PreviousPage}">&lt;- Previous</a>
-            {/block:PreviousPage}
-
-            <a href="/archive">Archive</a>
-
-            {block:NextPage}
-                <a href="{NextPage}">Next -&gt;</a>
-            {/block:NextPage}
-          {/block:Pagination}
-
-          {block:PermalinkPagination}
-            {block:PreviousPost}
-                <a href="{PreviousPost}">&lt;- Previous</a>
-            {/block:PreviousPost}
-
-            <a href="/archive">Archive</a>
-
-            {block:NextPost}
-                <a href="{NextPost}">Next -&gt;</a>
-            {/block:NextPost}
-          {/block:PermalinkPagination}
-        </p>
-        <p id="attribution">
-          Powered by <a href="http://tumblr.com/">Tumblr</a>; designed by <a href="http://calcandcoffee.tumblr.com/">Adam Lloyd</a>.
-        </p>
-    </body>
+      {block:NextPost}
+      <a href="{NextPost}">Next -&gt;</a>
+      {/block:NextPost}
+      {/block:PermalinkPagination}
+    </p>
+    <p id="attribution">
+      Powered by <a href="http://tumblr.com/">Tumblr</a>; designed by <a href="http://calcandcoffee.tumblr.com/">Adam Lloyd</a>.
+    </p>
+  </body>
 </html>
