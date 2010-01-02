@@ -132,14 +132,14 @@ li.post h3, li.post h3 a {
 
 
 /* text posts */
-li.text {
+.text {
 }
 
 
 /* photo posts */
-li.photo {
+.photo {
 }
-li.photo img {
+.photo img {
     background-color: white;
     border: 1px solid black;
     padding: 1px;
@@ -147,48 +147,48 @@ li.photo img {
 
 
 /* quote posts */
-li.quote {
+.quote {
 }
-li.quote div.source:before {
+.quote div.source:before {
     content: 'source: ';
 }
-li.quote div.source {
+.quote div.source {
     margin-top: 1em;
 }
 
 
 /* link posts */
-li.link {
+.link {
 }
-li.link a.link:before {
+.link a.link:before {
     content: "link: ";
 }
-li.link a.link {
+.link a.link {
     text-decoration: none;
 }
 
 
 /* chat posts */
-li.chat {
+.chat {
 }
-li.chat ul {
+.chat ul {
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
 }
-li.chat ul li:first {
+.chat ul li:first {
     margin-top: 0;
 }
-li.chat ul li {
+.chat ul li {
     margin-top: 0.5em;
 }
-li.chat .label {
+.chat .label {
     font-weight: bold;
 }
 
 
 /* video posts */
-li.video {
+.video {
 }
 
 
@@ -213,92 +213,90 @@ p#attribution {
 
     <ol id="posts">
       {block:Posts}
-      {block:Text}
-      <li class="post text">
-        {block:Title}
-        <h3><a href="{Permalink}">{Title}</a></h3>
-        {/block:Title}
+      <li class="post">
+        {block:Text}
+        <div class="text">
+          {block:Title}
+          <h3><a href="{Permalink}">{Title}</a></h3>
+          {/block:Title}
 
-        {Body}
+          {Body}
+        </div>
+        {/block:Text}
+
+        {block:Photo}
+        <div class="photo">
+          {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+
+          {block:Caption}
+          <div class="caption">{Caption}</div>
+          {/block:Caption}
+        </div>
+        {/block:Photo}
+
+        {block:Quote}
+        <div class="quote">
+          <blockquote>{Quote}</blockquote>
+
+          {block:Source}
+          <div class="source">{Source}</div>
+          {/block:Source}
+        </div>
+        {/block:Quote}
+
+        {block:Link}
+        <div class="link">
+          <h3><a href="{URL}" class="link" {Target}>{Name}</a></h3>
+
+          {block:Description}
+          <div class="description">{Description}</div>
+          {/block:Description}
+        </div>
+        {/block:Link}
+
+        {block:Chat}
+        <div class="chat">
+          {block:Title}
+          <h3><a href="{Permalink}">{Title}</a></h3>
+          {/block:Title}
+
+          <ul class="chat">
+            {block:Lines}
+            <li class="{Alt} user_{UserNumber}">
+              {block:Label}
+              <span class="label">{Label}</span>
+              {/block:Label}
+
+              {Line}
+            </li>
+            {/block:Lines}
+          </ul>
+        </div>
+        {/block:Chat}
+
+        {block:Video}
+        <div class="video">
+          {Video-400}
+
+          {block:Caption}
+          <div class="caption">{Caption}</div>
+          {/block:Caption}
+        </div>
+        {/block:Video}
+
+        {block:Audio}
+        <div class="post caption">
+          {AudioPlayerWhite}
+
+          {block:Caption}
+          <div class="caption">{Caption}</div>
+          {/block:Caption}
+        </div>
+        {/block:Audio}
+
+
         <p class="permalink"><a href="{Permalink}">permalink</a></p>
       </li>
-      {/block:Text}
-
-      {block:Photo}
-      <li class="post photo">
-        {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
-
-        {block:Caption}
-        <div class="caption">{Caption}</div>
-        {/block:Caption}
-        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-      </li>
-      {/block:Photo}
-
-      {block:Quote}
-      <li class="post quote">
-        <blockquote>{Quote}</blockquote>
-
-        {block:Source}
-        <div class="source">{Source}</div>
-        {/block:Source}
-        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-      </li>
-      {/block:Quote}
-
-      {block:Link}
-      <li class="post link">
-        <h3><a href="{URL}" class="link" {Target}>{Name}</a></h3>
-
-        {block:Description}
-        <div class="description">{Description}</div>
-        {/block:Description}
-        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-      </li>
-      {/block:Link}
-
-      {block:Chat}
-      <li class="post chat">
-        {block:Title}
-        <h3><a href="{Permalink}">{Title}</a></h3>
-        {/block:Title}
-
-        <ul class="chat">
-          {block:Lines}
-          <li class="{Alt} user_{UserNumber}">
-            {block:Label}
-            <span class="label">{Label}</span>
-            {/block:Label}
-
-            {Line}
-          </li>
-          {/block:Lines}
-        </ul>
-        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-      </li>
-      {/block:Chat}
-
-      {block:Video}
-      <li class="post video">
-        {Video-400}
-
-        {block:Caption}
-        <div class="caption">{Caption}</div>
-        {/block:Caption}
-        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-      </li>
-      {/block:Video}
-
-      {block:Audio}
-      <li class="post caption">
-        {AudioPlayerWhite}
-
-        {block:Caption}
-        <div class="caption">{Caption}</div>
-        {/block:Caption}
-        <p class="permalink"><a href="{Permalink}">permalink</a></p>
-      </li>
-      {/block:Audio}
       {/block:Posts}
     </ol>
 
