@@ -1,0 +1,183 @@
+body
+  background-color: #111815
+  color: #ffffff
+  font:
+    family: "Crimson Text", serif
+    size: 100%
+  line-height: 1.5em
+  margin: 0
+  padding: 0
+  word-spacing: 0.1em
+
+code
+  font:
+    family: "Inconsolata", "Droid Sans Mono", "Courier", monospace
+    size: 0.9em
+pre
+  font:
+    family: "Inconsolata", "Droid Sans Mono", "Courier", monospace
+
+  code
+    font-size: 1.0em
+
+#theRealBody
+  //background-image: url('TEST_bg.jpg')
+  :hover
+    border: 1px dotted #404040
+    border-top: none
+    border-bottom: none
+  margin: auto
+  padding: 0.3em 3ex
+  padding-top: 30px
+  width: 33em
+  
+#theTitle
+  font:
+    family: "IM Fell English", serif
+    size: 4.0em
+    style: italic
+    weight: 100
+  line-height: 1.0
+  margin: 0
+
+  a:link, a:visited
+    color: #fff
+  
+#theSubtitle
+  font:
+    family: "IM Fell English", serif
+    size: 1.25em
+    weight: 100
+  margin: 0
+  left: 1em
+  line-height: 1.0
+  position: relative
+  top: -0.4em
+
+#theContent
+  margin-top: 80px
+
+  blockquote
+    font:
+      style: italic
+    margin: 1.5em 0
+
+  h2, h3, h4, h5, h6, .aLink .theLink
+    font:
+      family: "IM Fell English", serif
+      style: italic
+      weight: 400
+    margin: 0
+  h2, .aLink .theLink
+    font-size: 2.0em
+    line-height: 1.5
+    margin:
+      top: 3.5em
+      bottom: 1.0em
+  h3
+    font-size: 1.5em
+    line-height: 1.0
+    margin:
+      top: 2.5em
+      bottom: 1.5em
+  h4
+    font-size: 1.25em
+    line-height: 1.2
+    margin:
+      top: 2.00em
+      bottom: 1.00em
+  h5
+    font-size: 1.0em
+  h6
+    font:
+      size: 1.0em
+      weight: 100
+
+  p
+    font:
+      size: 1em
+    line-height: 1.5
+    margin:
+      top: 1.5em
+      //bottom: 1.5em
+      bottom: 0
+
+  p + p
+    margin:
+      top: 0
+    text-indent: 1.5em
+
+  ol, ul
+    font-size: 1em
+    margin:
+      top: 1.5em
+      left: 0
+      bottom: 1.5em
+    padding-left: 0
+
+  ol
+    list-style-type: lower-roman
+
+  ul
+    list-style-type: circle
+
+  .aPost
+    margin-top: 6em
+
+  .aConversation
+    .aTranscript
+      .aParticipant
+        display: block
+        font-weight: 900
+        height: 0
+        overflow: visible
+        padding-right: 0.8em
+        position: relative
+        left: -100%
+        text-align: right
+      .aLine
+        margin: 0
+
+  .aLink
+    .theLink:before
+      content: '\2916'
+      margin-left: -0.87em
+
+  #theNavigation
+    font:
+      family: "IM Fell English SC", serif
+    margin-top: 3.0em
+    text-align: center
+
+#theFooter
+  line-height: 1.0em
+  margin-top: 1.5em
+  text-align: center
+
+  p
+    font:
+      family: "IM Fell English SC", serif
+    margin: 0
+
+  ul.myLinks
+    margin: 0
+    padding: 0
+
+    li
+      display: inline
+      font:
+        family: "IM Fell English SC", serif
+      text-transform: lowercase
+    li + li:before
+      content: '\2022'
+
+  a:link, a:visited
+    color: #fff
+
+a:link, a:visited
+  color: #ffe312
+  text-decoration: none
+.lit, a:link:hover, a:visited:hover
+  text-shadow: #ffe312 0 0 6px, #f80 0 0 3px
+.unlit
+  text-shadow: #ffe312 0 0 0
