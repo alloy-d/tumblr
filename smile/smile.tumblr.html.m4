@@ -317,8 +317,19 @@ include(`smile.conditional.css')
         </form>
       </div><!-- search -->
       <footer>
-        <p>Theme by <a href="http://lloyda2.tumblr.com/">Adam Lloyd</a></p>
-        <p>Powered by <a href="http://tumblr.com/">Tumblr</a></p>
+        <p>
+          <a rel="nofollow" href="http://smiletheme.tumblr.com/">
+            Smile!
+          </a>
+          by
+          <a rel="nofollow" href="http://text.alloy-d.net/">
+            Adam Lloyd
+          </a>
+        </p>
+        <p>
+          Powered by
+          <a rel="nofollow" href="http://tumblr.com/">Tumblr</a>
+        </p>
       </footer>
     </aside><!-- sidebar -->
   </body>
