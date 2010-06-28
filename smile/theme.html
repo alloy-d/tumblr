@@ -15,6 +15,8 @@
 
     {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
 
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
     <!-- Custom color definitions -->
     <meta name="color:Background" content="#fafafc" />
     <meta name="color:Text" content="#40404a" />
@@ -24,8 +26,6 @@
 
     <!-- Custom font definitions -->
     <meta name="font:Body" content='"Gill Sans"'/>
-    <meta name="font:Header fallback" content='"Gill Sans"'/>
-    <meta name="font:Monospace fallback" content='"Consolas"'/>
 
     <!-- Custom boolean definitions -->
     <meta name="if:Show description" content="1"/>
@@ -72,18 +72,18 @@
         padding-left: 1ex;
       }
       code, pre {
-        font-family: "Inconsolata", {font:Monospace fallback}, "Courier New", "Courier", "Andale Mono", monospace;
+        font-family: "Inconsolata", "Consolas", "Courier New", "Courier", "Andale Mono", monospace;
       }
       h2 {
         color: {color:Stand out};
-        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
         font-size: 220%;
         font-weight: normal;
         line-height: 1.1em;
       }
       p.prominent {
         color: {color:Stand out};
-        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
         font-size: 150%;
         font-style: italic;
         font-weight: normal;
@@ -115,7 +115,7 @@
         margin-left: 220px;
       }
       div#header h1 {
-        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
         font-size: 400%;
         font-weight: 100;
         margin: 0;
@@ -129,7 +129,7 @@
       }
       div#header div#description p {
         color: {color:Stand out};
-        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
         font-size: 150%;
         margin: 0;
       }
@@ -222,7 +222,7 @@
 
       /* Pagination styles */
       div#pagination {
-        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
         margin-bottom: 40px;
       }
 
@@ -248,7 +248,7 @@
         border: none;
         color: {color:Text};
         display: inline;
-        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
         font-size: 150%;
         margin: 0;
         padding: 0;
@@ -263,7 +263,7 @@
 
       /* Link list and footer styles */
       div#links {
-        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
         font-size: 150%;
       }
       div#links a:link, div#links a:visited {
@@ -281,7 +281,7 @@
       }
 
       div#footer {
-        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
         font-size: 80%;
         text-align: right;
       }
@@ -306,7 +306,7 @@
       }
 
       .post_info {
-        font-family: "Inconsolata", {font:Header fallback}, "Gill Sans", "Helvetica", sans-serif;
+        font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
         font-size: 80%;
         margin-top: -16px;
         padding: 16px 0;
@@ -322,7 +322,7 @@
     
       {block:IfUseSmileInsteadOfTitle}
       div#header h1 {
-        font-family: "Inconsolata", {font:Monospace fallback}, "Courier New", "Courier", "Andale Mono", monospace;
+        font-family: "Inconsolata", "Consolas", "Courier New", "Courier", "Andale Mono", monospace;
       }
       div#header h1 a:link:hover, div#header h1 a:visited:hover {
         text-decoration: none;
