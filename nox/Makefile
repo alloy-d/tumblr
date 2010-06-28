@@ -1,14 +1,16 @@
-all: nox.tumblr.html
+THEME=nox
 
-nox.css: nox.sass
-	sass nox.sass > nox.css
+all: $(THEME).tumblr.html
 
-nox.tumblr.html: nox.css nox.tumblr.html.m4
-	m4 nox.tumblr.html.m4 > nox.tumblr.html
+$(THEME).css: $(THEME).sass
+	sass $(THEME).sass > $(THEME).css
+
+$(THEME).tumblr.html: $(THEME).css $(THEME).tumblr.html.m4
+	m4 $(THEME).tumblr.html.m4 > $(THEME).tumblr.html
 
 clean:
-	rm -f nox.css
-	rm -f nox.tumblr.html
+	rm -f $(THEME).css
+	rm -f $(THEME).tumblr.html
 
-clip: nox.tumblr.html
-	xclip < nox.tumblr.html
+clip: $(THEME).tumblr.html
+	xclip < $(THEME).tumblr.html
