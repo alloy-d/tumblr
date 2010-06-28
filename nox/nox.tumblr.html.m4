@@ -1,30 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <head>
   <link
   href='http://fonts.googleapis.com/css?family=IM+Fell+English:regular,italic'
   rel='stylesheet'
-  type='text/css'
   />
 
   <link
   href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC'
   rel='stylesheet'
-  type='text/css'
   />
 
   <link
   href='http://fonts.googleapis.com/css?family=Crimson+Text'
   rel='stylesheet'
-  type='text/css'
   />
 
   <link
   href='http://fonts.googleapis.com/css?family=Inconsolata'
   rel='stylesheet'
-  type='text/css'
   />
 
-  <style type='text/css'>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
 include(`nox.css')
   </style>
 
@@ -37,115 +37,116 @@ include(`nox.css')
 </head>
 <body>
   <div id='theRealBody'>
-    <div id='theHeader'>
-      <h1 id='theTitle'><a href="/" title="Home">{Title}</a></h1>
-      <p id='theSubtitle'>{Description}</p>
-    </div>
+    <header>
+      <hgroup>
+        <h1><a rel="up" href="/" title="Home">{Title}</a></h1>
+        <h2>{Description}</h2>
+      </hgroup>
+    </header>
 
-    <div id='theContent'>
-      {block:Posts}
-        {block:Text} 
-          <div class="aPost">
-            <h2>{Title}</h2>
+    {block:Posts}
+      {block:Text} 
+        <article>
+          <h1>{Title}</h1>
 
-            {Body}
+          {Body}
+        </article>
+      {/block:Text}
+
+      {block:Photo}
+        <article class="aPhoto">
+          <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+
+          {block:Caption}
+            <div class="aCaption">{Caption}</div>
+          {/block:Caption}
+        </article>
+      {/block:Photo}
+
+      {block:Photoset}
+        <article class="aPhotoset">
+          {Photoset-500}
+
+          {block:Caption}
+            <div class="aCaption">{Caption}</div>
+          {/block:Caption}
+        </article>
+      {/block:Photoset}
+
+      {block:Quote}
+        <article class="aQuote">
+          <blockquote>{Quote}</blockquote>
+
+          {block:Source}
+            <div class="aCaption aCitation">{Source}</div>
+          {/block:Source}
+        </article>
+      {/block:Quote}
+
+      {block:Link}
+        <article class="aLink">
+          <a href="{URL}" class="theLink" {Target}>{Name}</a>
+
+          {block:Description}
+            <div class="aCaption">{Description}</div>
+          {/block:Description}
+        </article>
+      {/block:Link}
+
+      {block:Chat}
+        <article class="aConversation">
+          {block:Title}
+            <h1>{Title}</h1>
+          {/block:Title}
+
+          <div class="aTranscript">
+            {block:Lines}
+              {block:Label}
+                <span class="aParticipant">{Label}</span>
+              {/block:Label}
+              <span class="aLine">{Line}</span>
+            {/block:Lines}
           </div>
-        {/block:Text}
+        </article>
+      {/block:Chat}
 
-        {block:Photo}
-          <div class="aPost aPhoto">
-            <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+      {block:Video}
+        <article class="aVideo">
+          {Video-500}
 
-            {block:Caption}
-              <div class="aCaption">{Caption}</div>
-            {/block:Caption}
-          </div>
-        {/block:Photo}
+          {block:Caption}
+            <div class="aCaption">{Caption}</div>
+          {/block:Caption}
+        </article>
+      {/block:Video}
 
-        {block:Photoset}
-          <div class="aPost aPhotoset">
-            {Photoset-500}
+      {block:Audio}
+        <article class="aSound">
+          {AudioPlayerGrey}
 
-            {block:Caption}
-              <div class="aCaption">{Caption}</div>
-            {/block:Caption}
-          </div>
-        {/block:Photoset}
+          {block:Caption}
+            <div class="aCaption">{Caption}</div>
+          {/block:Caption}
+        </article>
+      {/block:Audio}
+    {/block:Posts}
 
-        {block:Quote}
-          <div class="aPost aQuote">
-            <blockquote>{Quote}</blockquote>
-
-            {block:Source}
-              <div class="aCaption aCitation">{Source}</div>
-            {/block:Source}
-          </div>
-        {/block:Quote}
-
-        {block:Link}
-          <div class="aPost aLink">
-            <a href="{URL}" class="theLink" {Target}>{Name}</a>
-
-            {block:Description}
-              <div class="aCaption">{Description}</div>
-            {/block:Description}
-          </div>
-        {/block:Link}
-
-        {block:Chat}
-          <div class="aPost aConversation">
-            {block:Title}
-              <h2>{Title}</h2>
-            {/block:Title}
-
-            <div class="aTranscript">
-              {block:Lines}
-                {block:Label}
-                  <span class="aParticipant">{Label}</span>
-                {/block:Label}
-                <span class="aLine">{Line}</span>
-              {/block:Lines}
-            </div>
-          </div>
-        {/block:Chat}
-
-        {block:Video}
-          <div class="aPost aVideo">
-            {Video-500}
-
-            {block:Caption}
-              <div class="aCaption">{Caption}</div>
-            {/block:Caption}
-          </div>
-        {/block:Video}
-
-        {block:Audio}
-          <div class="aPost aSound">
-            {AudioPlayerGrey}
-
-            {block:Caption}
-              <div class="aCaption">{Caption}</div>
-            {/block:Caption}
-          </div>
-        {/block:Audio}
-      {/block:Posts}
-
-      <div id="theNavigation">
-        {block:NextPage}
-          <a href="{NextPage}">older</a>
-          {block:PreviousPage}
-            &#x2022;
-          {/block:PreviousPage}
-        {/block:NextPage}
+    <nav>
+      {block:NextPage}
+        <a rel="next" href="{NextPage}">older</a>
         {block:PreviousPage}
-          <a href="{PreviousPage}">newer</a>
+          &#x2022;
         {/block:PreviousPage}
-      </div>
-    </div>
+      {/block:NextPage}
+      {block:PreviousPage}
+        <a rel="prev" href="{PreviousPage}">newer</a>
+      {/block:PreviousPage}
+    </nav>
 
-    <div id="theFooter">
-      <p id="myName">Adam (at alloy-d dot net)</p>
+    <footer>
+      <p><a rel="author" href="mailto:adam@alloy-d.net">Adam (at
+alloy-d dot net)</a></p>
       <p>Nox theme undergoing refinement</p>
-    </div>
+    </footer>
   </div>
 </body>

@@ -31,7 +31,7 @@ pre
   padding-top: 30px
   width: 33em
   
-#theTitle
+header h1
   font:
     family: "IM Fell English", serif
     size: 4.0em
@@ -43,7 +43,7 @@ pre
   a:link, a:visited
     color: #fff
   
-#theSubtitle
+header h2
   font:
     family: "IM Fell English", serif
     size: 1.25em
@@ -54,43 +54,53 @@ pre
   position: relative
   top: -0.4em
 
-#theContent
-  margin-top: 80px
+header
+  display: block
+  margin-bottom: 80px
+
+article
+  display: block
+  margin-top: 6em
 
   blockquote
     font:
       style: italic
     margin: 1.5em 0
 
-  h2, h3, h4, h5, h6, .aLink .theLink
+  h1, h2, h3, h4, h5, h6, a.theLink
     font:
       family: "IM Fell English", serif
       style: italic
       weight: 400
     margin: 0
-  h2, .aLink .theLink
+  h1, a.theLink
     font-size: 2.0em
     line-height: 1.5
     margin:
       top: 3.5em
       bottom: 1.0em
-  h3
+  h2
     font-size: 1.5em
     line-height: 1.0
     margin:
       top: 2.5em
       bottom: 1.5em
-  h4
+  h3
     font-size: 1.25em
     line-height: 1.2
     margin:
       top: 2.00em
       bottom: 1.00em
-  h5
+  h4
     font-size: 1.0em
+  h5
+    font:
+      size: 1.0em
+      weight: 100
   h6
     font:
       size: 1.0em
+      style: normal
       weight: 100
 
   p
@@ -121,35 +131,34 @@ pre
   ul
     list-style-type: circle
 
-  .aPost
-    margin-top: 6em
+.aConversation
+  .aTranscript
+    .aParticipant
+      display: block
+      font-weight: 900
+      height: 0
+      overflow: visible
+      padding-right: 0.8em
+      position: relative
+      left: -100%
+      text-align: right
+    .aLine
+      margin: 0
 
-  .aConversation
-    .aTranscript
-      .aParticipant
-        display: block
-        font-weight: 900
-        height: 0
-        overflow: visible
-        padding-right: 0.8em
-        position: relative
-        left: -100%
-        text-align: right
-      .aLine
-        margin: 0
+.aLink
+  .theLink:before
+    content: '\2916'
+    margin-left: -0.87em
 
-  .aLink
-    .theLink:before
-      content: '\2916'
-      margin-left: -0.87em
+nav
+  display: block
+  font:
+    family: "IM Fell English SC", serif
+  margin-top: 3.0em
+  text-align: center
 
-  #theNavigation
-    font:
-      family: "IM Fell English SC", serif
-    margin-top: 3.0em
-    text-align: center
-
-#theFooter
+footer
+  display: block
   line-height: 1.0em
   margin-top: 1.5em
   text-align: center
