@@ -55,7 +55,9 @@ include(`nox.css')
 
       {block:Photo}
         <article class="aPhoto">
-          <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+          {LinkOpenTag}
+            <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+          {LinkCloseTag}
 
           {block:Caption}
             <div class="aCaption">{Caption}</div>
