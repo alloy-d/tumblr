@@ -1,0 +1,20 @@
+{block:IfAddSeparatorsBetweenPosts}
+section#posts article {
+    border-bottom: 1px solid {color:Blend in};
+    margin-top: 7em;
+}
+section#posts article footer {
+    margin-top: 1em;
+    margin-bottom: -16px
+}
+{/block:IfAddSeparatorsBetweenPosts}
+
+
+{block:IfUseSmileInsteadOfTitle}
+header h1 {
+    font-family: "Inconsolata", "Consolas", "Droid Sans Mono", monospace;
+}
+header h1 a:link:hover, header h1 a:visited:hover {
+    text-decoration: none;
+}
+{/block:IfUseSmileInsteadOfTitle}

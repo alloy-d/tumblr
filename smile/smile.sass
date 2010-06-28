@@ -1,0 +1,286 @@
+$bodyFont: "Molengo", "Gill Sans", "Helvetica", sans-serif 
+$monoFont: "Inconsolata", "Consolas", "Droid Sans Mono", monospace
+$headerFont: "Inconsolata", "Gill Sans", "Helvetica", sans-serif
+
+body
+  //background-color set in variable_overrides.css
+  //color set in variable_overrides.css
+  font:
+    family: $bodyFont
+    size: 100%
+  padding:
+    top: 40px
+    right: 0
+    bottom: 0
+    left: 40px
+  width: 820px
+
+a:link, a:visited
+  //color set in variable_overrides.css
+  text-decoration: none
+
+a:link:hover, a:visited:hover
+  text-decoration: underline
+
+blockquote
+  border-left: 1px solid
+  //border-left-color set in variable_overrides.css
+  font-size: 100%
+  margin:
+    top: 1.5em
+    right: 0
+    bottom: 1.5em
+    left: 1.5em
+  padding:
+    top: 0
+    right: 1.5em
+    bottom: 0
+    left: 0.75em
+
+code, pre
+  font-family: $monoFont
+
+nav
+  display: block
+
+header
+  clear: both
+  display: block
+  margin:
+    bottom: 60px
+    left: 220px
+
+  h1
+    font:
+      family: $headerFont
+      size: 400%
+      weight: 100
+    margin: 0
+
+  em
+    //color set in variable_overrides.css
+    font-style: normal
+
+  a:link, a:visited
+    //color set in variable_overrides.css
+
+  h2
+    //color set in variable_overrides.css
+    font:
+      family: $headerFont
+      size: 150%
+      margin: 0
+      weight: normal
+
+  a img
+    border: none
+
+section#posts
+  display: block
+  float: right
+  line-height: 1.5em
+  text-align: left
+  width: 600px
+
+  article
+    display: block
+    margin:
+      top: 5em
+      bottom: 0
+
+    header
+      margin: 0
+
+    h1
+      //color set in variable_overrides.css
+      font:
+        family: $headerFont
+        size: 220%
+        weight: normal
+      line-height: 1.1em
+      margin-bottom: 1em
+
+    p
+      margin: 1em 0
+
+    img
+      max-width: 100%
+
+    footer
+      display: block
+      font:
+        family: $headerFont
+        size: 80%
+      height: 2.6em
+      line-height: 1.3em
+      margin-top: -16px
+      padding: 16px 0
+
+      .symbol
+        //color set in variable_overrides.css
+        text-transform: uppercase
+
+      p
+        margin: 0
+        padding: 0
+
+      ul
+        display: inline
+        list-style-type: none
+        margin: 0
+        padding: 0
+
+        li
+          display: inline
+          padding:
+            right: 1em
+
+      ul.tags
+        a:before
+          content: '#'
+
+        a:link, a:visited
+          //color set in variable_overrides.css
+          text-decoration: none
+
+        a:link:hover, a:visited:hover
+          text-decoration: none
+
+  article:first-child
+    margin-top: 0
+
+  article.photo
+    a:link, a:visited
+      img
+        border: none
+
+  article.quote, article.answer
+    blockquote
+      border: none
+      //color set in variable_overrides.css
+      font:
+        size: 120%
+        style: italic
+      margin: 0
+      margin-bottom: 0.8em
+      padding: 0
+
+    blockquote.short
+      font-size: 180%
+      line-height: 1.1em
+
+    blockquote.medium
+      font-size: 150%
+      line-height: 1.25
+
+    blockquote.long
+      font-size: 120%
+
+    .source
+      p:first-child
+        margin-right: 4ex
+        text-align: right
+      p:first-child:before
+        content: '\2014'
+
+  article.link
+    h1
+      a:link:hover, a:visited:hover
+        text-decoration: underline
+
+      a:after
+        content: ' \2192'
+
+  article.chat
+    p.chat_line
+      margin: 0
+
+    span.label
+      //color set in variable_overrides.css
+      font-weight: bold
+
+    footer
+      margin-top: 0
+
+  nav
+    font-family: $headerFont
+    margin-bottom: 40px
+    
+aside#sidebar
+  border-right: 2px solid
+  //border-right-color set in variable_overrides.css
+  display: block
+  float: left
+  padding-right: 20px
+  width: 180px
+
+  #search
+    margin: 0.8em 0
+    text-align: right
+
+    form
+      display: inline
+
+    input
+      //background-color set in variable_overrides.css
+      border: none
+      //color set in variable_overrides.css
+      display: inline
+      font:
+        family: $headerFont
+        size: 150%
+      margin: 0
+      padding: 0
+      text-align: right
+
+    input:hover, input:focus
+      //color set in variable_overrides.css
+
+    input#query
+      border-bottom: 1px solid
+      //border-bottom-color set in variable_overrides.css
+  
+  #links
+    font:
+      family: $headerFont
+      size: 150%
+
+    a:link, a:visited
+      //color set in variable_overrides.css
+      text-decoration: none
+
+    a:link:hover, a:visited:hover
+      //color set in variable_overrides.css
+      text-decoration: none
+
+    ul
+      list-style-type: none
+      margin: 0
+      padding: 0
+      text-align: right
+
+  footer
+    display: block
+    font:
+      family: $headerFont
+      size: 80%
+    text-align: right
+
+    p
+      margin: 0
+
+.accent
+  //color set in variable_overrides.css
+
+.collapsible
+  .text
+    display: none
+
+.collapsible:hover
+  .text
+    display: inline
+  .symbol
+    display: none
+
+.text_only
+  display: none

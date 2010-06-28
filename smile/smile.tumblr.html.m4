@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <!-- 
      Theme copyright 2009 Adam Lloyd.
@@ -7,7 +6,7 @@
        <http://www.perlfoundation.org/artistic_license_2_0>
   -->
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <title>{Title}{block:PostSummary} - "{PostSummary}"{/block:PostSummary}{block:SearchPage} - search results for "{SearchQuery}"{/block:SearchPage}</title>
     <link rel="shortcut icon" href="{Favicon}" />
@@ -17,7 +16,12 @@
       <meta name="description" content="{MetaDescription}" />
     {/block:Description}
 
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet'>
+
+    <!--[if lt IE 9]>
+    <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+    <![endif]-->
 
     <!-- Custom color definitions -->
     <meta name="color:Background" content="#fafafc" />
@@ -25,9 +29,6 @@
     <meta name="color:Stand out" content="#000000" />
     <meta name="color:Blend in" content="#d2d2d5" />
     <meta name="color:Link text" content="#185878" />
-
-    <!-- Custom font definitions -->
-    <meta name="font:Body" content='"Gill Sans"'/>
 
     <!-- Custom boolean definitions -->
     <meta name="if:Show description" content="1"/>
@@ -49,242 +50,276 @@
 
     <style type="text/css">
 include(`smile.css')
+include(`smile.variable_overrides.css')
+include(`smile.conditional.css')
     </style>
   </head>
   <body>
-    <div id="header">
-      {block:IfNotHeaderImage}
-        {block:IfNotUseSmileInsteadOfTitle}
-          <h1><a href="/">{Title}</a></h1>
-        {/block:IfNotUseSmileInsteadOfTitle}
-        {block:IfUseSmileInsteadOfTitle}
-          <h1><a href="/"
-              onmouseover="this.innerHTML='(~_^)';"
-              onmouseout="this.innerHTML='(^_^)';">(^_^)</a>
-          </h1>
-        {/block:IfUseSmileInsteadOfTitle}
-      {/block:IfNotHeaderImage}
-      {block:IfHeaderImage}
-        <a href="/">
-          <img src="{image:Header}">
-        </a>
-      {/block:IfHeaderImage}
-      {block:IfShowDescription}
-      <div id="description">
-        <p>{Description}</p>
-      </div>
-      {/block:IfShowDescription}
-    </div><!-- header -->
-    <div id="everything">
-      <div id="content">
-        {block:SearchPage}
-          <p class="prominent"><a href="/search/{URLSafeSearchQuery}">Here</a>'s what I've got for you:</p>
-        {/block:SearchPage}
+    <header>
+      <hgroup>
+        {block:IfNotHeaderImage}
+          {block:IfNotUseSmileInsteadOfTitle}
+            <h1><a rel="up" href="/">{Title}</a></h1>
+          {/block:IfNotUseSmileInsteadOfTitle}
+          {block:IfUseSmileInsteadOfTitle}
+            <h1><a rel="up" href="/"
+                onmouseover="this.innerHTML='(~_^)';"
+                onmouseout="this.innerHTML='(^_^)';">(^_^)</a>
+            </h1>
+          {/block:IfUseSmileInsteadOfTitle}
+        {/block:IfNotHeaderImage}
+        {block:IfHeaderImage}
+          <a rel="up" href="/">
+            <img src="{image:Header}" />
+          </a>
+        {/block:IfHeaderImage}
+        {block:IfShowDescription}
+          <h2>{Description}</h2>
+        {/block:IfShowDescription}
+      </hgroup>
+    </header>
 
-        <div id="posts">
-          {block:Posts}
-            <div class="post">
-                <a name="{PostID}"></a>
+    <section id="posts">
+      {block:SearchPage}
+        <p class="prominent"><a href="/search/{URLSafeSearchQuery}">Here</a>'s what I've got for you:</p>
+      {/block:SearchPage}
 
-              {block:Text}
-                <div class="post_content text">
-                  {block:Title}
-                    <h2 class="post_title">{Title}</h2>
-                  {/block:Title}
+      {block:Posts}
+        <article
+          {block:Text}class="text"{/block:Text}
+          {block:Photo}class="photo"{/block:Photo}
+          {block:Photoset}class="photoset"{/block:Photoset}
+          {block:Quote}class="quote"{/block:Quote}
+          {block:Link}class="link"{/block:Link}
+          {block:Chat}class="chat"{/block:Chat}
+          {block:Audio}class="audio"{/block:Audio}
+          {block:Video}class="video"{/block:Video}
+          {block:Answer}class="answer"{/block:Answer}
+        >
+          <a name="{PostID}"></a>
 
-                  <div class="post_body">
-                    <p>
-                      {Body}
-                    </p>
-                  </div><!-- post_body -->
-                </div><!-- post_content -->
-              {/block:Text}
+          {block:Text}
+            <header>
+              <h1>{Title}</h1>
+            </header>
 
-              {block:Photo}
-                <div class="post_content photo">
-                  {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+            <p>{Body}</p>
+          {/block:Text}
 
-                  {block:Caption}
-                    <div class="caption"><p>{Caption}</p></div>
-                  {/block:Caption}
-                </div><!-- post_content photo -->
-              {/block:Photo}
+          {block:Photo}
+            {LinkOpenTag}
+              <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+            {LinkCloseTag}
 
-              {block:Quote}
-                <div class="post_content quote">
-                  <blockquote class="{Length}">
-                    {Quote}
-                  </blockquote>
+            {block:Caption}
+              <div class="caption">
+                <p>{Caption}</p>
+              </div>
+            {/block:Caption}
+          {/block:Photo}
 
-                  {block:Source}
-                    <div class="source"><p>{Source}</p></div>
-                  {/block:Source}
-                </div><!-- post_content quote -->
-              {/block:Quote}
+          {block:Quote}
+            <blockquote class="{Length}">
+              {Quote}
+            </blockquote>
 
-              {block:Link}
-                <div class="post_content link">
-                  <h2 class="post_title"><a href="{URL}" {Target}>{Name}</a></h2>
+            {block:Source}
+              <div class="source">
+                <p>{Source}</p>
+              </div>
+            {/block:Source}
+          {/block:Quote}
 
-                  {block:Description}
-                    <p class="description">{Description}</p>
-                  {/block:Description}
-                </div><!-- post_content link -->
-              {/block:Link}
+          {block:Link}
+            <header>
+              <h1><a href="{URL}" {Target}>{Name}</a></h1>
+            </header>
 
-              {block:Chat}
-                <div class="post_content chat">
-                  {block:Title}
-                    <h2 class="post_title">{Title}</h2>
-                  {/block:Title}
+            {block:Description}
+              <p class="description">{Description}</p>
+            {/block:Description}
+          {/block:Link}
 
-                  {block:Lines}
-                    <p class="chat_line chat_line_{Alt}">
-                      {block:Label}
-                        <span class="label user_{UserNumber}">{Label}</span>
-                      {/block:Label}
-                      <span class="text">{Line}</span>
-                    </p>
-                  {/block:Lines}
-                </div><!-- post_content chat -->
-              {/block:Chat}
+          {block:Chat}
+            {block:Title}
+              <header>
+                <h1>{Title}</h1>
+              </header>
+            {/block:Title}
 
-              {block:Audio}
-                <div class="post_content audio">
-                  <div class="audio_container">{AudioPlayerBlack}</div>
-                  {block:Caption}
-                    <div class="caption">{Caption}</div>
-                  {/block:Caption}
-                </div><!-- post_content audio -->
-              {/block:Audio}
+            {block:Lines}
+              <p class="chat_line">
+                {block:Label} 
+                  <span class="label">{Label}</span>
+                {/block:Label}
 
-              {block:Video}
-                <div class="post_content video">
-                  <div class="video_container">{Video-500}</div>
-                  {block:Caption}
-                    <div class="caption">{Caption}</div>
-                  {/block:Caption}
-                </div><!-- post_content video -->
-              {/block:Video}
+                <span class="text">{Line}</span>
+              </p>
+            {/block:Lines}
+          {/block:Chat}
 
-              <div class="post_info collapsible">
-                {block:IfPostInfoCoverText}
-                  <span class="symbol">{text:Post info cover text}</span><span class="text_only"> - </span>
-                {/block:IfPostInfoCoverText}
-                {block:IfNotPostInfoCoverText}
-                  <span class="symbol">Meta</span><span class="text_only">-post information follows:</span>
-                {/block:IfNotPostInfoCoverText}
-                <div class="text">
-                  {block:Reblog}
-                    <span class="hat_tip">
-                      Found via
-                      <a href="{ReblogParentURL}">{ReblogParentName}</a>
-                    </span>
-                  {/block:Reblog}
-                  {block:NotReblog}
-                    Posted
-                  {/block:NotReblog}
-                  on <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">{DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a> at
-                  <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm}</a>.
-                  {block:Photo}
-                    {block:HighRes}
-                      <span class="high_res_link">
-                        <a href="{PhotoURL-HighRes}">Available in higher resolution.</a>
-                      </span>
-                    {/block:HighRes}
-                  {/block:Photo}
-                </div><!-- text -->
-              </div><!-- post_info -->
-            </div><!-- post -->
-            <hr class="text_only" />
-          {/block:Posts}
-        </div><!-- posts -->
-        {block:SearchPage}
-          {block:NoSearchResults}
-            <p class="prominent">Nothing! I haven't mentioned <span class="accent">{SearchQuery}</span>.</p>
-          {/block:NoSearchResults}
-        {/block:SearchPage}
-        <div id="pagination">
-          {block:Pagination}
-            {block:IfNotLeftAlwaysGoesBackInTime}
-              {block:PreviousPage}
-                <a href="{PreviousPage}">&laquo; newer</a>
-                {block:NextPage}
-                |
-                {/block:NextPage}
-              {/block:PreviousPage}
+          {block:Audio}
+            {AudioPlayerBlack}
+
+            {block:Caption}
+              <div class="caption">{Caption}</div>
+            {/block:Caption}
+          {/block:Audio}
+
+          {block:Video}
+            {Video-500}
+
+            {block:Caption}
+              <div class="caption">{Caption}</div>
+            {/block:Caption}
+          {/block:Video}
+
+          {block:Answer}
+            <blockquote class="question">{Question}</blockquote>
+            <div class="source"><p>{Asker}</p></div>
+
+            <div class="answer">{Answer}</div>
+          {/block:Answer}
+
+          <footer class="collapsible">
+            {block:IfPostInfoCoverText}
+              <span class="symbol">{text:Post info cover text}</span>
+              <span class="text_only"> &mdash; </span>
+            {/block:IfPostInfoCoverText}
+            {block:IfNotPostInfoCoverText}
+              <span class="symbol">Meta</span><span class="text_only">-post information
+              follows:</span>
+            {/block:IfNotPostInfoCoverText}
+
+            <div class="text">
+              <p>
+                {block:Reblog}
+                  <span class="hat_tip">
+                    Found via
+                    <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                  </span>
+                {/block:Reblog}
+                {block:NotReblog}
+                  Posted
+                {/block:NotReblog}
+                on
+                <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>
+                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                    {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}
+                  </a>
+                </time>
+                at
+                <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm}</a>.
+
+                {block:Photo}
+                  {block:HighRes}
+                    <a href="{PhotoURL-HighRes}">
+                      Available in higher resolution.
+                    </a>
+                  {/block:HighRes}
+                {/block:Photo}
+              </p>
+              {block:HasTags}
+                <ul class="tags">
+                  {block:Tags}
+                    <li><a rel="tag" href="{TagURL}">{Tag}</a></li>
+                  {/block:Tags} 
+                </ul>
+              {/block:HasTags}
+            </div><!-- text -->
+          </footer>
+            
+        </article>
+        <hr class="text_only" />
+      {/block:Posts}
+
+      {block:SearchPage}
+        {block:NoSearchResults}
+          <p class="prominent">Nothing! I haven't mentioned <span class="accent">{SearchQuery}</span>.</p>
+        {/block:NoSearchResults}
+      {/block:SearchPage}
+
+      <nav>
+        {block:Pagination}
+          {block:IfNotLeftAlwaysGoesBackInTime}
+            {block:PreviousPage}
+              <a href="{PreviousPage}">&laquo; newer</a>
               {block:NextPage}
-                <a href="{NextPage}">older &raquo;</a>
-              {/block:NextPage}
-            {/block:IfNotLeftAlwaysGoesBackInTime}
-            {block:IfLeftAlwaysGoesBackInTime}
-              {block:NextPage}
-                <a href="{NextPage}">&laquo; older</a>
-                {block:PreviousPage}
-                |
-                {/block:PreviousPage}
-              {/block:NextPage}
-              {block:PreviousPage}
-                <a href="{PreviousPage}">newer &raquo;</a>
-              {/block:PreviousPage}
-            {/block:IfLeftAlwaysGoesBackInTime}
-          {/block:Pagination}
-
-          {block:DayPagination}
-            {block:PreviousDayPage}
-              <a href="{PreviousDayPage}">&laquo; yesterday</a>
-              {block:NextDayPage}
               |
-              {/block:NextDayPage}
-            {/block:PreviousDayPage}
+              {/block:NextPage}
+            {/block:PreviousPage}
+            {block:NextPage}
+              <a href="{NextPage}">older &raquo;</a>
+            {/block:NextPage}
+          {/block:IfNotLeftAlwaysGoesBackInTime}
+          {block:IfLeftAlwaysGoesBackInTime}
+            {block:NextPage}
+              <a href="{NextPage}">&laquo; older</a>
+              {block:PreviousPage}
+              |
+              {/block:PreviousPage}
+            {/block:NextPage}
+            {block:PreviousPage}
+              <a href="{PreviousPage}">newer &raquo;</a>
+            {/block:PreviousPage}
+          {/block:IfLeftAlwaysGoesBackInTime}
+        {/block:Pagination}
+
+        {block:DayPagination}
+          {block:PreviousDayPage}
+            <a href="{PreviousDayPage}">&laquo; yesterday</a>
             {block:NextDayPage}
-              <a href="{NextDayPage}">tomorrow &raquo;</a>
+            |
             {/block:NextDayPage}
-          {/block:DayPagination}
+          {/block:PreviousDayPage}
+          {block:NextDayPage}
+            <a href="{NextDayPage}">tomorrow &raquo;</a>
+          {/block:NextDayPage}
+        {/block:DayPagination}
 
-          {block:PermalinkPagination}
-            {block:PreviousPost}
-              <a href="{PreviousPost}">&laquo; previous</a>
-              {block:NextPost}
-              |
-              {/block:NextPost}
-            {/block:PreviousPost}
+        {block:PermalinkPagination}
+          {block:PreviousPost}
+            <a href="{PreviousPost}">&laquo; previous</a>
             {block:NextPost}
-              <a href="{NextPost}">next &raquo;</a>
+            |
             {/block:NextPost}
-          {/block:PermalinkPagination}
-        </div><!-- pagination -->
-      </div><!-- content -->
-      <div id="static">
-        <div id="links">
-          <ul>
-            <!-- ADD LINKS HERE -->
-            <!-- Example:
-            <li><a href="http://somesite.com/some/path/">some text</a></li>
-            -->
-            {block:IfContactEmailAddress}
-              <li><a href="mailto:{text:Contact email address}">{block:IfContactLinkText}{text:Contact link text}{/block:IfContactLinkText}{block:IfNotContactLinkText}contact{/block:IfNotContactLinkText}</a></li>
-            {/block:IfContactEmailAddress}
-            <li><a
-              href="/archive">{block:IfArchiveLinkText}{text:Archive link text}{/block:IfArchiveLinkText}{block:IfNotArchiveLinkText}archive{/block:IfNotArchiveLinkText}</a></li>
-            <li><a href="{RSS}">{block:IfRSSLinkText}{text:RSS link text}{/block:IfRSSLinkText}{block:IfNotRSSLinkText}rss{/block:IfNotRSSLinkText}</a></li>
-          </ul>
-        </div><!-- links -->
-        <div id="search">
-          <form action="/search" method="get">
-            {block:IfSearchBoxDefaultText}
-            <input type="text" size="7" name="q" value="{text:Search box default text}" id="query" onfocus="this.value='';" onblur="if (this.value=='') this.value='{text:Search box default text}';" /><input type="submit" value="&raquo;" style="display: none;" />
-            {/block:IfSearchBoxDefaultText}
-            {block:IfNotSearchBoxDefaultText}
-            <input type="text" size="7" name="q" value="search" id="query" onfocus="this.value='';" onblur="if (this.value=='') this.value='search';" /><input type="submit" value="&raquo;" style="display: none;" />
-            {/block:IfNotSearchBoxDefaultText}
-          </form>
-        </div><!-- search -->
-        <div id="footer">
-          <p>Theme by <a href="http://lloyda2.tumblr.com/">Adam Lloyd</a></p>
-          <p>Powered by <a href="http://tumblr.com/">Tumblr</a></p>
-        </div>
-      </div><!-- static -->
-    </div><!-- everything -->
+          {/block:PreviousPost}
+          {block:NextPost}
+            <a href="{NextPost}">next &raquo;</a>
+          {/block:NextPost}
+        {/block:PermalinkPagination}
+      </nav>
+    </section><!-- posts -->
+
+    <aside id="sidebar">
+      <div id="links">
+        <ul>
+          <!-- ADD LINKS HERE -->
+          <!-- Example:
+          <li><a href="http://somesite.com/some/path/">some text</a></li>
+          -->
+          {block:IfContactEmailAddress}
+            <li><a href="mailto:{text:Contact email address}">{block:IfContactLinkText}{text:Contact link text}{/block:IfContactLinkText}{block:IfNotContactLinkText}contact{/block:IfNotContactLinkText}</a></li>
+          {/block:IfContactEmailAddress}
+          <li><a
+            href="/archive">{block:IfArchiveLinkText}{text:Archive link text}{/block:IfArchiveLinkText}{block:IfNotArchiveLinkText}archive{/block:IfNotArchiveLinkText}</a></li>
+          <li><a href="{RSS}">{block:IfRSSLinkText}{text:RSS link text}{/block:IfRSSLinkText}{block:IfNotRSSLinkText}rss{/block:IfNotRSSLinkText}</a></li>
+        </ul>
+      </div><!-- links -->
+      <div id="search">
+        <form action="/search" method="get">
+          {block:IfSearchBoxDefaultText}
+          <input type="text" size="7" name="q" value="{text:Search box default text}" id="query" onfocus="this.value='';" onblur="if (this.value=='') this.value='{text:Search box default text}';" /><input type="submit" value="&raquo;" style="display: none;" />
+          {/block:IfSearchBoxDefaultText}
+          {block:IfNotSearchBoxDefaultText}
+          <input type="text" size="7" name="q" value="search" id="query" onfocus="this.value='';" onblur="if (this.value=='') this.value='search';" /><input type="submit" value="&raquo;" style="display: none;" />
+          {/block:IfNotSearchBoxDefaultText}
+        </form>
+      </div><!-- search -->
+      <footer>
+        <p>Theme by <a href="http://lloyda2.tumblr.com/">Adam Lloyd</a></p>
+        <p>Powered by <a href="http://tumblr.com/">Tumblr</a></p>
+      </footer>
+    </aside><!-- sidebar -->
   </body>
 </html>

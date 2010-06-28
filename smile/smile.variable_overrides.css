@@ -1,0 +1,79 @@
+body {
+    background-color: {color:Background};
+    color: {color:Text};
+}
+
+a:link, a:visited {
+    color: {color:Link text};
+}
+
+blockquote {
+    border-left-color: {color:Blend in};
+}
+
+header em {
+    color: {color:Stand out};
+}
+
+header a:link, header a:visited {
+    color: {color:Stand out};
+}
+
+header h2 {
+    color: {color:Stand out};
+}
+
+section#posts article h1 {
+    color: {color:Stand out};
+}
+
+section#posts article footer .symbol {
+    color: {color:Blend in};
+}
+
+section#posts article footer ul.tags a:link,
+section#posts article footer ul.tags a:visited {
+    color: {color:Blend in};
+}
+
+section#posts article footer ul.tags a:link:hover,
+section#posts article footer ul.tags a:visited:hover {
+    color: {color:Link text};
+}
+
+section#posts article.quote blockquote {
+    color: {color:Stand out};
+}
+
+section#posts article.chat span.label {
+    color: {color:Stand out};
+}
+
+aside#sidebar {
+    border-right-color: {color:Blend in};
+}
+
+aside#sidebar #search input {
+    background-color: {color:Background};
+    color: {color:Text};
+}
+
+aside#sidebar #search input:hover, aside#sidebar #search input:focus {
+    color: {color:Stand out};
+}
+
+aside#sidebar #search input#query {
+    border-bottom-color: {color:Blend in};
+}
+
+aside#sidebar #links a:link, aside#sidebar #links a:visited {
+    color: {color:Text};
+}
+
+aside#sidebar #links a:link:hover, aside#sidebar #links a:visited:hover {
+    color: {color:Stand out};
+}
+
+.accent {
+    color: {color:Stand out};
+}
