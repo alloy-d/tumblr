@@ -129,6 +129,7 @@ include(`nox.css')
         {block:Answer}
           <blockquote class="aQuestion">{Question}</blockquote>
           <p class="aQuoteSource">{Asker}</p>
+
           <div class="anAnswer">{Answer}</div>
         {/block:Answer}
 
