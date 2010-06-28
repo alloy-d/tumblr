@@ -243,49 +243,49 @@ include(`smile.conditional.css')
         {block:Pagination}
           {block:IfNotLeftAlwaysGoesBackInTime}
             {block:PreviousPage}
-              <a href="{PreviousPage}">&laquo; newer</a>
+              <a rel="prev" href="{PreviousPage}">&laquo; newer</a>
               {block:NextPage}
               |
               {/block:NextPage}
             {/block:PreviousPage}
             {block:NextPage}
-              <a href="{NextPage}">older &raquo;</a>
+              <a rel="next" href="{NextPage}">older &raquo;</a>
             {/block:NextPage}
           {/block:IfNotLeftAlwaysGoesBackInTime}
           {block:IfLeftAlwaysGoesBackInTime}
             {block:NextPage}
-              <a href="{NextPage}">&laquo; older</a>
+              <a rel="next" href="{NextPage}">&laquo; older</a>
               {block:PreviousPage}
               |
               {/block:PreviousPage}
             {/block:NextPage}
             {block:PreviousPage}
-              <a href="{PreviousPage}">newer &raquo;</a>
+              <a rel="prev" href="{PreviousPage}">newer &raquo;</a>
             {/block:PreviousPage}
           {/block:IfLeftAlwaysGoesBackInTime}
         {/block:Pagination}
 
         {block:DayPagination}
           {block:PreviousDayPage}
-            <a href="{PreviousDayPage}">&laquo; yesterday</a>
+            <a rel="prev" href="{PreviousDayPage}">&laquo; yesterday</a>
             {block:NextDayPage}
             |
             {/block:NextDayPage}
           {/block:PreviousDayPage}
           {block:NextDayPage}
-            <a href="{NextDayPage}">tomorrow &raquo;</a>
+            <a rel="next" href="{NextDayPage}">tomorrow &raquo;</a>
           {/block:NextDayPage}
         {/block:DayPagination}
 
         {block:PermalinkPagination}
           {block:PreviousPost}
-            <a href="{PreviousPost}">&laquo; previous</a>
+            <a rel="prev" href="{PreviousPost}">&laquo; previous</a>
             {block:NextPost}
             |
             {/block:NextPost}
           {/block:PreviousPost}
           {block:NextPost}
-            <a href="{NextPost}">next &raquo;</a>
+            <a rel="next" href="{NextPost}">next &raquo;</a>
           {/block:NextPost}
         {/block:PermalinkPagination}
       </nav>
@@ -301,7 +301,7 @@ include(`smile.conditional.css')
           {block:IfContactEmailAddress}
             <li><a href="mailto:{text:Contact email address}">{block:IfContactLinkText}{text:Contact link text}{/block:IfContactLinkText}{block:IfNotContactLinkText}contact{/block:IfNotContactLinkText}</a></li>
           {/block:IfContactEmailAddress}
-          <li><a
+          <li><a rel="archives"
             href="/archive">{block:IfArchiveLinkText}{text:Archive link text}{/block:IfArchiveLinkText}{block:IfNotArchiveLinkText}archive{/block:IfNotArchiveLinkText}</a></li>
           <li><a href="{RSS}">{block:IfRSSLinkText}{text:RSS link text}{/block:IfRSSLinkText}{block:IfNotRSSLinkText}rss{/block:IfNotRSSLinkText}</a></li>
         </ul>
