@@ -1,0 +1,285 @@
+body {
+  background-color: {color:Background};
+  color: {color:Text};
+  font-family: {font:Body}, "Gill Sans", "Helvetica", sans-serif;
+  font-size: 12pt;
+  padding: 40px;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+/* Basic styles */
+a:link, a:visited {
+  color: {color:Link text};
+  text-decoration: none;
+}
+a:link:hover, a:visited:hover {
+  text-decoration: underline;
+}
+blockquote {
+  border-left: 1px solid {color:Blend in};
+  font-size: 100%;
+  margin: 1.5em 0 1.5em 1ex;
+  padding-right: 1.5ex;
+  padding-left: 1ex;
+}
+code, pre {
+  font-family: "Inconsolata", "Consolas", "Courier New", "Courier", "Andale Mono", monospace;
+}
+h2 {
+  color: {color:Stand out};
+  font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+  font-size: 220%;
+  font-weight: normal;
+  line-height: 1.1em;
+}
+p.prominent {
+  color: {color:Stand out};
+  font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+  font-size: 150%;
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+p {
+  margin: 1em 0;
+}
+
+.prominent {
+  margin: 2em 0;
+}
+.accent {
+  color: {color:Stand out};
+}
+
+
+/* Styles for the giant everything wrapper */
+div#everything {
+  width: 820px;
+}
+
+
+/* Header styles */
+div#header {
+  clear: both;
+  margin-bottom: 60px;
+  margin-left: 220px;
+}
+div#header h1 {
+  font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+  font-size: 400%;
+  font-weight: 100;
+  margin: 0;
+}
+div#header em {
+  color: {color:Stand out};
+  font-style: normal;
+}
+div#header a:link, div#header a:visited {
+  color: {color:Stand out};
+}
+div#header div#description p {
+  color: {color:Stand out};
+  font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+  font-size: 150%;
+  margin: 0;
+}
+div#header a img {
+  border: none;
+}
+
+/* Main content styles */
+div#content {
+  float: right;
+  line-height: 1.5em;
+  text-align: left;
+  width: 600px;
+}
+
+/* General post styles */
+div.post {
+  margin-top: 5em;
+  margin-bottom: 0;
+}
+div.post:first-child {
+  margin-top: 0;
+}
+div.post h2 {
+  margin-top: 0;
+}
+div.post img {
+  max-width: 100%;
+}
+
+{block:IfAddSeparatorsBetweenPosts}
+div.post {
+  border-bottom: 1px solid {color:Blend in};
+  margin-top: 7em;
+}
+.post_info {
+  margin-top: 1em;
+  margin-bottom: -16px;
+}
+{/block:IfAddSeparatorsBetweenPosts}
+
+/* Photo post styles */
+div.post .photo a:link img, div.post .photo a:visited img {
+  border: none;
+}
+
+/* Quote post styles */
+div.post .quote blockquote {
+  border: none;
+  color: {color:Stand out};
+  font-style: italic;
+  margin: 0 0 10pt 0;
+  padding: 0;
+}
+div.post .quote blockquote.short {
+  font-size: 180%;
+  line-height: 1.1em;
+}
+div.post .quote blockquote.medium {
+  font-size: 150%;
+  line-height: 1.25em;
+}
+div.post .quote blockquote.long {
+  font-size: 120%;
+}
+div.post .quote .source p:first-child {
+  margin-right: 4ex;
+  text-align: right;
+}
+div.post .quote .source p:first-child:before {
+  content: "\2014";
+}
+
+/* Link post styles */
+div.post .link h2 a:after {
+  content: " \2192";
+}
+
+/* Chat post styles */
+div.post .chat p.chat_line {
+  margin: 0;
+}
+div.post .chat span.label {
+  color: {color:Stand out};
+  font-weight: bold;
+}
+div.post .chat {
+  margin-bottom: 1em;
+}
+
+/* Pagination styles */
+div#pagination {
+  font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+  margin-bottom: 40px;
+}
+
+
+/* Styles for the bottom corner stuff. */
+div#static {
+  border-right: 2px solid {color:Blend in};
+  float: left;
+  padding-right: 20px;
+  width: 180px;
+}
+
+/* Search styles */
+div#search {
+  margin: 0.8em 0;
+  text-align: right;
+}
+div#search form {
+  display: inline;
+}
+div#search input {
+  background-color: {color:Background};
+  border: none;
+  color: {color:Text};
+  display: inline;
+  font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+  font-size: 150%;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+div#search input:hover, div#search input:focus {
+  color: {color:Stand out};
+}
+div#search input#query {
+  border-bottom: 1px solid {color:Blend in};
+}
+
+/* Link list and footer styles */
+div#links {
+  font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+  font-size: 150%;
+}
+div#links a:link, div#links a:visited {
+  color: {color:Text};
+}
+div#links a:link:hover, div#links a:visited:hover {
+  color: {color:Stand out};
+  text-decoration: none;
+}
+div#links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+div#footer {
+  font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+  font-size: 80%;
+  text-align: right;
+}
+div#footer div.collapsible {
+  display: inline;
+  padding: 2px 4px;
+  margin: -2px -4px;
+}
+div#footer p {
+  margin: 0;
+}
+
+/* "Fancy" stuff */
+.collapsible .text {
+  display: none;
+}
+.collapsible:hover .text {
+  display: inline;
+}
+.collapsible:hover .symbol {
+  display: none;
+}
+
+.post_info {
+  font-family: "Inconsolata", "Gill Sans", "Helvetica", sans-serif;
+  font-size: 80%;
+  margin-top: -16px;
+  padding: 16px 0;
+}
+.post_info .symbol {
+  color: {color:Blend in};
+  text-transform: uppercase;
+}
+
+.text_only {
+  display: none;
+}
+
+{block:IfUseSmileInsteadOfTitle}
+div#header h1 {
+  font-family: "Inconsolata", "Consolas", "Courier New", "Courier", "Andale Mono", monospace;
+}
+div#header h1 a:link:hover, div#header h1 a:visited:hover {
+  text-decoration: none;
+}
+{/block:IfUseSmileInsteadOfTitle}
+
+/* User-specific styles */
+{CustomCSS}
