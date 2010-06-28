@@ -83,7 +83,7 @@ include(`nox.css')
           <blockquote>{Quote}</blockquote>
 
           {block:Source}
-            <div class="aCaption aCitation">{Source}</div>
+            <p class="aQuoteSource">{Source}</p>
           {/block:Source}
         {/block:Quote}
 
