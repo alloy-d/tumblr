@@ -133,9 +133,16 @@ include(`nox.css')
           <div class="anAnswer">{Answer}</div>
         {/block:Answer}
 
-        <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonth}" pubdate>
-          <!--{DayOfMonth} {ShortMonth} {Year}--> <a href="{Permalink}">&#x221e;</a>
-        </time>
+        <footer>
+          {block:RebloggedFrom}
+            <span class="aHatTip">
+              via <a href="{ReblogParentURL}">{ReblogParentTitle}</a>
+            </span>
+          {/block:RebloggedFrom}
+          <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonth}" pubdate>
+            <!--{DayOfMonth} {ShortMonth} {Year}--> <a href="{Permalink}">&#x221e;</a>
+          </time>
+        </footer>
       </article>
     {/block:Posts}
 

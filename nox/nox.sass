@@ -178,28 +178,51 @@ article
     ol
       list-style-type: decimal
 
-  time[pubdate]
+  //time[pubdate]
+  footer
+    color: #fff
     display: block
     font:
       style: italic
     line-height: inherit
+    margin:
+      top: 0
+      right: -1.5em
+      bottom: -3.0em
+      left: -3.0em
+    opacity: 0.1
+    padding:
+      top: 0
+      right: 1.5em
+      bottom: 3.0em
+      left: 3.0em
     text-align: right
+    -webkit-transition: opacity 0.3s ease
 
     a:link, a:visited
       color: #fff
-      margin:
-        right: -1.5em
-        bottom: -1.5em
-        left: -3em
-      opacity: 0.1
-      padding:
-        right: 1.5em
-        bottom: 1.5em
-        left: 3em
 
     a:link:hover, a:visited:hover
       color: #ffe312
-      opacity: 1.0
+
+    time[pubdate]
+      a:link, a:visited
+        margin:
+          top: 0
+          right: -1.5em
+          bottom: -3.0em
+          left: 0
+        padding:
+          top: 0
+          right: 1.5em
+          bottom: 3.0em
+          left: 1.0em
+
+  footer:hover
+    opacity: 1.0
+
+    a:link, a:visited
+      color: #ffe312
 
 .aConversation
   .aTranscript
@@ -266,7 +289,8 @@ footer
 a:link, a:visited
   color: #ffe312
   text-decoration: none
+  -webkit-transition: text-shadow 1s ease, color 1s ease
 .lit, a:link:hover, a:visited:hover
-  text-shadow: #ffe312 0 0 6px, #f80 0 0 3px
+  text-shadow: #ffe312 0 0 8px, #f80 0 0 4px
 .unlit
   text-shadow: #ffe312 0 0 0
