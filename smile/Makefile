@@ -8,3 +8,5 @@ $(THEME).tumblr.html: $(THEME).tumblr.html.m4 $(THEME).css
 clip: $(THEME).tumblr.html
 	xclip < $(THEME).tumblr.html
 
+clean:
+	rm -f $(THEME).tumblr.html
