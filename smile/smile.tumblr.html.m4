@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!-- 
-     Theme copyright 2009 Adam Lloyd.
+     Theme copyright 2010 Adam Lloyd (adam@alloy-d.net).
      Licensed under the Artistic License 2.0:
        <http://www.perlfoundation.org/artistic_license_2_0>
   -->
