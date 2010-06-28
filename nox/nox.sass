@@ -149,14 +149,38 @@ article
     a:link, a:visited
       color: #fff
 
+  p.aQuoteSource
+    font-style: italic
+    margin-top: -1.5em
+    text-align: right
+  p.aQuoteSource:before
+    content: '\2014'
+
   .footnotes
     font-size: 0.8em
 
     p
-      line-height: 1.5em
+      line-height: inherit
 
     ol
       list-style-type: decimal
+
+  time[pubdate]
+    display: block
+    font:
+      style: italic
+    line-height: inherit
+    text-align: right
+
+    a:link, a:visited
+      color: #fff
+      margin: -3em
+      opacity: 0.1
+      padding: 3em
+
+    a:link:hover, a:visited:hover
+      color: #ffe312
+      opacity: 1.0
 
 .aConversation
   .aTranscript
@@ -177,6 +201,14 @@ article
     content: '\2916'
     margin-left: -0.87em
 
+.anAnswer
+  .aQuestion
+    br + br
+      content: ' '
+      display: inline-block
+      margin-right: 1.5em
+      width: 0
+
 nav
   display: block
   font:
@@ -185,9 +217,11 @@ nav
   text-align: center
 
 footer
+  bottom: 0
   display: block
   line-height: 1.0em
   margin-top: 1.5em
+  position: static
   text-align: center
 
   p

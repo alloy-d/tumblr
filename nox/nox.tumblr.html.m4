@@ -45,16 +45,23 @@ include(`nox.css')
     </header>
 
     {block:Posts}
-      {block:Text} 
-        <article>
+      <article
+        {block:Photo}class="aPhoto"{/block:Photo}
+        {block:Photoset}class="aSetOfPhotos"{/block:Photoset}
+        {block:Quote}class="aQuote"{/block:Quote}
+        {block:Link}class="aLink"{/block:Link}
+        {block:Chat}class="aConversation"{/block:Chat}
+        {block:Video}class="aVideo"{/block:Video}
+        {block:Audio}class="aSound"{/block:Audio}
+        {block:Answer}class="anAnswer"{/block:Answer}
+      >
+        {block:Text} 
           <h1>{Title}</h1>
 
           {Body}
-        </article>
-      {/block:Text}
+        {/block:Text}
 
-      {block:Photo}
-        <article class="aPhoto">
+        {block:Photo}
           {LinkOpenTag}
             <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
           {LinkCloseTag}
@@ -62,41 +69,33 @@ include(`nox.css')
           {block:Caption}
             <div class="aCaption">{Caption}</div>
           {/block:Caption}
-        </article>
-      {/block:Photo}
+        {/block:Photo}
 
-      {block:Photoset}
-        <article class="aPhotoset">
+        {block:Photoset}
           {Photoset-500}
 
           {block:Caption}
             <div class="aCaption">{Caption}</div>
           {/block:Caption}
-        </article>
-      {/block:Photoset}
+        {/block:Photoset}
 
-      {block:Quote}
-        <article class="aQuote">
+        {block:Quote}
           <blockquote>{Quote}</blockquote>
 
           {block:Source}
             <div class="aCaption aCitation">{Source}</div>
           {/block:Source}
-        </article>
-      {/block:Quote}
+        {/block:Quote}
 
-      {block:Link}
-        <article class="aLink">
+        {block:Link}
           <a href="{URL}" class="theLink" {Target}>{Name}</a>
 
           {block:Description}
             <div class="aCaption">{Description}</div>
           {/block:Description}
-        </article>
-      {/block:Link}
+        {/block:Link}
 
-      {block:Chat}
-        <article class="aConversation">
+        {block:Chat}
           {block:Title}
             <h1>{Title}</h1>
           {/block:Title}
@@ -109,28 +108,34 @@ include(`nox.css')
               <span class="aLine">{Line}</span>
             {/block:Lines}
           </div>
-        </article>
-      {/block:Chat}
+        {/block:Chat}
 
-      {block:Video}
-        <article class="aVideo">
+        {block:Video}
           {Video-500}
 
           {block:Caption}
             <div class="aCaption">{Caption}</div>
           {/block:Caption}
-        </article>
-      {/block:Video}
+        {/block:Video}
 
-      {block:Audio}
-        <article class="aSound">
+        {block:Audio}
           {AudioPlayerGrey}
 
           {block:Caption}
             <div class="aCaption">{Caption}</div>
           {/block:Caption}
-        </article>
-      {/block:Audio}
+        {/block:Audio}
+
+        {block:Answer}
+          <blockquote class="aQuestion">{Question}</blockquote>
+          <p class="aQuoteSource">{Asker}</p>
+          <div class="anAnswer">{Answer}</div>
+        {/block:Answer}
+
+        <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonth}" pubdate>
+          <!--{DayOfMonth} {ShortMonth} {Year}--> <a href="{Permalink}">&#x221e;</a>
+        </time>
+      </article>
     {/block:Posts}
 
     <nav>
