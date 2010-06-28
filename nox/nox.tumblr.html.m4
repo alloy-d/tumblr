@@ -38,8 +38,8 @@ include(`nox.css')
 <body>
   <div id='theRealBody'>
     <div id='theHeader'>
-      <h1 id='theTitle'><a href="/" title="Home">Adam Lloyd</a></h1>
-      <p id='theSubtitle'>Stargazer, coder, person.</p>
+      <h1 id='theTitle'><a href="/" title="Home">{Title}</a></h1>
+      <p id='theSubtitle'>{Description}</p>
     </div>
 
     <div id='theContent'>
