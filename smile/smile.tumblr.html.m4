@@ -183,53 +183,55 @@ include(`smile.conditional.css')
             <div class="answer">{Answer}</div>
           {/block:Answer}
 
-          <footer class="collapsible">
-            {block:IfPostInfoCoverText}
-              <span class="symbol">{text:Post info cover text}</span>
-              <span class="text_only"> &mdash; </span>
-            {/block:IfPostInfoCoverText}
-            {block:IfNotPostInfoCoverText}
-              <span class="symbol">Meta</span><span class="text_only">-post information
-              follows:</span>
-            {/block:IfNotPostInfoCoverText}
+          {block:Date}
+            <footer class="collapsible">
+              {block:IfPostInfoCoverText}
+                <span class="symbol">{text:Post info cover text}</span>
+                <span class="text_only"> &mdash; </span>
+              {/block:IfPostInfoCoverText}
+              {block:IfNotPostInfoCoverText}
+                <span class="symbol">Meta</span><span class="text_only">-post information
+                follows:</span>
+              {/block:IfNotPostInfoCoverText}
 
-            <div class="text">
-              <p>
-                {block:Reblog}
-                  <span class="hat_tip">
-                    Found via
-                    <a href="{ReblogParentURL}">{ReblogParentName}</a>
-                  </span>
-                {/block:Reblog}
-                {block:NotReblog}
-                  Posted
-                {/block:NotReblog}
-                on
-                <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>
-                  <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                    {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}
-                  </a>
-                </time>
-                at
-                <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm}</a>.
-
-                {block:Photo}
-                  {block:HighRes}
-                    <a href="{PhotoURL-HighRes}">
-                      Available in higher resolution.
+              <div class="text">
+                <p>
+                  {block:Reblog}
+                    <span class="hat_tip">
+                      Found via
+                      <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                    </span>
+                  {/block:Reblog}
+                  {block:NotReblog}
+                    Posted
+                  {/block:NotReblog}
+                  on
+                  <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>
+                    <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                      {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}
                     </a>
-                  {/block:HighRes}
-                {/block:Photo}
-              </p>
-              {block:HasTags}
-                <ul class="tags">
-                  {block:Tags}
-                    <li><a rel="tag" href="{TagURL}">{Tag}</a></li>
-                  {/block:Tags} 
-                </ul>
-              {/block:HasTags}
-            </div><!-- text -->
-          </footer>
+                  </time>
+                  at
+                  <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm}</a>.
+
+                  {block:Photo}
+                    {block:HighRes}
+                      <a href="{PhotoURL-HighRes}">
+                        Available in higher resolution.
+                      </a>
+                    {/block:HighRes}
+                  {/block:Photo}
+                </p>
+                {block:HasTags}
+                  <ul class="tags">
+                    {block:Tags}
+                      <li><a rel="tag" href="{TagURL}">{Tag}</a></li>
+                    {/block:Tags} 
+                  </ul>
+                {/block:HasTags}
+              </div><!-- text -->
+            </footer>
+          {/block:Date}
             
         </article>
         <hr class="text_only" />
@@ -300,6 +302,11 @@ include(`smile.conditional.css')
           <!-- Example:
           <li><a href="http://somesite.com/some/path/">some text</a></li>
           -->
+          {block:HasPages}
+            {block:Pages}
+              <li><a href="{URL}">{Label}</a></li>
+            {/block:Pages}
+          {/block:HasPages}
           {block:IfContactEmailAddress}
             <li><a href="mailto:{text:Contact email address}">{block:IfContactLinkText}{text:Contact link text}{/block:IfContactLinkText}{block:IfNotContactLinkText}contact{/block:IfNotContactLinkText}</a></li>
           {/block:IfContactEmailAddress}
