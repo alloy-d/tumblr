@@ -20,7 +20,7 @@
     <link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet'>
 
     <!--[if lt IE 9]>
-    <script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+    <script src='http://static.tumblr.com/stpp4vf/kS4l4rhp9/html5.js'></script>
     <![endif]-->
 
     <!-- Custom color definitions -->
