@@ -3,9 +3,8 @@
 
 <!--
      Light City, a Tumblr theme
-     Author: Adam Lloyd <lloyda2 (at) rpi (dot) edu>
      
-     Copyright 2009 Adam Lloyd.
+     Copyright 2010 Adam Lloyd (adam@alloy-d.net)
 
      Licensed under the Artistic License 2.0:
      http://www.perlfoundation.org/artistic_license_2_0
