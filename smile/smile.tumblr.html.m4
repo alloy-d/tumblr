@@ -99,9 +99,11 @@ include(`smile.conditional.css')
           <a name="{PostID}"></a>
 
           {block:Text}
-            <header>
-              <h1>{Title}</h1>
-            </header>
+            {block:Title}
+              <header>
+                <h1>{Title}</h1>
+              </header>
+            {/block:Title}
 
             <p>{Body}</p>
           {/block:Text}
