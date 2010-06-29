@@ -11,6 +11,10 @@ blockquote {
     border-left-color: {color:Blend in};
 }
 
+hr {
+    border-top-color: {color:Blend in};
+}
+
 header em {
     color: {color:Stand out};
 }
