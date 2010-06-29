@@ -327,13 +327,9 @@ include(`smile.conditional.css')
       </div><!-- search -->
       <footer>
         <p>
-          <a rel="nofollow" href="http://smiletheme.tumblr.com/">
-            Smile!
-          </a>
+          <a rel="nofollow" href="http://smiletheme.tumblr.com/"> Smile!</a>
           by
-          <a rel="nofollow" href="http://text.alloy-d.net/">
-            Adam Lloyd
-          </a>
+          <a rel="nofollow" href="http://text.alloy-d.net/">Adam Lloyd</a>
         </p>
         <p>
           Powered by
