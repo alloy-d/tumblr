@@ -15,3 +15,4 @@ clip: $(THEME).tumblr.html
 
 clean:
 	rm -f $(THEME).tumblr.html
+	rm -f $(THEME).css
