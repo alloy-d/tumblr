@@ -52,6 +52,8 @@
 include(`smile.css')
 include(`smile.variable_overrides.css')
 include(`smile.conditional.css')
+
+{CustomCSS}
     </style>
   </head>
   <body>
