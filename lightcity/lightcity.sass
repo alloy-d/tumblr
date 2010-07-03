@@ -4,9 +4,14 @@ $headerFont: "URW Palladio L", "Palatino", "Georgia", serif
 body
   //background-color set in variable_overrides.css
   //color set in variable_overrides.css
-  font-family: $bodyFont
+  font:
+    family: $bodyFont
+    size: 12pt
   margin: 0
   padding: 0
+
+header, hgroup, section, footer, nav
+  display: block
 
 a:link, a:visited
   border-bottom: 1px solid
@@ -189,7 +194,7 @@ body > footer
   p
     font-size: 80%
     margin: 0
-    margin-top: 0.5em
+    margin-top: 0.7em
     padding: 0
     padding-bottom: 0.5em
 
@@ -197,9 +202,14 @@ body > footer
     display: block
 
     ul
+      display: inline
       list-style-type: none
-      margin: 0
+      margin: 0.4em 0
       padding: 0
+
+    ul + ul:before 
+      content: '\2022'
+      font-size: 70%
 
     li
       display: inline

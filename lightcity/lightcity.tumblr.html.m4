@@ -211,6 +211,13 @@ include(`lightcity.variable_overrides.css')
     </section>
     <footer>
       <nav>
+        {block:HasPages}
+          <ul>
+            {block:Pages}
+              <li><a href="{URL}">{Label}</a></li>
+            {/block:Pages}
+          </ul>
+        {/block:HasPages}
         <ul>
           {block:AskEnabled}
             <li><a href="/ask">ask</a></li>
