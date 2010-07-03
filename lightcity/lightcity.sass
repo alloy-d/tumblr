@@ -40,6 +40,11 @@ h1, h2, h3, h4, h5, h6
     family: $headerFont
     weight: normal
 
+hr
+  border: none
+  border-top: 3px solid
+  //border-top-color set in variable_overrides.css
+
 body > header
   display: block
   margin:
@@ -135,6 +140,12 @@ section#posts
       
       a:link, a:visited
         border: none
+
+    div.source
+      p:first-child
+        text-align: right
+      p:first-child:before
+        content: '\2014'
 
   article.chat
     p

@@ -16,6 +16,10 @@ blockquote {
     border-left-color: {color:Standout};
 }
 
+hr {
+    border-top-color: {color:Standout};
+}
+
 body > header h1 {
     background-color: {color:Standout};
     color: {color:Text};
