@@ -36,7 +36,9 @@ ins
   text-decoration: none
 
 h1, h2, h3, h4, h5, h6
-  font-family: $headerFont
+  font:
+    family: $headerFont
+    weight: normal
 
 body > header
   display: block
@@ -48,7 +50,6 @@ body > header
     //background-color set in variable_overrides.css
     //color set in variable_overrides.css
     font:
-      family: $headerFont
       size: 90px
       weight: 100
     line-height: 1.2em
@@ -69,9 +70,9 @@ body > header
   h2
     //color set in variable_overrides.css
     font:
-      family: $headerFont
       size: 28px
       style: italic
+      weight: bold
     margin: 0
     text-align: center
 
@@ -98,7 +99,6 @@ section#posts
       h1
         background-color: transparent
         font:
-          family: $headerFont
           size: 30px
           weight: normal
         line-height: 1.3em
