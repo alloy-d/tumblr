@@ -1,0 +1,175 @@
+$bodyFont: "Verdana", "Gill Sans", sans-serif
+$headerFont: "URW Palladio L", "Palatino", "Georgia", serif
+
+body
+  //background-color set in variable_overrides.css
+  //color set in variable_overrides.css
+  font-family: $bodyFont
+  margin: 0
+  padding: 0
+
+a:link, a:visited
+  border-bottom: 1px solid
+  //border-bottom-color set in variable_overrides.css
+  //color set in variable_overrides.css
+  text-decoration: none
+
+a:link:hover, a:visited:hover
+  //background-color set in variable_overrides.css
+  text-decoration: none
+
+p
+  margin: 16px 0
+
+blockquote
+  border-left: 3px solid
+  //border-left-color set in variable_overrides.css
+  margin-right: 2ex
+  margin-left: 1ex
+  padding-left: 1.5ex
+
+code, pre
+  font-family: "Andale Mono", "Monaco", monospace
+
+ins
+  font-style: italic
+  text-decoration: none
+
+h1, h2, h3, h4, h5, h6
+  font-family: $headerFont
+
+body > header
+  display: block
+  margin:
+    top: 60px
+    bottom: 160px
+
+  h1
+    //background-color set in variable_overrides.css
+    //color set in variable_overrides.css
+    font:
+      family: $headerFont
+      size: 90px
+      weight: 100
+    line-height: 1.2em
+    margin:
+      top: 0
+      bottom: 0
+    text-align: center
+    text-transform: uppercase
+
+    a:link, a:visited
+      background-color: transparent
+      border: none
+      color: inherit
+
+    a:link:hover, a:visited:hover
+      background-color: transparent
+
+  h2
+    //color set in variable_overrides.css
+    font:
+      family: $headerFont
+      size: 28px
+      style: italic
+    margin: 0
+    text-align: center
+
+    p
+      display: inline
+    br, hr
+      display: none
+
+section#posts
+  border: none
+  display: block
+  line-height: 1.5em
+  margin: auto
+  text-align: justify
+  width: 600px
+
+  article
+    display: block
+    margin-bottom: 120px
+
+    header
+      display: block
+
+      h1
+        background-color: transparent
+        font:
+          family: $headerFont
+          size: 30px
+          weight: normal
+        line-height: 1.3em
+        margin:
+          top: 0
+        text-align: left
+        text-transform: none
+
+        a
+          line-height: 1.4em
+
+    img
+      //background-color set in variable_overrides.css
+      clear: both
+      display: block
+      margin: auto
+      padding: 8px
+
+    a:link, a:visited
+      img
+        border: none
+
+    div.caption
+      margin-top: 1.5em
+
+    footer
+      display: block
+
+      font:
+        family: $headerFont
+        size: 80%
+        style: italic
+      
+      a:link, a:visited
+        border: none
+
+  article.chat
+    margin-bottom: 16px
+
+    p
+      margin: 0
+    span.label
+      font-weight: bold
+
+  article.audio
+    div.audio_container
+      clear: both
+      margin: auto
+      text-align: center
+
+  article.video
+    div.video_container
+      clear: both
+      margin: auto
+      text-align: center
+
+  nav
+    text-align: center
+
+    a:link, a:visited
+      border-bottom: none
+      font:
+        family: $headerFont
+        style: italic
+
+body > footer
+  font:
+    family: $headerFont
+    style: italic
+  text-align: center
+
+  p
+    margin: 0.5em 0
+

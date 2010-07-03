@@ -1,0 +1,30 @@
+body {
+    background-color: {color:Background};
+    color: {color:Text};
+}
+
+a:link, a:visited {
+    border-bottom-color: {color:Text};
+    color: {color:Text};
+}
+
+a:link:hover, a:visited:hover {
+    background-color: {color:Standout};
+}
+
+blockquote {
+    border-left-color: {color:Standout};
+}
+
+body > header h1 {
+    background-color: {color:Standout};
+    color: {color:Text};
+}
+
+body > header h2 {
+    color: {color:Text};
+}
+
+article img {
+    background-color: {color:Standout};
+}
