@@ -70,7 +70,9 @@ include(`lightcity.variable_overrides.css')
             {LinkCloseTag}
 
             {block:Caption}
-              <p class="caption">{Caption}</p>
+              <div class="caption">
+                <p>{Caption}</p>
+              </div>
             {/block:Caption}
           {/block:Photo}
 
@@ -80,7 +82,9 @@ include(`lightcity.variable_overrides.css')
             </blockquote>
 
             {block:Source}
-              <p class="source">{Source}</p>
+              <div class="source">
+                <p>{Source}</p>
+              </div>
             {/block:Source}
           {/block:Quote}
 
@@ -90,7 +94,9 @@ include(`lightcity.variable_overrides.css')
             </header>
 
             {block:Description}
-              <p class="description">{Description}</p>
+              <div class="description">
+                <p>{Description}</p>
+              </div>
             {/block:Description}
           {/block:Link}
 
@@ -115,7 +121,9 @@ include(`lightcity.variable_overrides.css')
             <div class="audio_container">{AudioPlayerGrey}</div>
 
             {block:Caption}
-              <p class="caption">{Caption}</div>
+              <div class="caption">
+                <p>{Caption}</p>
+              </div>
             {/block:Caption}
           {/block:Audio}
 
@@ -123,14 +131,16 @@ include(`lightcity.variable_overrides.css')
             <div class="video_container">{Video-500}</div>
             
             {block:Caption}
-              <p class="caption">{Caption}</p>
+              <div class="caption">
+                <p>{Caption}</p>
+              </div>
             {/block:Caption}
           {/block:Video}
 
           {block:Answer}
             <blockquote class="question">{Question}</blockquote>
 
-            <p class="source">{Asker}</p>
+            <div class="source"><p>{Asker}</p></div>
 
             <div class="answer"><p>{Answer}</p></div>
           {/block:Answer}
