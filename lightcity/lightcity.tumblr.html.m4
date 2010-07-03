@@ -199,7 +199,7 @@ include(`lightcity.variable_overrides.css')
     </section>
     <footer>
       <p>Powered by <a href="http://tumblr.com/">Tumblr</a>;
-      themed by <a href="http://lloyda2.tumblr.com/">Adam Lloyd</a>.</p>
+      themed by <a href="http://text.alloy-d.net/">Adam Lloyd</a>.</p>
     </footer>
   </body>
 </html>
