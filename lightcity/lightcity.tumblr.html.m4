@@ -210,6 +210,18 @@ include(`lightcity.variable_overrides.css')
       </nav>
     </section>
     <footer>
+      <nav>
+        <ul>
+          {block:AskEnabled}
+            <li><a href="/ask">ask</a></li>
+          {/block:AskEnabled}
+          {block:SubmissionsEnabled}
+            <li><a href="/submit">submit</a></li>
+          {/block:SubmissionsEnabled}
+          <li><a rel="archives" href="/archive">archive</a></li>
+          <li><a rel="alternate" href="/rss">RSS</a></li>
+        </ul>
+      </nav>
       <p>Powered by <a rel="nofollow" href="http://tumblr.com/">Tumblr</a>;
       <a rel="nofollow" href="http://www.tumblr.com/theme/554">Light City</a>
       by <a rel="nofollow" href="http://text.alloy-d.net/">Adam Lloyd</a>.</p>
