@@ -9,7 +9,7 @@
      http://www.perlfoundation.org/artistic_license_2_0
   -->
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}{block:SearchPage} - search results for "{SearchQuery}"{/block:SearchPage}</title>
     <link rel="shortcut icon" href="{Favicon}" />
