@@ -135,27 +135,29 @@ include(`lightcity.variable_overrides.css')
             <div class="answer"><p>{Answer}</p></div>
           {/block:Answer}
 
-          <footer>
-            {block:RebloggedFrom}
-              <span class="hat_tip">
-                Found via
-                <a href="{ReblogParentURL}">{ReblogParentName}</a>.
-              </span>
-            {/block:RebloggedFrom}
-            <time datetime="{Year}-{MonthNumberWithZero}-"{DayOfMonthWithZero}" pubdate>
-              Posted
-              <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
-                  {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a>, at
-              <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm} (&#8734;)</a>.
-            </time>
-            {block:Photo}
-              {block:HighRes}
-                <span class="high_res_link">
-                  <a href="{PhotoURL-HighRes}">Available in higher resolution.</a>
+          {block:Date}
+            <footer>
+              {block:RebloggedFrom}
+                <span class="hat_tip">
+                  Found via
+                  <a href="{ReblogParentURL}">{ReblogParentName}</a>.
                 </span>
-              {/block:HighRes}
-            {/block:Photo}
-          </footer>
+              {/block:RebloggedFrom}
+              <time datetime="{Year}-{MonthNumberWithZero}-"{DayOfMonthWithZero}" pubdate>
+                Posted
+                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                    {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a>, at
+                <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm} (&#8734;)</a>.
+              </time>
+              {block:Photo}
+                {block:HighRes}
+                  <span class="high_res_link">
+                    <a href="{PhotoURL-HighRes}">Available in higher resolution.</a>
+                  </span>
+                {/block:HighRes}
+              {/block:Photo}
+            </footer>
+          {/block:Date}
         </article>
       {/block:Posts}
 
