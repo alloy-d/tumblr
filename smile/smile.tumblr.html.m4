@@ -309,6 +309,12 @@ include(`smile.conditional.css')
               <li><a href="{URL}">{Label}</a></li>
             {/block:Pages}
           {/block:HasPages}
+          {block:AskEnabled}
+            <li><a href="/ask">ask</a></li>
+          {/block:AskEnabled}
+          {block:SubmissionsEnabled}
+            <li><a href="/submit">submit</a></li>
+          {/block:SubmissionsEnabled}
           {block:IfContactEmailAddress}
             <li><a href="mailto:{text:Contact email address}">{block:IfContactLinkText}{text:Contact link text}{/block:IfContactLinkText}{block:IfNotContactLinkText}contact{/block:IfNotContactLinkText}</a></li>
           {/block:IfContactEmailAddress}
