@@ -16,6 +16,11 @@
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
     {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+    <!--[if lt IE 9]>
+    <script src='http://static.tumblr.com/stpp4vf/kS4l4rhp9/html5.js'></script>
+    <![endif]-->
+
     <meta name="color:Text" content="#303030" />
     <meta name="color:Standout" content="#F0F0F0" />
     <meta name="color:Background" content="#FFFFFF" />
