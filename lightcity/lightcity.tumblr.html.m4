@@ -240,7 +240,7 @@ include(`lightcity.variable_overrides.css')
             <li><a href="/submit">submit</a></li>
           {/block:SubmissionsEnabled}
           <li><a rel="archives" href="/archive">archive</a></li>
-          <li><a rel="alternate" href="/rss">RSS</a></li>
+          <li><a rel="alternate" href="{RSS}">RSS</a></li>
         </ul>
       </nav>
       <p>Powered by <a rel="nofollow" href="http://tumblr.com/">Tumblr</a>;
