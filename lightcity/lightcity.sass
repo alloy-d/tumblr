@@ -137,8 +137,15 @@ section#posts
     div.caption
       margin-top: 1.5em
 
+    div.source
+      p:first-child
+        text-align: right
+      p:first-child:before
+        content: '\2014'
+
     footer
       display: block
+      line-height: 1.3
       margin-top: 16px
 
       font:
@@ -149,11 +156,18 @@ section#posts
       a:link, a:visited
         border: none
 
-    div.source
-      p:first-child
-        text-align: right
-      p:first-child:before
-        content: '\2014'
+      ul
+        display: inline
+        list-style: none
+        margin: 0
+        padding: 0
+
+      li
+        display: inline
+        margin-left: 0.35em
+
+      li:before
+        content: '#'
 
   article.chat
     p

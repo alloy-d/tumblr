@@ -166,6 +166,15 @@ include(`lightcity.variable_overrides.css')
                   </span>
                 {/block:HighRes}
               {/block:Photo}
+              {block:HasTags}
+                <br />
+                Tags:
+                <ul>
+                  {block:Tags}
+                    <li><a href="{TagURL}">{Tag}</a></li>
+                  {/block:Tags}
+                </ul>
+              {/block:HasTags}
             </footer>
           {/block:Date}
         </article>
