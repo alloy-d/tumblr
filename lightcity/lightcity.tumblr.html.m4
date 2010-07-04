@@ -153,7 +153,7 @@ include(`lightcity.variable_overrides.css')
                   <a href="{ReblogParentURL}">{ReblogParentName}</a>.
                 </span>
               {/block:RebloggedFrom}
-              <time datetime="{Year}-{MonthNumberWithZero}-"{DayOfMonthWithZero}" pubdate>
+              <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>
                 Posted
                 <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
                     {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a>, at
