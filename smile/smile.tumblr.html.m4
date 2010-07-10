@@ -122,6 +122,16 @@ include(`smile.conditional.css')
             {/block:Caption}
           {/block:Photo}
 
+          {block:Photoset}
+            {Photoset-500}
+
+            {block:Caption}
+              <div class="caption">
+                <p>{Caption}</p>
+              </div>
+            {/block:Caption}
+          {/block:Photoset}
+
           {block:Quote}
             <blockquote class="{Length}">
               {Quote}
