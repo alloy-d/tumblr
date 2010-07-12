@@ -81,6 +81,16 @@ include(`lightcity.variable_overrides.css')
             {/block:Caption}
           {/block:Photo}
 
+          {block:Photoset}
+            <div class="photoset_container">{Photoset-500}</div>
+
+            {block:Caption}
+              <div class="caption">
+                <p>{Caption}</p>
+              </div>
+            {/block:Caption}
+          {/block:Photoset}
+
           {block:Quote}
             <blockquote>
               {Quote}
