@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<head>
+  <link
+  href='http://fonts.googleapis.com/css?family=IM+Fell+English:regular,italic'
+  rel='stylesheet'
+  />
+
+  <link
+  href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC'
+  rel='stylesheet'
+  />
+
+  <link
+  href='http://fonts.googleapis.com/css?family=Crimson+Text'
+  rel='stylesheet'
+  />
+
+  <link
+  href='http://fonts.googleapis.com/css?family=Inconsolata'
+  rel='stylesheet'
+  />
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+body {
+  background-color: #111815;
+  color: white;
+  font-family: "Crimson Text", serif;
+  font-size: 100%;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+  word-spacing: 0.1em; }
+
+code {
+  font-family: "Inconsolata", "Droid Sans Mono", "Courier", monospace;
+  font-size: 0.9em; }
+
+pre {
+  font-family: "Inconsolata", "Droid Sans Mono", "Courier", monospace; }
+  pre code {
+    font-size: 1em; }
+
+#theRealBody {
+  hover-border: 1px dotted #404040;
+  hover-border-top: none;
+  hover-border-bottom: none;
+  margin: auto;
+  padding: 0.3em 3ex;
+  padding-top: 30px;
+  width: 33em; }
+
+header h1 {
+  font-family: "IM Fell English", serif;
+  font-size: 4em;
+  font-style: italic;
+  font-weight: 100;
+  line-height: 1;
+  margin: 0; }
+  header h1 a:link, header h1 a:visited {
+    color: white; }
+
+header h2 {
+  font-family: "IM Fell English", serif;
+  font-size: 1.25em;
+  font-weight: 100;
+  margin: 0;
+  left: 1em;
+  line-height: 1;
+  position: relative;
+  top: -0.4em; }
+
+header {
+  display: block;
+  margin-bottom: 80px; }
+
+article {
+  display: block;
+  margin-top: 6em; }
+  article blockquote {
+    font-style: italic;
+    margin: 1.5em 0; }
+    article blockquote blockquote {
+      margin-top: 0.75em;
+      margin-bottom: 0.75em;
+      margin-left: 1.5em; }
+  article h1, article h2, article h3, article h4, article h5, article h6, article a.theLink {
+    font-family: "IM Fell English", serif;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0; }
+  article h1, article a.theLink {
+    font-size: 2em;
+    line-height: 1.5;
+    margin-top: 3.5em;
+    margin-bottom: 1em; }
+  article h2 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-top: 2.5em;
+    margin-bottom: 1.5em; }
+  article h3 {
+    font-size: 1.25em;
+    line-height: 1.2;
+    margin-top: 2em;
+    margin-bottom: 1em; }
+  article h4 {
+    font-size: 1em; }
+  article h5 {
+    font-size: 1em;
+    font-weight: 100; }
+  article h6 {
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 100; }
+  article p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-top: 1.5em;
+    margin-bottom: 0; }
+  article p + p {
+    margin-top: 0;
+    text-indent: 1.5em; }
+  article ol, article ul {
+    font-size: 1em;
+    margin-top: 1.5em;
+    margin-left: 0;
+    margin-bottom: 1.5em;
+    padding-left: 0; }
+    article ol ol, article ol ul, article ul ol, article ul ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 1.5em; }
+  article ol {
+    list-style-type: lower-roman; }
+  article ul {
+    list-style-type: circle; }
+  article li p {
+    margin-top: 0; }
+  article hr {
+    border: none;
+    border-top: thin solid white;
+    margin-top: 1.5em;
+    opacity: 0.5;
+    width: 80%; }
+  article a:link img, article a:visited img {
+    border: none; }
+  article sup {
+    line-height: 0; }
+    article sup a:link, article sup a:visited {
+      color: white; }
+  article p.aQuoteSource {
+    margin-top: -1.5em;
+    text-align: right; }
+  article p.aQuoteSource:before {
+    content: "\2014"; }
+  article .footnotes {
+    font-size: 0.8em; }
+    article .footnotes p {
+      line-height: inherit; }
+    article .footnotes ol {
+      list-style-type: decimal; }
+  article footer {
+    color: white;
+    display: block;
+    font-style: italic;
+    line-height: inherit;
+    margin-top: 0;
+    margin-right: -1.5em;
+    margin-bottom: -3em;
+    margin-left: -3em;
+    opacity: 0.1;
+    padding-top: 0;
+    padding-right: 1.5em;
+    padding-bottom: 3em;
+    padding-left: 3em;
+    text-align: right;
+    transition: opacity 0.3s ease;
+    -webkit-transition: opacity 0.3s ease; }
+    article footer a:link, article footer a:visited {
+      color: white; }
+    article footer a:link:hover, article footer a:visited:hover {
+      color: #ffe312; }
+    article footer time[pubdate] a:link, article footer time[pubdate] a:visited {
+      margin-top: 0;
+      margin-right: -1.5em;
+      margin-bottom: -3em;
+      margin-left: 0;
+      padding-top: 0;
+      padding-right: 1.5em;
+      padding-bottom: 3em;
+      padding-left: 1em; }
+  article footer:hover {
+    opacity: 1; }
+    article footer:hover a:link, article footer:hover a:visited {
+      color: #ffe312; }
+
+.aConversation .aTranscript .aParticipant {
+  display: block;
+  font-weight: 900;
+  height: 0;
+  overflow: visible;
+  padding-right: 0.8em;
+  position: relative;
+  left: -100%;
+  text-align: right; }
+.aConversation .aTranscript .aLine {
+  margin: 0; }
+
+.aLink .theLink:before {
+  content: "\2712";
+  margin-left: -0.87em; }
+
+.anAnswer .aQuestion br + br {
+  content: " ";
+  display: inline-block;
+  margin-right: 1.5em;
+  width: 0; }
+
+nav {
+  display: block;
+  font-family: "IM Fell English SC", serif;
+  margin-top: 3em;
+  text-align: center; }
+
+footer {
+  bottom: 0;
+  display: block;
+  line-height: 1em;
+  margin-top: 1.5em;
+  position: static;
+  text-align: center; }
+  footer p {
+    font-family: "IM Fell English SC", serif;
+    margin: 0; }
+  footer ul.myLinks {
+    margin: 0;
+    padding: 0; }
+    footer ul.myLinks li {
+      display: inline;
+      font-family: "IM Fell English SC", serif;
+      text-transform: lowercase; }
+    footer ul.myLinks li + li:before {
+      content: "\2022"; }
+  footer a:link, footer a:visited {
+    color: white; }
+
+a:link, a:visited {
+  color: #ffe312;
+  text-decoration: none;
+  transition: text-shadow 1s ease, color 1s ease;
+  -webkit-transition: text-shadow 1s ease, color 1s ease; }
+
+.lit, a:link:hover, a:visited:hover {
+  text-shadow: #ffe312 0 0 8px, #ff8800 0 0 4px; }
+
+.unlit {
+  text-shadow: #ffe312 0 0 0; }
+
+  </style>
+
+  <title>{Title}</title>
+  <link rel="shortcut icon" href="{Favicon}" />
+  <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+  {block:Description}
+    <meta name='description' content='{MetaDescription}' />
+  {/block:Description}
+</head>
+<body>
+  <div id='theRealBody'>
+    <header>
+      <hgroup>
+        <h1><a rel="up" href="/" title="Home">{Title}</a></h1>
+        <h2>{Description}</h2>
+      </hgroup>
+    </header>
+
+    {block:Posts}
+      <article
+        {block:Photo}class="aPhoto"{/block:Photo}
+        {block:Photoset}class="aSetOfPhotos"{/block:Photoset}
+        {block:Quote}class="aQuote"{/block:Quote}
+        {block:Link}class="aLink"{/block:Link}
+        {block:Chat}class="aConversation"{/block:Chat}
+        {block:Video}class="aVideo"{/block:Video}
+        {block:Audio}class="aSound"{/block:Audio}
+        {block:Answer}class="anAnswer"{/block:Answer}
+      >
+        {block:Text} 
+          <h1>{Title}</h1>
+
+          {Body}
+        {/block:Text}
+
+        {block:Photo}
+          {LinkOpenTag}
+            <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+          {LinkCloseTag}
+
+          {block:Caption}
+            <div class="aCaption">{Caption}</div>
+          {/block:Caption}
+        {/block:Photo}
+
+        {block:Photoset}
+          {Photoset-500}
+
+          {block:Caption}
+            <div class="aCaption">{Caption}</div>
+          {/block:Caption}
+        {/block:Photoset}
+
+        {block:Quote}
+          <blockquote>{Quote}</blockquote>
+
+          {block:Source}
+            <p class="aQuoteSource">{Source}</p>
+          {/block:Source}
+        {/block:Quote}
+
+        {block:Link}
+          <a href="{URL}" class="theLink" {Target}>{Name}</a>
+
+          {block:Description}
+            <div class="aCaption">{Description}</div>
+          {/block:Description}
+        {/block:Link}
+
+        {block:Chat}
+          {block:Title}
+            <h1>{Title}</h1>
+          {/block:Title}
+
+          <div class="aTranscript">
+            {block:Lines}
+              {block:Label}
+                <span class="aParticipant">{Label}</span>
+              {/block:Label}
+              <span class="aLine">{Line}</span>
+            {/block:Lines}
+          </div>
+        {/block:Chat}
+
+        {block:Video}
+          {Video-500}
+
+          {block:Caption}
+            <div class="aCaption">{Caption}</div>
+          {/block:Caption}
+        {/block:Video}
+
+        {block:Audio}
+          {AudioPlayerGrey}
+
+          {block:Caption}
+            <div class="aCaption">{Caption}</div>
+          {/block:Caption}
+        {/block:Audio}
+
+        {block:Answer}
+          <blockquote class="aQuestion">{Question}</blockquote>
+          <p class="aQuoteSource">{Asker}</p>
+
+          <div class="anAnswer">{Answer}</div>
+        {/block:Answer}
+
+        <footer>
+          {block:RebloggedFrom}
+            <span class="aHatTip">
+              via <a href="{ReblogParentURL}">{ReblogParentTitle}</a>
+            </span>
+          {/block:RebloggedFrom}
+          <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonth}" pubdate>
+            <!--{DayOfMonth} {ShortMonth} {Year}--> <a href="{Permalink}">&#x221e;</a>
+          </time>
+        </footer>
+      </article>
+    {/block:Posts}
+
+    <nav>
+      {block:NextPage}
+        <a rel="next" href="{NextPage}">older</a>
+        {block:PreviousPage}
+          &#x2022;
+        {/block:PreviousPage}
+      {/block:NextPage}
+      {block:PreviousPage}
+        <a rel="prev" href="{PreviousPage}">newer</a>
+      {/block:PreviousPage}
+    </nav>
+
+    <footer>
+      <p><a rel="author" href="mailto:adam@alloy-d.net">Adam (at
+alloy-d dot net)</a></p>
+      <p>Nox theme undergoing refinement</p>
+    </footer>
+  </div>
+</body>

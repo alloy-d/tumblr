@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<!--
+     Light City, a Tumblr theme
+     
+     Copyright 2010 Adam Lloyd (adam@alloy-d.net)
+
+     Licensed under the Artistic License 2.0:
+     http://www.perlfoundation.org/artistic_license_2_0
+  -->
+
+<html>
+  <head>
+    <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}{block:SearchPage} - search results for "{SearchQuery}"{/block:SearchPage}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+
+    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+    <!--[if lt IE 9]>
+    <script src='http://static.tumblr.com/stpp4vf/kS4l4rhp9/html5.js'></script>
+    <![endif]-->
+
+    <meta name="color:Text" content="#303030" />
+    <meta name="color:Standout" content="#F0F0F0" />
+    <meta name="color:Background" content="#FFFFFF" />
+
+    <style>
+body {
+  font-family: "Verdana", "Gill Sans", sans-serif;
+  font-size: 12pt;
+  margin: 0;
+  padding: 0; }
+
+header, hgroup, section, article, footer, nav {
+  display: block; }
+
+a:link, a:visited {
+  border-bottom: 1px solid;
+  text-decoration: none; }
+
+a:link:hover, a:visited:hover {
+  text-decoration: none; }
+
+p {
+  margin: 16px 0; }
+
+blockquote {
+  border-left: 3px solid;
+  margin-right: 2ex;
+  margin-left: 1ex;
+  padding-left: 1.5ex; }
+
+code, pre {
+  font-family: "Andale Mono", "Monaco", monospace; }
+
+ins {
+  font-style: italic;
+  text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Baskerville", "URW Palladio L", "Palatino", "Georgia", serif;
+  font-weight: normal; }
+
+hr {
+  border: none;
+  border-top: 3px solid; }
+
+sup {
+  line-height: 0; }
+
+body > header {
+  display: block;
+  margin-top: 60px;
+  margin-bottom: 160px; }
+  body > header h1 {
+    font-size: 90px;
+    font-weight: 100;
+    line-height: 1.2em;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    text-transform: uppercase; }
+    body > header h1 a:link, body > header h1 a:visited {
+      background-color: transparent;
+      border: none;
+      color: inherit; }
+    body > header h1 a:link:hover, body > header h1 a:visited:hover {
+      background-color: transparent; }
+  body > header h2 {
+    font-size: 28px;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0;
+    text-align: center; }
+    body > header h2 p {
+      display: inline; }
+    body > header h2 br, body > header h2 hr {
+      display: none; }
+
+section#posts {
+  border: none;
+  display: block;
+  line-height: 1.5em;
+  margin: auto;
+  text-align: justify;
+  width: 600px; }
+  section#posts article {
+    display: block;
+    margin-bottom: 120px; }
+    section#posts article header {
+      display: block; }
+      section#posts article header h1 {
+        background-color: transparent;
+        font-size: 30px;
+        font-weight: normal;
+        line-height: 1.3em;
+        margin-top: 0;
+        text-align: left;
+        text-transform: none; }
+        section#posts article header h1 a {
+          line-height: 1.4em; }
+    section#posts article img {
+      clear: both;
+      display: block;
+      margin: auto;
+      padding: 8px; }
+    section#posts article a:link img, section#posts article a:visited img {
+      border: none; }
+    section#posts article div.caption {
+      margin-top: 1.5em; }
+    section#posts article div.source p:first-child {
+      text-align: right; }
+    section#posts article div.source p:first-child:before {
+      content: "\2014"; }
+    section#posts article footer {
+      display: block;
+      line-height: 1.3;
+      margin-top: 16px;
+      font-family: "Baskerville", "URW Palladio L", "Palatino", "Georgia", serif;
+      font-size: 80%;
+      font-style: italic; }
+      section#posts article footer a:link, section#posts article footer a:visited {
+        border: none; }
+      section#posts article footer ul {
+        display: inline;
+        list-style: none;
+        margin: 0;
+        padding: 0; }
+      section#posts article footer li {
+        display: inline;
+        margin-left: 0.35em; }
+      section#posts article footer li:before {
+        content: "#"; }
+  section#posts article.photoset div.photoset_container {
+    clear: both;
+    margin: auto;
+    text-align: center; }
+  section#posts article.chat p {
+    margin: 0; }
+  section#posts article.chat span.label {
+    font-weight: bold; }
+  section#posts article.audio div.audio_container {
+    clear: both;
+    margin: auto;
+    text-align: center; }
+  section#posts article.video div.video_container {
+    clear: both;
+    margin: auto;
+    text-align: center; }
+  section#posts nav {
+    display: block;
+    text-align: center; }
+    section#posts nav a:link, section#posts nav a:visited {
+      border-bottom: none;
+      font-family: "Baskerville", "URW Palladio L", "Palatino", "Georgia", serif;
+      font-style: italic; }
+
+body > footer {
+  font-family: "Baskerville", "URW Palladio L", "Palatino", "Georgia", serif;
+  font-style: italic;
+  margin-top: 1em;
+  text-align: center; }
+  body > footer p {
+    font-size: 80%;
+    margin: 0;
+    margin-top: 0.7em;
+    padding: 0;
+    padding-bottom: 0.5em; }
+  body > footer nav {
+    display: block; }
+    body > footer nav ul {
+      display: inline;
+      list-style-type: none;
+      margin: 0.4em 0;
+      padding: 0; }
+    body > footer nav ul + ul:before {
+      content: "\2022";
+      font-size: 70%; }
+    body > footer nav li {
+      display: inline;
+      margin: 0 0.4em;
+      text-transform: lowercase; }
+
+body {
+    background-color: {color:Background};
+    color: {color:Text};
+}
+
+a:link, a:visited {
+    border-bottom-color: {color:Text};
+    color: {color:Text};
+}
+
+a:link:hover, a:visited:hover {
+    background-color: {color:Standout};
+}
+
+blockquote {
+    border-left-color: {color:Standout};
+}
+
+hr {
+    border-top-color: {color:Standout};
+}
+
+body > header h1 {
+    background-color: {color:Standout};
+    color: {color:Text};
+}
+
+body > header h2 {
+    color: {color:Text};
+}
+
+article img {
+    background-color: {color:Standout};
+}
+
+body > footer {
+    background-color: {color:Standout};
+}
+
+
+{CustomCSS}
+    </style>
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1><a rel="up" href="/">{Title}</a></h1>
+        {block:Description}
+          <h2>{Description}</h2>
+        {/block:Description}
+      </hgroup>
+    </header>
+
+    <section id="posts">
+      {block:Posts}
+        <article
+          {block:Text}class="text"{/block:Text}
+          {block:Photo}class="photo"{/block:Photo}
+          {block:Photoset}class="photoset"{/block:Photoset}
+          {block:Quote}class="quote"{/block:Quote}
+          {block:Link}class="link"{/block:Link}
+          {block:Chat}class="chat"{/block:Chat}
+          {block:Audio}class="audio"{/block:Audio}
+          {block:Video}class="video"{/block:Video}
+          {block:Answer}class="answer"{/block:Answer}
+        >
+          <a name="{PostID}"></a>
+
+          {block:Text}
+            {block:Title}
+              <header>
+                <h1>{Title}</h1>
+              </header>
+            {/block:Title}
+
+            <p>
+              {Body}
+            </p>
+          {/block:Text}
+
+          {block:Photo}
+            {LinkOpenTag}
+              <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+            {LinkCloseTag}
+
+            {block:Caption}
+              <div class="caption">
+                <p>{Caption}</p>
+              </div>
+            {/block:Caption}
+          {/block:Photo}
+
+          {block:Photoset}
+            <div class="photoset_container">{Photoset-500}</div>
+
+            {block:Caption}
+              <div class="caption">
+                <p>{Caption}</p>
+              </div>
+            {/block:Caption}
+          {/block:Photoset}
+            
+
+          {block:Quote}
+            <blockquote>
+              {Quote}
+            </blockquote>
+
+            {block:Source}
+              <div class="source">
+                <p>{Source}</p>
+              </div>
+            {/block:Source}
+          {/block:Quote}
+
+          {block:Link}
+            <header>
+              <h1><a href="{URL}" {Target}>{Name}</a></h1>
+            </header>
+
+            {block:Description}
+              <div class="description">
+                <p>{Description}</p>
+              </div>
+            {/block:Description}
+          {/block:Link}
+
+          {block:Chat}
+            {block:Title}
+              <header>
+                <h1>{Title}</h1>
+              </header>
+            {/block:Title}
+
+            {block:Lines}
+              <p class="chat_line chat_line_{Alt}">
+                {block:Label}
+                  <span class="label">{Label}</span>
+                {/block:Label}
+                <span class="text">{Line}</span>
+              </p>
+            {/block:Lines}
+          {/block:Chat}
+
+          {block:Audio}
+            <div class="audio_container">{AudioPlayerGrey}</div>
+
+            {block:Caption}
+              <div class="caption">
+                <p>{Caption}</p>
+              </div>
+            {/block:Caption}
+          {/block:Audio}
+
+          {block:Video}
+            <div class="video_container">{Video-500}</div>
+            
+            {block:Caption}
+              <div class="caption">
+                <p>{Caption}</p>
+              </div>
+            {/block:Caption}
+          {/block:Video}
+
+          {block:Answer}
+            <blockquote class="question">{Question}</blockquote>
+
+            <div class="source"><p>{Asker}</p></div>
+
+            <div class="answer"><p>{Answer}</p></div>
+          {/block:Answer}
+
+          {block:Date}
+            <footer>
+              {block:RebloggedFrom}
+                <span class="hat_tip">
+                  Found via
+                  <a href="{ReblogParentURL}">{ReblogParentName}</a>.
+                </span>
+              {/block:RebloggedFrom}
+              <time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>
+                Posted
+                <a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/">
+                    {DayOfWeek}, {Month} {DayOfMonth}{DayOfMonthSuffix}</a>, at
+                <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm} (&#8734;)</a>.
+              </time>
+              {block:Photo}
+                {block:HighRes}
+                  <span class="high_res_link">
+                    <a href="{PhotoURL-HighRes}">Available in higher resolution.</a>
+                  </span>
+                {/block:HighRes}
+              {/block:Photo}
+              {block:HasTags}
+                <br />
+                Tags:
+                <ul>
+                  {block:Tags}
+                    <li><a href="{TagURL}">{Tag}</a></li>
+                  {/block:Tags}
+                </ul>
+              {/block:HasTags}
+            </footer>
+          {/block:Date}
+        </article>
+      {/block:Posts}
+
+      <nav>
+        {block:Pagination}
+          {block:PreviousPage}
+            <a rel="prev" href="{PreviousPage}">&laquo; newer</a>
+            {block:NextPage}
+            |
+            {/block:NextPage}
+          {/block:PreviousPage}
+          {block:NextPage}
+            <a rel="next" href="{NextPage}">older &raquo;</a>
+          {/block:NextPage}
+        {/block:Pagination}
+
+        {block:DayPagination}
+          {block:PreviousDayPage}
+            <a rel="prev" href="{PreviousDayPage}">&laquo; yesterday</a>
+            {block:NextDayPage}
+            |
+            {/block:NextDayPage}
+          {/block:PreviousDayPage}
+          {block:NextDayPage}
+            <a rel="next" href="{NextDayPage}">tomorrow &raquo;</a>
+          {/block:NextDayPage}
+        {/block:DayPagination}
+
+        {block:PermalinkPagination}
+          {block:PreviousPost}
+            <a rel="prev" href="{PreviousPost}">&laquo; previous</a>
+            {block:NextPost}
+            |
+            {/block:NextPost}
+          {/block:PreviousPost}
+          {block:NextPost}
+            <a rel="next" href="{NextPost}">next &raquo;</a>
+          {/block:NextPost}
+        {/block:PermalinkPagination}
+      </nav>
+    </section>
+    <footer>
+      <nav>
+        {block:HasPages}
+          <ul>
+            {block:Pages}
+              <li><a href="{URL}">{Label}</a></li>
+            {/block:Pages}
+          </ul>
+        {/block:HasPages}
+        <ul>
+          {block:AskEnabled}
+            <li><a href="/ask">ask</a></li>
+          {/block:AskEnabled}
+          {block:SubmissionsEnabled}
+            <li><a href="/submit">submit</a></li>
+          {/block:SubmissionsEnabled}
+          <li><a rel="archives" href="/archive">archive</a></li>
+          <li><a rel="alternate" href="{RSS}">RSS</a></li>
+        </ul>
+      </nav>
+      <p>Powered by <a rel="nofollow" href="http://tumblr.com/">Tumblr</a>;
+      <a rel="nofollow" href="http://www.tumblr.com/theme/554">Light City</a>
+      by <a rel="nofollow" href="http://text.alloy-d.net/">Adam Lloyd</a>.</p>
+    </footer>
+  </body>
+</html>
