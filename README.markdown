@@ -63,10 +63,12 @@ tumblelog](http://text.alloy-d.net).</del> <ins>I'm not enough of a
 peacock to carry it off, though, so it's no longer in use.</ins> (This
 is referred to as 'al' in my commit messages.)
 
-The file [base.html](tip/base.html) contains, more or less, the HTML that
-is used by each of my themes since "I like lampposts". More up-to-date
-copies can probably be extracted from either my personal theme or
-Light City.
+The file [base.html](tip/base.html) <del>contains, more or less, the
+HTML that is used by each of my themes since "I like lampposts". More
+up-to-date copies can probably be extracted from either my personal
+theme or Light City.</del> <ins>was a silly idea and has been removed.
+Don't go looking for it.  Conforming to the same HTML each time is
+impractical and boring.</ins>
 
 
 
