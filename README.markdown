@@ -5,7 +5,7 @@ This is a repository of the themes I've created for
 [Tumblr](http://tumblr.com)-powered blogs.
 
 You can find my tumblelog, which is quite probably using one of these
-themes, [here](http://lloyda2.tumblr.com).
+themes, [here](http://text.alloy-d.net).
 
 
 
@@ -57,8 +57,10 @@ Other
 -----
 
 You can find a theme I made for personal use in the
-[adamlloyd](master/adamlloyd) directory. As of the last edit of this README,
-it is in use on [my main tumblelog](http://lloyda2.tumblr.com). (This
+[adamlloyd](master/adamlloyd) directory. <del>As of the last edit of
+this README, it is in use on [my main
+tumblelog](http://text.alloy-d.net).</del> <ins>I'm not enough of a
+peacock to carry it off, though, so it's no longer in use.</ins> (This
 is referred to as 'al' in my commit messages.)
 
 The file [base.html](tip/base.html) contains, more or less, the HTML that
